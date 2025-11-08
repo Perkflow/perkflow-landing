@@ -1,0 +1,34 @@
+{
+  "Contact_Page": {
+    "title": "Ready to make smarter rewards? Let's talk",
+    "content": "Have questions? Curious about how our rewards work? Or just exploring what's possible? Fill out the form below and let's see how we can help or reach out directly using the contact info below.",
+    "form": {
+      "title": "Our friendly team would love to hear from you.",
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "First name"
+      },
+      "lastName": {
+        "label": "Last Name",
+        "placeholder": "Last name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "phone": {
+        "label": "Phone Number"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Type your message here..."
+      },
+      "submitButton": {
+        "text": "Submit"
+      },
+      "successMessage": {
+        "text": "Thank you for your message! We'll get back to you soon."
+      }
+    }
+  }
+}

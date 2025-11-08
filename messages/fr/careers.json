@@ -1,0 +1,119 @@
+{
+  "Careers_Page": {
+    "Hero": {
+      "heading": "Rencontrez certains des membres incroyables de notre équipe",
+      "subheading": "Nous sommes fiers de nos membres d’équipe talentueux et diversifiés, passionnés par la création de systèmes de récompense et de reconnaissance de classe mondiale qui autonomisent les organisations.",
+      "cta": "Voir les postes ouverts"
+    },
+    "Values": {
+      "heading": "Nos valeurs",
+      "subheading": "Ce que nous défendons et comment nous nous présentons.",
+      "philosophy": {
+        "card1": {
+          "title": "Construire avec un objectif",
+          "content": "Nous ne créons pas pour suivre les tendances, mais pour résoudre des problèmes concrets qui ont un impact sur la façon dont les gens se sentent et performent au travail."
+        },
+        "card2": {
+          "title": "Célébrer le parcours",
+          "content": "Nous valorisons chaque étape qui mène au succès. La croissance, l'apprentissage et les efforts méritent d'être reconnus."
+        },
+        "card3": {
+          "title": "Diriger avec empathie",
+          "content": "Nous dirigeons par l'écoute. Nous partons du principe que les intentions sont bonnes et équilibrons bienveillance et responsabilité."
+        },
+        "card4": {
+          "title": "Pratiquer ce que nous prêchons",
+          "content": "Nous utilisons Perkflow pour célébrer nos propres réalisations parce que nous croyons en notre produit et nous vivons notre mission au quotidien."
+        },
+        "card5": {
+          "title": "Grandir par la propriété",
+          "content": "Nous utilisons Perkflow pour nous féliciter mutuellement, car nous croyons en notre produit et nous vivons notre mission."
+        },
+        "card6": {
+          "title": "S'améliorer sans cesse",
+          "content": "Nous posons des questions. Nous remettons en question ce qui est obsolète. Et nous continuons d'évoluer ensemble."
+        }
+      }
+    },
+    "Benefits": {
+      "heading": "Avantages et bénéfices",
+      "subheading": "Nous prenons soin de nos collaborateurs.",
+      "purpose": {
+        "card1": {
+          "title": "Horaire flexible",
+          "content": "L’équilibre entre vie professionnelle et personnelle compte. Nous encourageons chacun à prendre ses semaines de congé."
+        },
+        "card2": {
+          "title": "Santé et bien-être",
+          "content": "Soins de santé compétitifs, soutien en santé mentale."
+        },
+        "card3": {
+          "title": "Soutien à la croissance",
+          "content": "Budget d'apprentissage, mentorat, parcours de croissance interne."
+        },
+        "card4": {
+          "title": "Célébrations",
+          "content": "Des récompenses optimisées par Perkflow pour vos propres jalons."
+        }
+      }
+    },
+    "Team": {
+      "heading": "Rencontrez notre équipe",
+      "member1": {
+        "role": "PDG"
+      },
+      "member2": {
+        "role": "Directeur technique"
+      },
+      "member3": {
+        "role": "Chef de produit"
+      },
+      "member4": {
+        "role": "Responsable Design"
+      }
+    },
+    "openRole": {
+      "heading": "Postes ouverts",
+      "filter": {
+        "department": {
+          "option": {
+            "all": "Tous les départements",
+            "engineering": "Ingénierie",
+            "design": "Design",
+            "marketing": "Marketing",
+            "sales": "Ventes",
+            "management": "Gestion"
+          }
+        },
+        "location": {
+          "option": {
+            "all": "Tous les emplacements",
+            "remote": "Télétravail",
+            "on_site": "Sur site",
+            "hybrid": "Hybride"
+          }
+        },
+        "searchInput": {
+          "placeholder": "Rechercher par nom ou poste..."
+        }
+      },
+      "results": {
+        "isLoading": "Chargement des postes…",
+        "table": {
+          "head_role": "Poste",
+          "head_location": "Emplacement"
+        },
+        "emptyState": {
+          "no_role_found": {
+            "title": "Aucun poste ouvert pour le moment",
+            "subtitle": "Nous n’avons actuellement aucun poste disponible. Veuillez revenir bientôt."
+          },
+          "no_match": {
+            "title": "Aucun poste correspondant trouvé",
+            "subtitle": "Essayez d’ajuster vos filtres ou votre recherche pour voir plus de résultats."
+          }
+        }
+      }
+    }
+  }
+}

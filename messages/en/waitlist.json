@@ -1,0 +1,11 @@
+{
+  "Waitlist_Page": {
+    "heading": "Be the First to Unlock Smarter Rewards",
+    "text": "Join the waitlist for our all-in-one platform to automate gifting, set team goals, and build unforgettable culture through rewards and experiences.",
+    "form": {
+      "placeholder": "Enter your email",
+      "button": "Join Waitlist",
+      "pendingButton": "Joining..."
+    }
+  }
+}

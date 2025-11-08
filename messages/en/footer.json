@@ -1,0 +1,32 @@
+{
+  "Footer": {
+    "body": "From milestone rewards to curated team moments, PerkFlow helps you turn employee achievements into meaningful experiences — whether through travel, gifting, or unforgettable perks. Celebrate with purpose. Inspire loyalty. Make every reward count.",
+    "Company": {
+      "heading": "Company",
+      "link": {
+        "support": "Support",
+        "blog": "Blog",
+        "why_us": "Why us",
+        "terms": "Terms of service",
+        "jobs": "Jobs posting",
+        "news": "News page",
+        "privacy": "Privacy policy",
+        "refund": "Refund policy"
+      }
+    },
+    "Features": {
+      "heading": "Features",
+      "link": {
+        "gifts": "Gifts",
+        "automated_rewards": "Automated rewards",
+        "trips": "Trips"
+      }
+    },
+    "Contact": {
+      "heading": "Contact Us"
+    },
+    "Copywrite": {
+      "text": "All Rights Reserved."
+    }
+  }
+}

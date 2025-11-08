@@ -1,0 +1,103 @@
+{
+  "Enterprise_Page": {
+    "Hero": {
+      "heading": "Reward What Moves the Business Forward",
+      "subheading": "Perkflow helps companies recognize milestones, reward top performers, and build a culture of momentum through meaningful, personalized experiences.",
+      "contactForm": {
+        "title": "Build Your Plan",
+        "desc": "To get started in improving your company culture, please fill in the form below and you will be contacted.",
+        "button": "Build Your Plan"
+      },
+      "button": "Book a demo"
+    },
+    "Incentives": {
+      "title": "Incentives That Drive Culture and Results",
+      "content": "Most companies want to recognize and reward their employees. But too often, it's an afterthought—an email, a gift card, or a generic bonus. That’s not what people remember. Perkflow gives your team something better: a real reason to stay motivated, to feel valued, and to keep aiming higher. We help you build a system where performance is recognized in real time, with experiences that inspire, and tools that simplify everything."
+    },
+    "Purpose": {
+      "heading": "One Platform, Endless Possibilities",
+      "subheading": "Turn any milestone into a moment worth celebrating.",
+      "card1": {
+        "title": "Create Clear, Meaningful Goals",
+        "content": "Set individual or team targets, like hitting a sales number, launching a new project, or completing onboarding. Every goal can be tracked, timed, and labeled with custom tags (like #Q4closed or #LevelUpWeek)."
+      },
+      "card2": {
+        "title": "Track Progress with Visibility for All",
+        "content": "Everyone sees where they stand. Progress bars, deadlines, and live updates keep teams aligned and focused, without needing to chase updates or send reminders."
+      },
+      "card3": {
+        "title": "Unlock Rewards That Feel Personal",
+        "content": "When a goal is reached, Perkflow notifies the team and unlocks a pre-set reward, like a trip, a curated experience, or something your company defines. You can even let employees vote on their reward."
+      }
+    },
+    "Objectives": {
+      "heading": "Built for Companies That Care About Culture",
+      "card1": {
+        "title": "It Motivates Without Micromanaging",
+        "content": "Employees are given something real to work toward. You set the challenge, and the system handles the rest. You don't need to follow up, they can see their own progress."
+      },
+      "card2": {
+        "title": "It Makes Recognition Consistent, Not Random",
+        "content": "Instead of saving recognition for annual reviews or end-of-year bonuses, you can create a culture of regular, earned recognition."
+      },
+      "card3": {
+        "title": "It Supports Everyone, from HR to People Ops",
+        "content": "Whether you're planning a team incentive, welcoming new hires, or re-engaging a remote department, Perkflow helps each team use rewards as a tool for real impact."
+      },
+      "contactForm": {
+        "title": "Talk to an Incentive Specialist",
+        "desc": "Please fill in the form below and our team will contact you to discuss your specific needs.",
+        "button": "Talk to an Incentive Specialist"
+      }
+    },
+    "Features": {
+      "heading": "Enterprise-Ready Features",
+      "card1": {
+        "title": "Clarity",
+        "content": "Easy setup. No confusion. You're in control of your reward rules and structure."
+      },
+      "card2": {
+        "title": "Flexibility",
+        "content": "Set rewards for individuals, teams, departments, or company-wide initiatives."
+      },
+      "card3": {
+        "title": "Scalability",
+        "content": "Start with one use case, grow to multiple. It works whether you have 20 or 2,000 people."
+      },
+      "card4": {
+        "title": "Security & Reliability",
+        "content": "We support SSO, role-based access, GDPR compliance, and secure data storage."
+      }
+    },
+    "Story": {
+      "heading": "Customer Stories",
+      "subheading": "See how Perkflow simplifies rewarding and brings motivation to teams of every size.",
+      "card1": {
+        "content": "“Perkflow helped us connect performance with something real. Our sales team hit 110% of quota three quarters in a row—and they had a blast doing it.”",
+        "author": "James Doe",
+        "position": "Head of Sales, Netflix"
+      },
+      "card2": {
+        "content": "“Perkflow helped us connect performance with something real. Our sales team hit 110% of quota three quarters in a row—and they had a blast doing it.”",
+        "author": "James Packer",
+        "position": "Head of Company, Executives"
+      }
+    },
+    "Results": {
+      "heading": "Real Results, Not Hype",
+      "subheading": "What our customers are seeing",
+      "card1": {
+        "content": "Increase in employee goal completion"
+      },
+      "card2": {
+        "content": "Engagement on performance tracking"
+      },
+      "card3": {
+        "content": "More positive feedback in company surveys"
+      },
+      "card4": {
+        "content": "Increased retention"
+      }
+    }
+  }
+}

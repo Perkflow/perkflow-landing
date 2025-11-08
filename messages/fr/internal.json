@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "home": "Accueil",
+    "inbox": "Boîte de réception",
+    "requests": "Demandes",
+    "customers": "Clients",
+    "rewards": "Récompenses",
+    "payments": "Paiements",
+    "team": "Gestion de l'équipe",
+    "reports": "Rapports",
+    "help": "Aide",
+    "settings": "Paramètres"
+  },
+  "header": {
+    "title": "Interne"
+  },
+  "empty": {
+    "noData": "Aucune donnée pour le moment"
+  }
+}

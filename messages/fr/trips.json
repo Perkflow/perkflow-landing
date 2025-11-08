@@ -1,0 +1,71 @@
+{
+  "Trips_Page": {
+    "Hero": {
+      "heading": "Transformez vos réussites en voyages inoubliables",
+      "subheading": "Du rêve au départ, nous vous aidons à planifier des récompenses de voyage significatives qui célèbrent les victoires et inspirent la performance.",
+      "contactForm": {
+        "title": "Construisez votre plan",
+        "desc": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté.",
+        "button": "Construisez votre plan"
+      },
+      "button": "Réservez une démo",
+      "socialProof": {
+        "heading": "Approuvé par les équipes modernes",
+        "subheading": "(26 000 avis)"
+      }
+    },
+    "TransformSection": {
+      "titleTag": "Pourquoi récompenser avec un voyage",
+      "heading": "Transformez les étapes importantes en voyages inoubliables.",
+      "subheading": "Les récompenses voyages d'affaires ne se contentent pas de récompenser les réussites, elles les libèrent. Grâce à un programme de voyages bien conçu, vous pouvez améliorer les performances, fidéliser les meilleurs talents et créer une culture où chacun se surpasse.",
+      "point1": "Renforcez la culture avec des expériences mémorables.",
+      "point2": "Faites en sorte que les plus performants se sentent reconnus.",
+      "point3": "Déléguez la planification, tout en gardant le contrôle.",
+      "point4": "Améliorez le moral de l'équipe grâce à des souvenirs partagés.",
+      "button": "Rejoindre la liste d'attente"
+    },
+    "Career-path": {
+      "caption": "Comment ça marche",
+      "heading": "Un chemin clair de l'objectif à la récompense",
+      "subheading": "Créez des voyages axés sur la performance où les employés découvrent des expériences inoubliables en atteignant des objectifs.",
+      "card1": {
+        "title": "Soumettez votre idée de voyage",
+        "content": "Définissez les objectifs du voyage et l'objectif de performance."
+      },
+      "card2": {
+        "title": "Suivez vos progrès en toute transparence",
+        "content": "Suivez la progression de votre équipe dans la tâche et laissez nos experts en voyages planifier votre voyage."
+      },
+      "card3": {
+        "title": "Débloquez la récompense de voyage",
+        "content": "Une fois l'objectif atteint, les détails peuvent être finalisés et la facture payée."
+      }
+    },
+    "Dream": {
+      "caption": "Ce que vous obtenez",
+      "heading": "Votre voyage de rêve, suralimenté",
+      "subheading": "De la planification intelligente aux choix d'équipe, nous rendons les voyages sans effort, collaboratifs et inoubliables.",
+      "feature1": {
+        "title": "Concepteur de voyages expert",
+        "content": "Nos experts chevronnés accompagnent votre voyage incentive avec des idées créatives et une excellente exécution."
+      },
+      "feature2": {
+        "title": "Destination basée sur un sondage",
+        "content": "Laissez votre équipe s'exprimer."
+      },
+      "feature3": {
+        "title": "Itinéraire personnalisé",
+        "content": "Pour une aide rapide et des suggestions de voyage."
+      }
+    },
+    "Testimonials": {
+      "caption": "témoignages",
+      "heading": "Nous sommes plébiscités par les équipes qui valorisent leurs collaborateurs",
+      "subheading": "Apprécié par les responsables RH. Efficacité prouvée pour booster les performances. Lorsque les équipes se sentent valorisées, elles performent. Notre solution stimule la motivation, la cohésion et génère des résultats mesurables.",
+      "testimonialsList": {
+        "testimonial1": "Nous avons dépassé nos objectifs du deuxième trimestre. Notre équipe parle encore du voyage de récompense.",
+        "testimonial2": "Le voyage a fait plus pour le moral qu’une année de bonus."
+      }
+    }
+  }
+}

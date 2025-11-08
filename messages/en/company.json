@@ -1,0 +1,28 @@
+{
+  "Company_Page": {
+    "Hero": {
+      "heading": "We're Building the Future of Recognition, Join Us.",
+      "subheading": "At Perkflow, we believe meaningful recognition drives motivation, culture, and growth. If you care about creating work that inspires progress in others, you’ll feel right at home here.",
+      "overlay": {
+        "text": "See how Perkflow simplifies rewarding and brings motivation to teams of every size.",
+        "link": "Read case study"
+      }
+    },
+    "List": {
+      "companies": {
+        "content": "Perkflow helped us tie onboarding milestones to rewards. New hires now feel seen, fast."
+      },
+      "link_text": "Read case study"
+    },
+    "Join": {
+      "heading": "Join the companies turning everyday wins into lasting momentum.",
+      "subheading": "Your people are already doing great work. Let's make sure they feel it.",
+      "contactForm": {
+        "title": "Build Your Plan",
+        "desc": "To get started in improving your company culture, please fill in the form below and you will be contacted.",
+        "button": "Build Your Plan"
+      },
+      "button": "Book a demo"
+    }
+  }
+}

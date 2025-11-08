@@ -1,0 +1,102 @@
+{
+  "AutomatedReward": {
+    "HeroSection": {
+      "heading": "Gratifiez les grandes performances par de grandes récompenses",
+      "subheading": "Récompensez automatiquement les comportements qui génèrent des résultats.",
+      "first_CTA": "Construisez votre plan",
+      "second_CTA": "Réserver une démo",
+      "socialProof": {
+        "heading": "Approuvé par les équipes modernes",
+        "subheading": "(26 000 avis)"
+      }
+    },
+    "contactFormDialog": {
+      "title": "Construisez votre plan",
+      "description": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté.",
+      "cta": "Construisez votre plan"
+    },
+    "Motivation": {
+      "titleTag": "Pourquoi automatiser les récompenses ?",
+      "heading": "La motivation est plus efficace lorsqu’elle est rapide et intelligente",
+      "subheading": "Motivez votre équipe plus rapidement, plus facilement et plus équitablement.",
+      "Item": {
+        "item1": "Les récompenses sont liées à des résultats clairs",
+        "item2": "La visibilité partagée crée une concurrence saine",
+        "item3": "Aucun retard ni obstacle pour récompenser les progrès",
+        "item4": "Gagnez du temps administratif. Que des résultats et de la reconnaissance"
+      }
+    },
+    "RewardAutopilot": {
+      "titleTag": "Comment ça marche ?",
+      "heading": "Comment les récompenses fonctionnent en pilote automatique ?",
+      "subheading": "Nous automatisons l'ensemble du cycle de récompense afin que votre équipe reste motivée.",
+      "item1": {
+        "title": "Choisissez votre déclencheur",
+        "desc": "Définissez des objectifs clairs liés à des performances réelles ou à toute réalisation personnalisée."
+      },
+      "item2": {
+        "title": "Définissez votre récompense",
+        "desc": "Des cadeaux personnalisés aux expériences de voyage, attribuez des récompenses significatives."
+      },
+      "item3": {
+        "title": "Laissez le système tourner",
+        "desc": "Asseyez-vous et regardez les employés atteindre leurs objectifs et débloquer automatiquement des récompenses."
+      }
+    },
+    "Customize": {
+      "titleTag": "Faites-le vôtre",
+      "heading": "Personnalisez votre façon de motiver",
+      "subheading": "Notre plateforme est suffisamment flexible pour s'adapter à votre culture.",
+      "Item": {
+        "item1": "Attribuez des récompenses à des individus ou à des équipes.",
+        "item2": "Ajoutez des hashtags pour suivre et personnaliser chaque objectif.",
+        "item3": "Contrôle en temps réel.",
+        "item4": "Voyez le système de récompense au fur et à mesure de votre croissance."
+      }
+    },
+    "Impact": {
+      "heading": "Voir l’impact d’une récompense intelligente",
+      "subheading": "Découvrez des résultats concrets obtenus par des entreprises utilisant des récompenses automatisées pour motiver leurs équipes.",
+      "stat1": {
+        "desc": "Augmentation de l'engagement des employés"
+      },
+      "stat2": {
+        "desc": "Plus rapide dans la distribution des récompenses."
+      },
+      "stat3": {
+        "desc": "Temps moyen nécessaire à la mise en place de nouvelles récompenses"
+      },
+      "stat4": {
+        "desc": "Plus de participation aux campagnes à l'échelle de l'entreprise en utilisant des hashtags"
+      }
+    },
+    "FAQ": {
+      "heading": "Questions fréquemment posées sur les cadeaux",
+      "subheading": "Des questions ? Nous sommes là pour vous aider.",
+      "item1": {
+        "question": "Qu’est-ce qu’une récompense automatisée ?",
+        "answer": "Une récompense automatisée est une incitation déclenchée par des actions ou objectifs spécifiques. Il peut s’agir de la réalisation d'une tâche, de l’atteinte d’un objectif commercial ou de la validation d’un jalon. Une fois configuré, tout se gère en arrière-plan."
+      },
+      "item2": {
+        "question": "Ai-je besoin de compétences techniques pour configurer cela ?",
+        "answer": "Pas du tout. Il suffit de moins d’une minute pour lancer une récompense. Notre plateforme est conçue pour être simple d’utilisation, avec des modèles prêts à l’emploi et un support disponible si vous en avez besoin."
+      },
+      "item3": {
+        "question": "Pouvons-nous créer des récompenses différentes pour des équipes ou des objectifs distincts ?",
+        "answer": "Absolument. Vous pouvez créer autant de flux de récompenses que nécessaire, entièrement personnalisés pour des équipes, des individus ou des départements."
+      },
+      "item4": {
+        "question": "Comment pouvons-nous tout suivre ?",
+        "answer": "Vous disposez d'un tableau de bord centralisé où vous pouvez suivre les progrès, l'historique des récompenses et les campagnes à venir, le tout en un seul endroit."
+      },
+      "item5": {
+        "question": "Quels types de récompenses pouvons-nous automatiser ?",
+        "answer": "Vous pouvez automatiser les cadeaux, les voyages, les expériences ou les primes personnalisées, selon ce qui correspond le mieux au style de motivation de votre équipe."
+      },
+      "item6": {
+        "question": "Puis-je connecter cela aux outils que nous utilisons déjà ?",
+        "answer": "Oui, notre plateforme s'intègre aux outils et API courants, vous pouvez donc déclencher des récompenses directement depuis les applications que vous utilisez."
+      }
+    }
+  }
+}

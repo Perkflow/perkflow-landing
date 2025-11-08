@@ -1,0 +1,11 @@
+{
+  "Waitlist_Page": {
+    "heading": "Soyez le premier à débloquer des récompenses plus intelligentes",
+    "text": "Rejoignez la liste d’attente pour accéder à notre plateforme tout-en-un qui automatise les cadeaux, fixe des objectifs d’équipe et construit une culture inoubliable grâce aux récompenses et aux expériences.",
+    "form": {
+      "placeholder": "Entrez votre email",
+      "button": "Rejoindre la liste d’attente",
+      "pendingButton": "Inscription..."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ta1",
+    "team": "Team Perrick",
+    "subtitle": "Worked on Client conversion this week",
+    "avatars": [null, null, null, null]
+  },
+  {
+    "id": "ta2",
+    "team": "Team Ahmad",
+    "subtitle": "on Innovation this week",
+    "avatars": [null, null, null]
+  },
+  {
+    "id": "ta3",
+    "team": "Team Song",
+    "subtitle": "on Problem Solving this week",
+    "avatars": [null, null, null, null]
+  }
+]

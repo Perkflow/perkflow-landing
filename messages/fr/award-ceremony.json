@@ -1,0 +1,42 @@
+{
+  "Award_Ceremony_Page": {
+    "Hero": {
+      "heading": "Des moments qui font avancer les gens",
+      "subheading": "Perkflow vous aide à organiser des cérémonies de remise de prix significatives, afin que votre équipe se sente vue, célébrée et inspirée pour continuer à avancer.",
+      "button": "Réserver une démo"
+    },
+    "contactForm": {
+      "title": "Planifier une cérémonie de remise de prix",
+      "desc": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté.",
+      "button": "Planifier une cérémonie"
+    },
+    "Recognition": {
+      "heading": "La reconnaissance n'est pas seulement une fonctionnalité. C'est un moment.",
+      "subheading": "Vos collaborateurs méritent plus qu’un emoji Slack ou d'un e-mail de remerciement annuel. Ils méritent un moment marquant. Perkflow vous aide à transformer l'atteinte de vos objectifs en célébration, avec des cérémonies de récompenses qui semblent méritées, authentiques et stimulantes."
+    },
+    "Celebrate": {
+      "heading": "Célébrez les étapes clés en temps réel",
+      "subheading": "Vos collaborateurs accomplissent plus que jamais, mais la reconnaissance tarde souvent à suivre. Avec Perkflow, plus besoin d’attendre qu’un manager s’en souvienne ou qu’un bilan annuel arrive. Fixez des objectifs de performance une fois pour toutes, comme la conclusion d'un contrat, l'intégration ou le lancement d'une campagne et nous nous occupons du reste. Dès qu’un objectif est atteint, vos collaborateurs sont récompensés en temps réel avec des cadeaux, des expériences ou des célébrations qui ont une vraie signification. Une reconnaissance opportune, automatique et inoubliable."
+    },
+    "Milestone": {
+      "heading": "Donnez du sens à chaque étape",
+      "subheading": "Parce que les gens ne veulent pas seulement être récompensés, ils veulent être vus.",
+      "card1": {
+        "title": "Une reconnaissance opportune",
+        "content": "Les récompenses sont déclenchées par de véritables jalons pour que l’appréciation arrive au moment où elle compte le plus, pas des mois plus tard."
+      },
+      "card2": {
+        "title": "Des récompenses profondément personnalisées",
+        "content": "Qu'il s'agisse d'un cadeau personnalisé, d'une célébration d'équipe ou d'une expérience individuelle, les employés reçoivent quelque chose qui reflète leur valeur unique."
+      },
+      "card3": {
+        "title": "Outils de célébration intégrés",
+        "content": "Perkflow rend chaque récompense visible dans un flux partagé, afin que les coéquipiers puissent célébrer ensemble et transformer la reconnaissance en un moment d'équipe."
+      }
+    },
+    "Accomplishment": {
+      "heading": "Transformez vos réalisations en moments de fierté",
+      "subheading": "Qu'elles soient virtuelles ou en personne, vos récompenses doivent avoir autant d'importance que le travail qui les a rendues possibles."
+    }
+  }
+}

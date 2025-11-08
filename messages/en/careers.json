@@ -1,0 +1,119 @@
+{
+  "Careers_Page": {
+    "Hero": {
+      "heading": "Meet Some of Our Amazing Team Members",
+      "subheading": "We are proud of our talented and diverse team members who are passionate about building world-class reward and recognition systems that empower organizations.",
+      "cta": "See open roles"
+    },
+    "Values": {
+      "heading": "Our Values",
+      "subheading": "What we stand for and how we show up",
+      "philosophy": {
+        "card1": {
+          "title": "Build with purpose",
+          "content": "We don’t build for buzz, we solve real problems that impact how people feel and perform at work."
+        },
+        "card2": {
+          "title": "Celebrate the journey",
+          "content": "We value the steps it takes to succeed. Growth, learning, and effort are worth recognizing."
+        },
+        "card3": {
+          "title": "Lead with empathy",
+          "content": "We lead by listening. We assume good intentions,  and balance kindness with accountability."
+        },
+        "card4": {
+          "title": "Practice what we preach",
+          "content": "We use Perkflow to celebrate each other because we believe in our product, and we live our mission."
+        },
+        "card5": {
+          "title": "Grow through ownership",
+          "content": "We use Perkflow to celebrate each other because we believe in our product, and we live our mission."
+        },
+        "card6": {
+          "title": "Keep improving",
+          "content": "We ask questions. We challenge what’s outdated. And we keep evolving—together."
+        }
+      }
+    },
+    "Benefits": {
+      "heading": "Benefits & Perks",
+      "subheading": "We take care of our people",
+      "purpose": {
+        "card1": {
+          "title": "Flexible schedule",
+          "content": "Work-life balance matters. We expect everyone to take their vacation weeks off."
+        },
+        "card2": {
+          "title": "Health & Wellness",
+          "content": "Competitive healthcare, mental health support."
+        },
+        "card3": {
+          "title": "Growth support",
+          "content": "Learning budget, mentorship, internal growth paths."
+        },
+        "card4": {
+          "title": "Celebrations",
+          "content": "Perkflow-powered rewards for your own milestones."
+        }
+      }
+    },
+    "Team": {
+      "heading": "Meet the Team",
+      "member1": {
+        "role": "CEO"
+      },
+      "member2": {
+        "role": "CTO"
+      },
+      "member3": {
+        "role": "Product Lead"
+      },
+      "member4": {
+        "role": "Design Head"
+      }
+    },
+    "openRole": {
+      "heading": "Open roles",
+      "filter": {
+        "department": {
+          "option": {
+            "all": "All Departments",
+            "engineering": "Engineering",
+            "design": "Design",
+            "marketing": "Marketing",
+            "sales": "Sales",
+            "management": "Management"
+          }
+        },
+        "location": {
+          "option": {
+            "all": "All Locations",
+            "remote": "Remote",
+            "on_site": "On site",
+            "hybrid": "Hybrid"
+          }
+        },
+        "searchInput": {
+          "placeholder": "Search by name or role..."
+        }
+      },
+      "results": {
+        "isLoading": "Loading roles…",
+        "table": {
+          "head_role": "Role",
+          "head_location": "Location"
+        },
+        "emptyState": {
+          "no_role_found": {
+            "title": "No open roles right now",
+            "subtitle": "We don't have any open positions at the moment. Please check back soon."
+          },
+          "no_match": {
+            "title": "No matching roles found",
+            "subtitle": "Try adjusting your filters or search to see more results."
+          }
+        }
+      }
+    }
+  }
+}

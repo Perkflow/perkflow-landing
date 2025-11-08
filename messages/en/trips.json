@@ -1,0 +1,71 @@
+{
+  "Trips_Page": {
+    "Hero": {
+      "heading": "Turn achievements into unforgettable trips",
+      "subheading": "From dream to departure, we help plan meaningful travel rewards that celebrate wins and inspire performance.",
+      "contactForm": {
+        "title": "Build Your Plan",
+        "desc": "To get started in improving your company culture, please fill in the form below and you will be contacted.",
+        "button": "Build Your Plan"
+      },
+      "button": "Book a demo",
+      "socialProof": {
+        "heading": "Trusted by modern teams",
+        "subheading": "(26k Reviews)"
+      }
+    },
+    "TransformSection": {
+      "titleTag": "why reward with travel",
+      "heading": "Transform milestones into unforgettable journeys.",
+      "subheading": "Corporate travel rewards don’t just recognize achievement, They unlock it. With a well-crafted travel program, you can elevate performance, retain top talent, and create a culture where people go above and beyond.",
+      "point1": "Strengthen culture with memorable experiences.",
+      "point2": "Make top performers feel seen.",
+      "point3": "Delegate the planning, keep the control.",
+      "point4": "Improve team morale with shared memories.",
+      "button": "Join waitlist"
+    },
+    "Career-path": {
+      "caption": "how it works",
+      "heading": "A clear path from goal to reward",
+      "subheading": "Create performance driven trips where employees unlock unforgettable experiences by hitting targets",
+      "card1": {
+        "title": "Submit your trip idea",
+        "content": "Define the goals of the trip and the performance target"
+      },
+      "card2": {
+        "title": "Track progress seamlessly",
+        "content": "Monitor your teams progress with the task and let our travel experts plan your trip"
+      },
+      "card3": {
+        "title": "Unlock the travel reward",
+        "content": "Once the goal is achieved, the details can be finalized and the invoice paid"
+      }
+    },
+    "Dream": {
+      "caption": "what you get",
+      "heading": "Your dream trip, supercharged",
+      "subheading": "From smart planning to team-driven choices, we make travel effortless, collaborative, and unfforgetable",
+      "feature1": {
+        "title": "Expert travel designer",
+        "content": "Our seasoned experts provide your incentive trip with creative ideas and excellent execution"
+      },
+      "feature2": {
+        "title": "Poll-based destination",
+        "content": "Let your team have a say"
+      },
+      "feature3": {
+        "title": "Customized itinerary",
+        "content": "For quick help and travel suggestions"
+      }
+    },
+    "Testimonials": {
+      "caption": "testimonials",
+      "heading": "Trusted by teams that care about people",
+      "subheading": "Loved by people leaders. Proven to boost performance. When teams feel valued, they perform. Our solution sparks motivation, connection, and measurable results.",
+      "testimonialsList": {
+        "testimonial1": "We smashed our Q2 targets. Our team’s still talking about the reward trip.",
+        "testimonial2": "The trip did more for morale than a year of bonuses."
+      }
+    }
+  }
+}

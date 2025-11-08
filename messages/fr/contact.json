@@ -1,0 +1,34 @@
+{
+  "Contact_Page": {
+    "title": "Prêt à faire des récompenses plus intelligentes ? Parlons-en",
+    "content": "Vous avez des questions ? Vous êtes curieux de savoir comment fonctionnent nos récompenses ? Vous voulez savoir ce qu'il est possible de faire ? Remplissez le formulaire ci-dessous et voyons comment nous pouvons vous aider ou contactez-nous directement en utilisant les coordonnées ci-dessous.",
+    "form": {
+      "title": "Notre équipe amicale serait ravie d'avoir de vos nouvelles.",
+      "firstName": {
+        "label": "Prénom",
+        "placeholder": "Votre prénom"
+      },
+      "lastName": {
+        "label": "Nom",
+        "placeholder": "Votre nom"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Votre adresse email"
+      },
+      "phone": {
+        "label": "Numéro de téléphone"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Écrivez votre message ici..."
+      },
+      "submitButton": {
+        "text": "Soumettre"
+      },
+      "successMessage": {
+        "text": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "Header": {
+    "navItem": {
+      "title1": "Features",
+      "title2": "Resources",
+      "title3": "Enterprise",
+      "title4": "Company"
+    },
+    "authButtons": {
+      "login": "Log in",
+      "buildPlan": "Build Your Plan"
+    },
+    "contactFormDialog": {
+      "title": "Build Your Plan",
+      "description": "To get started in improving your company culture, please fill in the form below and you will be contacted."
+    },
+    "featureMegaMenu": {
+      "heading": "Explore the full power of rewards",
+      "text": "See how our complete suite of recognition tools helps you motivate, reward, and celebrate your team effortlessly.",
+      "items": {
+        "item1": {
+          "title": "Automated Rewards",
+          "description": "For your every employee, an automated incentive journey to awaken the winner in everyone of them."
+        },
+        "item2": {
+          "title": "Gifts",
+          "description": "We curate rewards for your team based on goal completion for your company."
+        },
+        "item3": {
+          "title": "Trips",
+          "description": "Set up milestone-based team or solo trips as high-impact rewards for top performers."
+        },
+        "item4": {
+          "title": "Award Ceremony",
+          "description": "Create memorable recognition moments with digital or in-person award ceremonies."
+        }
+      }
+    },
+    "companyMegaMenu": {
+      "item1": {
+        "title": "Why Us",
+        "description": "Built to make motivation measurable, rewards meaningful, and teams unstoppable."
+      },
+      "item2": {
+        "title": "Careers",
+        "description": "Join a team that celebrates progress—yours included."
+      },
+      "item3": {
+        "title": "News",
+        "description": "The latest on how we're shaping the future of rewards and recognition."
+      },
+      "item4": {
+        "title": "Customers",
+        "description": "How leading teams are turning goals into momentum and recognition into results."
+      }
+    },
+    "mobileMenu": {
+      "navItems": {
+        "features": {
+          "title": "Features",
+          "item1": {
+            "name": "Automated Rewards",
+            "content": "The latest industry news, updates and info."
+          },
+          "item2": {
+            "name": "Gifts",
+            "content": "Learn how our customers are making big changes."
+          },
+          "item3": {
+            "name": "Trips",
+            "content": "Get up and running on new features and techniques."
+          }
+        },
+        "company": {
+          "title": "Company",
+          "item1": {
+            "name": "Why Us",
+            "content": "Built to make motivation measurable, rewards meaningful, and teams unstoppable."
+          },
+          "item2": {
+            "name": "Careers",
+            "content": "Join a team that celebrates progress—yours included."
+          },
+          "item3": {
+            "name": "News",
+            "content": "The latest on how we're shaping the future of rewards and recognition."
+          },
+          "item4": {
+            "name": "Customers",
+            "content": "How leading teams are turning goals into momentum and recognition into results."
+          }
+        },
+        "resources": {
+          "title": "Resources"
+        },
+        "enterprise": {
+          "title": "Enterprise"
+        }
+      }
+    }
+  }
+}

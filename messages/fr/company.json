@@ -1,0 +1,28 @@
+{
+  "Company_Page": {
+    "Hero": {
+      "heading": "Nous construisons l’avenir de la reconnaissance, rejoignez-nous.",
+      "subheading": "Chez Perkflow, nous sommes convaincus qu'une reconnaissance significative est un moteur de motivation, de culture et de croissance. Si vous avez à cœur de créer un travail qui inspire le progrès chez les autres, vous vous sentirez comme chez vous.",
+      "overlay": {
+        "text": "Découvrez comment Perkflow simplifie la récompense et apporte de la motivation aux équipes de toutes tailles.",
+        "link": "Lire l’étude de cas"
+      }
+    },
+    "List": {
+      "companies": {
+        "content": "Perkflow nous a aidés à associer les étapes clés de l'intégration à des récompenses. Les nouvelles recrues se sentent désormais rapidement reconnues."
+      },
+      "link_text": "Lire l’étude de cas"
+    },
+    "Join": {
+      "heading": "Rejoignez les entreprises qui transforment leurs succès quotidiens en une dynamique durable.",
+      "subheading": "Vos collaborateurs font déjà un excellent travail. Assurons-nous qu'ils en soient conscients.",
+      "contactForm": {
+        "title": "Construisez votre plan",
+        "desc": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté.",
+        "button": "Construisez votre plan"
+      },
+      "button": "Réservez une démo"
+    }
+  }
+}

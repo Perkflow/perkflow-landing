@@ -1,0 +1,16 @@
+{
+  "Resources_Page": {
+    "Hero": {
+      "heading": "Explorez l'avenir de la culture axée sur la performance",
+      "subheading": "Nos recherches et nos histoires explorent ce qui motive réellement les équipes et comment les entreprises avant-gardistes transforment la reconnaissance en élan."
+    },
+    "recent_articles": {
+      "heading": "Articles récents",
+      "failed_to_load": "Échec du chargement des articles",
+      "load_more": "Charger plus d'articles",
+      "show_less": "Afficher moins d'articles"
+    },
+    "loading_text": "Chargement des articles...",
+    "no_articles": "Aucun article disponible"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "HomePage": {
+    "Hero": {
+      "title": "Your All-in-One Platform for Rewards That Work",
+      "subtitle": "Set goals. Unlock rewards. Motivate smarter with automated gifting, trips & culture-building tools.",
+      "primaryCTA": {
+        "text": "Build your plan"
+      },
+      "secondaryCTA": {
+        "text": "Book a demo"
+      }
+    },
+    "Partners": {
+      "heading": "Inspired by modern teams powering motivation — one goal at a time"
+    },
+    "HowItWorks": {
+      "caption": "how it works",
+      "heading": "When teams feel valued, they go the extra mile.",
+      "subheading": "Our platform helps you plan rewarding experiences with less stress, more clarity, and complete control.",
+      "card1": {
+        "title": "Plan",
+        "text": "Tell us about your team's goals, values, and budget to get started."
+      },
+      "card2": {
+        "title": "Personalize",
+        "text": "Receive custom-curated incentive program aligned with your company culture and performance goals."
+      },
+      "card3": {
+        "title": "Approve",
+        "text": "Easily approve trips or gifts, track participation, and monitor progress from a single dashboard."
+      },
+      "cta": "Explore Our Rewards Solutions"
+    },
+    "Benefits": {
+      "caption": "Benefits",
+      "heading": "Why Choose Perkflow.",
+      "subheading": "Plan smarter. Motivate better. Grow together.",
+      "benefit1": {
+        "body": "Transform milestones into unforgettable team moments",
+        "card": {
+          "card1": {
+            "title": "Set a goal for your team",
+            "description": "Create a challenge, link it to a reward while employees stay engaged with clear goals and rewards."
+          },
+          "card2": {
+            "title": "Unlock the reward",
+            "description": "When the team hits the set goal, the reward becomes accessible."
+          },
+          "card3": {
+            "title": "Let the team vote",
+            "description": "Built-in polls let your team vote for rewards they love once they hit their goal."
+          }
+        },
+        "cta": "Talk to an Incentive Specialist"
+      },
+      "benefit2": {
+        "body": "Full control, zero chaos",
+        "card": {
+          "card1": {
+            "title": "Track progress",
+            "description": "From request to final payment, watch your request move forward step by step."
+          },
+          "card2": {
+            "title": "Invite team members",
+            "description": "Let teammates confirm their participation, give input and follow their progress."
+          },
+          "card3": {
+            "title": "Set it and forget it",
+            "description": "Run challenges for different teams, assign organizers and let our incentives designers take care of the details."
+          }
+        },
+        "cta": "Get started"
+      },
+      "benefit3": {
+        "body": "Support that moves with you",
+        "card": {
+          "card1": {
+            "title": "24/7 support for you and your team",
+            "description": "We're here to answer your questions and offer fast resolution when plans change or issues pop up."
+          },
+          "card2": {
+            "title": "Real Incentive experts",
+            "description": "Whether a trip or a gift, your request is handled by a human incentive designer."
+          },
+          "card3": {
+            "title": "Transparent pricing and approval flows",
+            "description": "Everyone knows what's being spent and who's approving it."
+          }
+        },
+        "cta": "Get started"
+      }
+    },
+    "Service": {
+      "caption": "What we offer",
+      "heading": "Explore Our Services",
+      "subheading": "Seamless incentives experiences designed to celebrate success and spark momentum.",
+      "card1": {
+        "title": "Goal-based setting",
+        "description": "Turn business objectives into milestones incentives program. Set performance goals and unlock determined rewards when your team hits the mark."
+      },
+      "card2": {
+        "title": "Tailored Incentive design",
+        "description": "Collaborate with expert planners to build unforgettable, tailored itineraries for a team or individuals."
+      },
+      "card3": {
+        "title": "Budget Estimator & Dynamic pricing",
+        "description": "Get instant cost estimates as you plan, based on group size, preferences, and goals."
+      },
+      "card4": {
+        "title": "Seamless Communication & Invites",
+        "description": "Send branded invites, onboard participants easily, and keep everyone aligned with built-in messaging and updates."
+      },
+      "card5": {
+        "title": "User & Access Management",
+        "description": "Organize users by roles. Set permissions, track engagement, and keep planning streamlined."
+      },
+      "card6": {
+        "title": "Reward journey Integration",
+        "description": "Timely gifts, thoughtfully delivered. Smart matching with employee survey data ensures every gift feels personal and appreciated."
+      },
+      "cta": "Get started"
+    },
+    "Testimonials": {
+      "caption": "Testimonials",
+      "heading": "What People Say About Perkflow",
+      "subheading": "See how Perkflow is transforming goals into getaways. From individuals to entire teams",
+      "testimonial1": {
+        "role": "Head of HR",
+        "quote": "We used to struggle with team motivation. Now, people are actually competing to unlock travel rewards. It's a complete mindset shift"
+      },
+      "testimonial2": {
+        "role": "Sales Director",
+        "quote": "Perkflow gave us more than incentives. It gave us culture. We now tag every trip our own hashtags like #BeatQ3"
+      },
+      "testimonial3": {
+        "role": "Regional Sales Manager",
+        "quote": "Perkflow turned our sales targets into something exciting. The team crushed their Q2 goals to win the Bali trip!"
+      },
+      "span": "For services and support"
+    },
+    "Planning": {
+      "heading": "Start planning your next move",
+      "heading-highlight": "today",
+      "text": "From reward getaways to custom adventures, Perkflow brings your ideas to life.",
+      "cta": "Build Your Plan"
+    },
+    "ContactFormDialog": {
+      "form": {
+        "firstName": {
+          "label": "First Name",
+          "placeholder": "First name"
+        },
+        "lastName": {
+          "label": "Last Name",
+          "placeholder": "Last name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Email"
+        },
+        "phone": {
+          "label": "Phone Number"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Type your message here..."
+        },
+        "submitButton": {
+          "text": "Submit"
+        },
+        "successMessage": {
+          "text": "Form submitted"
+        }
+      },
+      "rewardSolutions": {
+        "title": "Explore Our Rewards Solutions",
+        "description": "Please fill in the form below and our team will contact you."
+      },
+      "getStarted": {
+        "title": "Get Started",
+        "description": "To get started in improving your company culture, please fill in the form below and you will be contacted."
+      },
+      "planning": {
+        "title": "Build Your Plan",
+        "description": "To get started in improving your company culture, please fill in the form below and you will be contacted."
+      }
+    }
+  }
+}

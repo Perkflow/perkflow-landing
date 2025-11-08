@@ -1,0 +1,102 @@
+{
+  "Header": {
+    "navItem": {
+      "title1": "Fonctionnalités",
+      "title2": "Ressources",
+      "title3": "Entreprise",
+      "title4": "Société"
+    },
+    "authButtons": {
+      "login": "Se connecter",
+      "buildPlan": "Construisez votre plan"
+    },
+    "contactFormDialog": {
+      "title": "Créez votre plan",
+      "description": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté."
+    },
+    "featureMegaMenu": {
+      "heading": "Découvrez toute la puissance des récompenses",
+      "text": "Découvrez comment notre suite complète d’outils de reconnaissance vous aide à motiver, récompenser et célébrer votre équipe en toute simplicité.",
+      "items": {
+        "item1": {
+          "title": "Récompenses automatisées",
+          "description": "Offrez à chacun de vos employés un parcours d’incitation automatisé pour révéler le gagnant qui sommeille en lui."
+        },
+        "item2": {
+          "title": "Cadeaux",
+          "description": "Nous sélectionnons des récompenses pour votre équipe en fonction de l’atteinte des objectifs de votre entreprise."
+        },
+        "item3": {
+          "title": "Voyages",
+          "description": "Mettez en place des voyages d’équipe ou individuels, basés sur des jalons, en tant que récompenses marquantes pour vos meilleurs performeurs."
+        },
+        "item4": {
+          "title": "Cérémonie de remise de prix",
+          "description": "Créez des moments de reconnaissance inoubliables grâce à des cérémonies, digitales ou en présentiel."
+        }
+      }
+    },
+    "companyMegaMenu": {
+      "item1": {
+        "title": "Pourquoi nous ?",
+        "description": "Conçu pour rendre la motivation mesurable, les récompenses significatives et les équipes inarrêtables."
+      },
+      "item2": {
+        "title": "Carrières",
+        "description": "Rejoignez une équipe qui célèbre les progrès — y compris les vôtres."
+      },
+      "item3": {
+        "title": "Actualités",
+        "description": "Les dernières nouvelles sur la façon dont nous façonnons l’avenir des récompenses et de la reconnaissance."
+      },
+      "item4": {
+        "title": "Clients",
+        "description": "Découvrez comment les équipes leaders transforment leurs objectifs en élan et la reconnaissance en résultats."
+      }
+    },
+    "mobileMenu": {
+      "navItems": {
+        "features": {
+          "title": "Fonctionnalités",
+          "item1": {
+            "name": "Récompenses automatisées",
+            "content": "Les dernières actualités, mises à jour et infos du secteur."
+          },
+          "item2": {
+            "name": "Cadeaux",
+            "content": "Découvrez comment nos clients apportent de grands changements."
+          },
+          "item3": {
+            "name": "Voyages",
+            "content": "Mettez-vous rapidement en route avec de nouvelles fonctionnalités et techniques."
+          }
+        },
+        "company": {
+          "title": "Société",
+          "item1": {
+            "name": "Pourquoi nous",
+            "content": "Conçu pour rendre la motivation mesurable, les récompenses impactantes et les équipes inarrêtables."
+          },
+          "item2": {
+            "name": "Carrières",
+            "content": "Rejoignez une équipe qui célèbre les progrès — les vôtres aussi."
+          },
+          "item3": {
+            "name": "Actualités",
+            "content": "Découvrez comment nous façonnons l’avenir des récompenses et de la reconnaissance."
+          },
+          "item4": {
+            "name": "Clients",
+            "content": "Comment les meilleures équipes transforment leurs objectifs en résultats concrets."
+          }
+        },
+        "resources": {
+          "title": "Ressources"
+        },
+        "enterprise": {
+          "title": "Entreprise"
+        }
+      }
+    }
+  }
+}

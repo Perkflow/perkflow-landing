@@ -1,0 +1,18 @@
+[
+  {
+    "id": "r1",
+    "actorId": "u_2",
+    "text": "The sales team crushed their #BeatQ2target this month!",
+    "tags": ["#BeatQ2target"],
+    "createdAt": "2025-09-06T09:00:00Z",
+    "reactions": { "like": 21, "celebrate": 4, "clap": 8 },
+    "comments": [
+      {
+        "id": "c1",
+        "author": { "name": "Steven", "avatarUrl": "/avatars/a3.svg" },
+        "text": "Amazing work!",
+        "createdAt": "2025-09-06T10:00:00Z"
+      }
+    ]
+  }
+]

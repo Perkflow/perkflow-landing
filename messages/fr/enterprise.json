@@ -1,0 +1,103 @@
+{
+  "Enterprise_Page": {
+    "Hero": {
+      "heading": "Récompensez ce qui fait avancer l’entreprise.",
+      "subheading": "Perkflow aide les entreprises à reconnaître les étapes importantes, à récompenser les plus performants et à instaurer une culture de dynamisme grâce à des expériences significatives et personnalisées",
+      "contactForm": {
+        "title": "Construisez votre plan",
+        "desc": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté.",
+        "button": "Construisez votre plan"
+      },
+      "button": "Réserver une démo"
+    },
+    "Incentives": {
+      "title": "Des mesures incitatives qui favorisent la culture et les résultats",
+      "content": "La plupart des entreprises souhaitent reconnaître et récompenser leurs employés. Mais trop souvent, cela se résume à une formalité : un e-mail, une carte-cadeau ou une prime générique. Ce n’est pas ce qui marque les esprits. Perkflow offre à votre équipe quelque chose de plus : une véritable raison de rester motivé, de se sentir valorisé et de viser toujours plus haut. Nous vous aidons à créer un système où la performance est reconnue en temps réel, avec des expériences inspirantes et des outils qui simplifient tout."
+    },
+    "Purpose": {
+      "heading": "Une plateforme, une infinité de possibilités",
+      "subheading": "Transformez chaque étape en un moment qui mérite d'être célébré.",
+      "card1": {
+        "title": "Fixer des objectifs clairs et significatifs",
+        "content": "Créez des objectifs individuels ou d’équipe, comme atteindre un chiffre d’affaires, lancer un nouveau projet ou finaliser l’intégration. Chaque objectif peut être suivi, chronométré et étiqueté avec des balises personnalisées (comme #ClotureQ4 ou #SemaineNiveauSup)."
+      },
+      "card2": {
+        "title": "Suivre les progrès avec une visibilité pour tous",
+        "content": "Chacun voit où il en est. Les barres de progression, les échéances et les mises à jour en direct permettent aux équipes de rester concentrées et alignées, sans avoir à relancer les mises à jour ni à envoyer des rappels."
+      },
+      "card3": {
+        "title": "Débloquez des récompenses personnalisées",
+        "content": "Lorsqu’un objectif est atteint, Perkflow informe l’équipe et débloque une récompense prédéfinie, comme un voyage, une expérience personnalisée ou quelque chose que votre entreprise définit. Vous pouvez même laisser les employés voter pour leur récompense."
+      }
+    },
+    "Objectives": {
+      "heading": "Conçu pour les entreprises qui accordent de l'importance à la culture",
+      "card1": {
+        "title": "Il motive sans microgérer",
+        "content": "Les employés ont un objectif concret à atteindre. Vous définissez le défi, et le système s'occupe du reste. Vous n'avez pas besoin d'assurer le suivi, ils peuvent voir leurs propres progrès."
+      },
+      "card2": {
+        "title": "Cela rend la reconnaissance cohérente et non aléatoire",
+        "content": "Au lieu de réserver les marques de reconnaissance aux évaluations annuelles ou aux primes de fin d'année, vous pouvez créer une culture de reconnaissance régulière et méritée."
+      },
+      "card3": {
+        "title": "Il soutient tout le monde, des RH aux opérations humaines",
+        "content": "Que vous planifiez une mesure incitative pour votre équipe, que vous accueilliez de nouveaux employés ou que vous souhaitiez remotiver un service distant, Perkflow aide chaque équipe à utiliser les récompenses comme un outil ayant un impact réel."
+      },
+      "contactForm": {
+        "title": "Parler à un expert en récompenses",
+        "desc": "Veuillez remplir le formulaire ci-dessous et notre équipe vous contactera pour discuter de vos besoins spécifiques.",
+        "button": "Parler à un expert en récompenses"
+      }
+    },
+    "Features": {
+      "heading": "Fonctionnalités adaptées aux entreprises",
+      "card1": {
+        "title": "Clarté",
+        "content": "Configuration facile. Aucune confusion. Vous contrôlez les règles et la structure des récompenses."
+      },
+      "card2": {
+        "title": "Flexibilité",
+        "content": "Définissez des récompenses pour les individus, les équipes, les services ou les initiatives à l’échelle de l’entreprise."
+      },
+      "card3": {
+        "title": "Évolutivité",
+        "content": "Commencez par un cas d'utilisation unique, puis développez-le en plusieurs. Cela fonctionne pour 20 ou 2 000 personnes."
+      },
+      "card4": {
+        "title": "Sécurité et fiabilité",
+        "content": "Nous prenons en charge l'authentification unique (SSO), l'accès basé sur les rôles, la conformité au RGPD et le stockage sécurisé des données."
+      }
+    },
+    "Story": {
+      "heading": "Témoignages clients",
+      "subheading": "Découvrez comment Perkflow simplifie la récompense et apporte de la motivation aux équipes de toutes tailles.",
+      "card1": {
+        "content": "“Perkflow nous a aidés à concrétiser nos performances. Notre équipe commerciale a atteint 110 % de ses objectifs trois trimestres de suite, et elle s'est éclatée.”",
+        "author": "James Doe",
+        "position": "Responsable des ventes, Netflix"
+      },
+      "card2": {
+        "content": "“Perkflow nous a aidés à concrétiser nos performances. Notre équipe commerciale a atteint 110 % de ses objectifs trois trimestres de suite, et elle s'est éclatée.”",
+        "author": "James Packer",
+        "position": "Chef d'entreprise, cadres"
+      }
+    },
+    "Results": {
+      "heading": "Des résultats concrets, pas du vent",
+      "subheading": "Ce que voient nos clients.",
+      "card1": {
+        "content": "d'augmentation de la réalisation des objectifs des employés"
+      },
+      "card2": {
+        "content": "plus d’engagement sur le suivi des performances"
+      },
+      "card3": {
+        "content": "plus de retours positifs dans les enquêtes d’entreprise"
+      },
+      "card4": {
+        "content": "d’augmentation de la rétention"
+      }
+    }
+  }
+}

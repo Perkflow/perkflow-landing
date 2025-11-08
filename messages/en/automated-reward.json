@@ -1,0 +1,102 @@
+{
+  "AutomatedReward": {
+    "HeroSection": {
+      "heading": "Let Great Performance Unlock Great Rewards",
+      "subheading": "Automatically reward behaviors that drive results",
+      "first_CTA": "Build your plan",
+      "second_CTA": "Book a demo",
+      "socialProof": {
+        "heading": "Trusted by modern teams",
+        "subheading": "(26k Reviews)"
+      }
+    },
+    "contactFormDialog": {
+      "title": "Build Your Plan",
+      "description": "To get started in improving your company culture, please fill in the form below and you will be contacted.",
+      "cta": "Build Your Plan"
+    },
+    "Motivation": {
+      "titleTag": "why automate rewards",
+      "heading": "Motivation works better when it’s timely and smart",
+      "subheading": "Motivate your team faster, easier, and more fairly",
+      "Item": {
+        "item1": "Rewards are tied to clear outcomes",
+        "item2": "Shared visibility creates healthy competition",
+        "item3": "No delays or bottlenecks to reward progress",
+        "item4": "Save admin time. Just results and recognition"
+      }
+    },
+    "RewardAutopilot": {
+      "titleTag": "how it works",
+      "heading": "How rewards run on autopilot",
+      "subheading": "We automate the entire reward cycle so your team stays motivated",
+      "item1": {
+        "title": "Choose your trigger",
+        "desc": "Set clear goals tied to real performance or any custom achievement"
+      },
+      "item2": {
+        "title": "Define your reward",
+        "desc": "From curated gifts to travel experiences, assign meaningful rewards"
+      },
+      "item3": {
+        "title": "Let it run",
+        "desc": "Sit back and watch as employees hit their targets and unlock rewards automatically"
+      }
+    },
+    "Customize": {
+      "titleTag": "Make it yours",
+      "heading": "Customize the way you motivate",
+      "subheading": "Flexible enough to match your culture",
+      "Item": {
+        "item1": "Assign rewards to individuals or teams",
+        "item2": "Add hashtags to track and personalize each goal",
+        "item3": "Real-time control",
+        "item4": "Scale as you grow"
+      }
+    },
+    "Impact": {
+      "heading": "See the impact of smarter rewards",
+      "subheading": "Real results from companies using automated rewards to motivate their teams",
+      "stat1": {
+        "desc": "Increase in employee engagement"
+      },
+      "stat2": {
+        "desc": "Faster reward delivery process"
+      },
+      "stat3": {
+        "desc": "Average setup time for launching new rewards"
+      },
+      "stat4": {
+        "desc": "More participation in company wide campaigns using hashtags"
+      }
+    },
+    "FAQ": {
+      "heading": "Frequently Asked Questions About Gifts",
+      "subheading": "Have any questions? We're here to assist you.",
+      "item1": {
+        "question": "What are automated rewards?",
+        "answer": "Automated rewards are incentives that are triggered by specific actions or goals—like completing a task, hitting a sales target, or reaching a milestone. Everything runs in the background once it’s set up."
+      },
+      "item2": {
+        "question": "Do I need technical skills to set this up?",
+        "answer": "Not at all. It takes less than a minute to launch a reward. Our platform is designed for simplicity, with ready-made templates and support if you need it."
+      },
+      "item3": {
+        "question": "Can we set different rewards for different teams or goals?",
+        "answer": "Absolutely. You can create as many reward flows as you need, personalized for teams, individuals, or departments."
+      },
+      "item4": {
+        "question": "How do we keep track of everything?",
+        "answer": "You get a central dashboard where you can monitor progress, reward history, and upcoming campaigns—all in one place."
+      },
+      "item5": {
+        "question": "What kind of rewards can we automate?",
+        "answer": "You can automate gifts, trips, experiences, or custom bonuses—whatever fits your team's motivation style."
+      },
+      "item6": {
+        "question": "Can I connect this to tools we already use?",
+        "answer": "Yes—our platform integrates with popular tools and APIs, so you can trigger rewards directly from the apps you rely on."
+      }
+    }
+  }
+}

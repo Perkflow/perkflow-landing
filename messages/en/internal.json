@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "home": "Home",
+    "inbox": "Inbox",
+    "requests": "Requests",
+    "customers": "Customers",
+    "rewards": "Rewards",
+    "payments": "Payments",
+    "team": "Team management",
+    "reports": "Reports",
+    "help": "Help",
+    "settings": "Settings"
+  },
+  "header": {
+    "title": "Internal"
+  },
+  "empty": {
+    "noData": "No data yet"
+  }
+}

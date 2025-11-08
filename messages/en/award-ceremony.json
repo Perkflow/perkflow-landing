@@ -1,0 +1,42 @@
+{
+  "Award_Ceremony_Page": {
+    "Hero": {
+      "heading": "Moments that move people forward",
+      "subheading": "Perkflow helps you host meaningful award ceremonies—so your team feels seen, celebrated, and inspired to keep pushing forward.",
+      "button": "Book a demo"
+    },
+    "contactForm": {
+      "title": "Plan an Award Ceremony",
+      "desc": "To get started in improving your company culture, please fill in the form below and you will be contacted.",
+      "button": "Plan an award ceremony"
+    },
+    "Recognition": {
+      "heading": "Recognition isn't just a feature. It's a Moment.",
+      "subheading": "Your people need more than a Slack emoji or an annual email shoutout. They need a moment. Perkflow helps you turn goal completion into celebration, with award ceremonies that feel earned, authentic, and energizing."
+    },
+    "Celebrate": {
+      "heading": "Celebrate Milestones as They Happen",
+      "subheading": "Your people are achieving more than ever, but recognition often lags behind. With Perkflow, you don't need to wait for a manager to remember or an annual review to roll around. Set performance milestones once, like closing a deal, completing onboarding, or launching a campaign and we take care of the rest. As soon as it's achieved, your people are rewarded in real time with gifts, experiences, or celebrations that actually mean something. It's recognition that's timely, automatic, and unforgettable."
+    },
+    "Milestone": {
+      "heading": "Make Every Milestone Matter",
+      "subheading": "Because people don’t just want to be rewarded, they want to be seen.",
+      "card1": {
+        "title": "Recognition That's Timely",
+        "content": "Awards are triggered by real milestones, so appreciation lands when it's most meaningful, not months later."
+      },
+      "card2": {
+        "title": "Deeply Personalized Rewards",
+        "content": "Whether it's a curated gift, a team celebration, or a solo experience, employees receive something that reflects their unique value."
+      },
+      "card3": {
+        "title": "Built-In Celebration Tools",
+        "content": "Perkflow makes every award visible in a shared feed, so teammates can celebrate together and turn recognition into a team moment."
+      }
+    },
+    "Accomplishment": {
+      "heading": "Turn Accomplishment Into a Moment of Pride",
+      "subheading": "Whether virtual or in-person, your awards should feel as important as the work behind them."
+    }
+  }
+}

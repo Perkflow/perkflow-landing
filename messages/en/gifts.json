@@ -1,0 +1,52 @@
+{
+  "Gifts_Page": {
+    "Hero": {
+      "heading": "Give rewards that keep your team going.",
+      "subheading": "Motivate your team with thoughtful rewards.",
+      "contactForm": {
+        "title": "Build Your Plan",
+        "desc": "To get started in improving your company culture, please fill in the form below and you will be contacted.",
+        "button": "Build Your Plan"
+      },
+      "button": "Book a demo",
+      "socialProof": {
+        "heading": "Trusted by modern teams",
+        "subheading": "(26k Reviews)"
+      }
+    },
+    "Why_Gifts_Work": {
+      "titleTag": "Why gifts work",
+      "heading": "Gifts are a powerful way to keep your team excited",
+      "subheading": "When people know there’s something waiting at the finish line, they push harder",
+      "point1": "Celebrate big or small wins",
+      "point2": "Keep momentum during projects",
+      "point3": "Reward top performers",
+      "point4": "Show appreciation for effort"
+    },
+    "Make_Gifting_Easy": {
+      "heading": "Make gifting easier",
+      "subheading": "Sending the right gift shouldn’t be stressful. Here's how we help you reward people without the extra work",
+      "card1": {
+        "title": "One place for all rewards",
+        "content": "Track every gift from selection to delivery. See who is being rewarded and let team members celebrate each other all in one place"
+      },
+      "card2": {
+        "title": "Set goals and watch it work",
+        "content": "Decide what you want teams to achieve, attach a reward and watch rewards land right when they should"
+      },
+      "card3": {
+        "title": "Stay in control of costs",
+        "content": "You’ll have a professional by your side to help you plan and stick to your budget to avoid any surprise costs"
+      }
+    },
+    "Recognize_Achievement": {
+      "titleTag": "Why gifting with us works",
+      "heading": "Recognize achievements at the right time",
+      "subheading": "Whether you’re celebrating wins or boosting morale, we make it easy to send the right gifts at the right time",
+      "point1": "Track and manage gifts in one dashboard",
+      "point2": "Motivate through visibility",
+      "point3": "Goal based automation",
+      "point4": "Professional support"
+    }
+  }
+}

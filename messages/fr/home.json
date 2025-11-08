@@ -1,0 +1,187 @@
+{
+  "HomePage": {
+    "HeroVariation1": {
+      "tagline": "LÀ OÙ LA PERFORMANCE RENCONTRE LA RECONNAISSANCE.",
+      "title": "Votre plateforme tout-en-un pour des récompenses qui motivent.",
+      "subtitle": "Transformez les objectifs en motivation. La motivation en récompenses.",
+      "primaryCTA": {
+        "text": "Rejoindre la liste d’attente"
+      }
+    },
+    "HeroVariation2": {
+      "tagline": "UNE RECONNAISSANCE PLUS INTELLIGENTE. UNE CULTURE PLUS FORTE.",
+      "title": "Propulsé par une IA qui aide votre équipe à performer.",
+      "subtitle": "Notre IA ne se contente pas de reconnaître le succès — elle assiste dans les tâches, guide les objectifs et stimule les résultats."
+    },
+    "HeroVariation3": {
+      "tagline": "",
+      "title": "Célébrez chaque victoire. Créez un impact durable.",
+      "subtitle": "Transformez les réussites en moments que votre équipe n’oubliera jamais.",
+      "primaryCTA": {
+        "text": "Explorer les récompenses"
+      },
+      "secondaryCTA": {
+        "text": "Rejoindre la liste d’attente"
+      }
+    },
+    "Partners": {
+      "heading": "Inspiré par les équipes modernes qui dynamisent la performance — un objectif à la fois"
+    },
+    "HowItWorks": {
+      "caption": "Comment ça marche ?",
+      "heading": "Quand les équipes se sentent valorisées, elles donnent toujours un peu plus.",
+      "subheading": "Notre plateforme vous permet de planifier des expériences gratifiantes avec moins de stress, plus de clarté et un contrôle total.",
+      "card1": {
+        "title": "Planifiez",
+        "text": "Parlez-nous des objectifs, des valeurs et du budget de votre équipe pour commencer."
+      },
+      "card2": {
+        "title": "Personnalisez",
+        "text": "Recevez un programme d’incitation personnalisé qui s’aligne parfaitement sur votre culture d’entreprise et vos objectifs de performance."
+      },
+      "card3": {
+        "title": "Approuvez",
+        "text": "Approuvez facilement les voyages ou les cadeaux, suivez la participation et surveillez les progrès à partir d'un seul tableau de bord."
+      },
+      "cta": "Découvrez nos solutions de récompenses"
+    },
+    "Benefits": {
+      "caption": "Bénéfices",
+      "heading": "Pourquoi choisir Perkflow ?",
+      "subheading": "Planifiez plus intelligemment. Motivez mieux. Grandissez ensemble.",
+      "benefit1": {
+        "body": "Faites de chaque jalon, un moment d'équipe inoubliable",
+        "card": {
+          "card1": {
+            "title": "Fixez un objectif pour votre équipe",
+            "description": "Créez un défi, associez-le à une récompense pendant que les employés restent engagés avec des objectifs et des récompenses claires."
+          },
+          "card2": {
+            "title": "Inviter les membres de l'équipe",
+            "description": "Permettez à vos collaborateurs de confirmer leur participation, de donner leur avis et de suivre leur progression."
+          },
+          "card3": {
+            "title": "Programmez et déléguez",
+            "description": "Organisez des défis pour différentes équipes, attribuez des responsables et laissez nos concepteurs d'incitations s'occuper des détails."
+          },
+          "card4": {
+            "title": "Débloquez la récompense",
+            "description": "Lorsque l’équipe atteint l’objectif fixé, la récompense devient accessible."
+          }
+        }
+      },
+      "benefit2": {
+        "body": "Un support qui bouge avec vous",
+        "card": {
+          "card1": {
+            "title": "Assistance 24h/24 et 7j/7 pour vous et votre équipe",
+            "description": "Nous sommes là pour répondre à vos questions et vous proposer une résolution rapide lorsque vos plans changent ou que des problèmes surviennent."
+          },
+          "card2": {
+            "title": "Véritables experts en incitations à votre service",
+            "description": "Qu’il s’agisse d’un voyage ou d’un cadeau, votre demande est prise en charge par un concepteur humain spécialisé."
+          },
+          "card3": {
+            "title": "Tarification transparente et flux d'approbation",
+            "description": "Tout le monde sait ce qui est dépensé et qui approuve quoi."
+          }
+        }
+      }
+    },
+    "Service": {
+      "caption": "Ce que nous offrons",
+      "heading": "Découvrez Nos Services",
+      "subheading": "Des expériences d’incitation transparentes conçues pour célébrer le succès et susciter l’élan.",
+      "card1": {
+        "title": "Mise en place basée sur les objectifs",
+        "description": "Transformez les objectifs commerciaux en programmes d’incitation par étapes. Fixez des objectifs de performance et débloquez des récompenses définies lorsque votre équipe atteint les résultats."
+      },
+      "card2": {
+        "title": "Conception d’incitations sur mesure",
+        "description": "Collaborez avec des planificateurs experts pour créer des itinéraires inoubliables et adaptés, que ce soit pour une équipe ou pour des individus."
+      },
+      "card3": {
+        "title": "Estimation budgétaire & tarification dynamique",
+        "description": "Obtenez instantanément des estimations de coûts pendant la planification, basées sur la taille du groupe, les préférences et les objectifs."
+      },
+      "card4": {
+        "title": "Communication & invitations simplifiées",
+        "description": "Envoyez des invitations personnalisées à votre marque, intégrez facilement les participants et maintenez tout le monde aligné grâce à la messagerie et aux mises à jour intégrées."
+      },
+      "card5": {
+        "title": "Gestion des utilisateurs & des accès",
+        "description": "Organisez les utilisateurs par rôles. Définissez des autorisations, suivez l’engagement et assurez une planification fluide."
+      },
+      "card6": {
+        "title": "Intégration du parcours de récompenses",
+        "description": "Des cadeaux ponctuels, livrés avec attention. Un appariement intelligent avec les données des enquêtes des employés garantit que chaque cadeau soit personnel et apprécié."
+      },
+      "cta": "Commencer"
+    },
+    "Testimonials": {
+      "caption": "Témoignages",
+      "heading": "Ce que les gens disent de Perkflow",
+      "subheading": "Découvrez comment Perkflow transforme vos objectifs en escapades. Des individus aux équipes entières.",
+      "testimonial1": {
+        "role": "Head of HR",
+        "quote": "Avant, nous avions du mal à motiver nos équipes. Aujourd'hui, les gens rivalisent pour obtenir des récompenses voyages. C'est un changement radical de mentalité."
+      },
+      "testimonial2": {
+        "role": "Sales Director",
+        "quote": "Perkflow nous a apporté bien plus que des avantages. Il nous a apporté une culture d'entreprise. Nous utilisons désormais nos propres hashtags pour chaque voyage, comme #BeatQ3."
+      },
+      "testimonial3": {
+        "role": "Regional Sales Manager",
+        "quote": "Perkflow a transformé nos objectifs de vente en une expérience passionnante. L'équipe a dépassé ses objectifs du deuxième trimestre et a remporté le voyage à Bali !"
+      },
+      "span": "Pour les services et le support"
+    },
+    "Planning": {
+      "heading": "Travaillez dur.",
+      "heading-highlight": "Célébrez plus fort",
+      "text": "Avec PerkFlow, la performance ouvre la voie à des aventures qui inspirent, ressourcent et rassemblent les équipes",
+      "cta": "Construisez votre plan"
+    },
+    "ContactFormDialog": {
+      "form": {
+        "firstName": {
+          "label": "Prénom",
+          "placeholder": "Votre prénom"
+        },
+        "lastName": {
+          "label": "Nom",
+          "placeholder": "Votre nom"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Votre adresse email"
+        },
+        "phone": {
+          "label": "Numéro de téléphone"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Écrivez votre message ici..."
+        },
+        "submitButton": {
+          "text": "Soumettre"
+        },
+        "successMessage": {
+          "text": "Formulaire envoyé avec succès"
+        }
+      },
+      "rewardSolutions": {
+        "title": "Découvrez nos solutions de récompenses",
+        "description": "Veuillez remplir le formulaire ci-dessous et notre équipe vous contactera."
+      },
+      "getStarted": {
+        "title": "Commencer",
+        "description": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté."
+      },
+      "planning": {
+        "title": "Construisez votre plan",
+        "description": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté."
+      }
+    }
+  }
+}

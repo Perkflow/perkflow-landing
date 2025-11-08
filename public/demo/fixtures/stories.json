@@ -1,0 +1,37 @@
+[
+  {
+    "id": "s1",
+    "name": "Ahmad TX",
+    "avatarUrl": "/avatars/a1.svg",
+    "label": "Outstanding support yet again!",
+    "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop&crop=faces"
+  },
+  {
+    "id": "s2",
+    "name": "Tasha Swift",
+    "avatarUrl": "/avatars/a2.svg",
+    "label": "Our new Product Manager",
+    "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=faces"
+  },
+  {
+    "id": "s3",
+    "name": "Steven HH",
+    "avatarUrl": "/avatars/a3.svg",
+    "label": "Employee of the Month",
+    "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=600&fit=crop&crop=faces"
+  },
+  {
+    "id": "s4",
+    "name": "Carlos DD",
+    "avatarUrl": "/avatars/a4.svg",
+    "label": "Happy Birthday!",
+    "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=600&fit=crop&crop=faces"
+  },
+  {
+    "id": "s5",
+    "name": "Jordan Miller",
+    "avatarUrl": "/avatars/a5.svg",
+    "label": "Promoted to Senior Engineer!",
+    "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=faces"
+  }
+]

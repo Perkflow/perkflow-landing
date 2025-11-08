@@ -1,0 +1,69 @@
+[
+  {
+    "id": "p1",
+    "actorId": "u_2",
+    "actorName": "Ahmad TX",
+    "actorAvatar": "/avatars/a1.svg",
+    "text": "The sales team absolutely crushed their #BeatQ2target this month! their dedication and innovative approach to client relationships is inspiring. Way to go! 🎉",
+    "tag": "BeatQ2target",
+    "fromName": "Steven",
+    "createdAt": "2025-09-06T09:00:00Z",
+    "reactions": { "like": 21, "celebrate": 4, "clap": 8 },
+    "comments": [
+      {
+        "id": "c1",
+        "author": { "name": "Steven", "avatarUrl": "/avatars/a3.svg" },
+        "text": "Fantastic update!",
+        "createdAt": "2025-09-06T09:30:00Z"
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "actorId": "u_3",
+    "actorName": "Tasha Swift",
+    "actorAvatar": "/avatars/a2.svg",
+    "text": "Welcome our new Product Manager! Exciting times ahead.",
+    "tag": "NewHire",
+    "fromName": "HR",
+    "createdAt": "2025-09-06T11:00:00Z",
+    "reactions": { "like": 12, "celebrate": 6, "clap": 3 },
+    "comments": []
+  },
+  {
+    "id": "p3",
+    "actorId": "u_5",
+    "actorName": "Perrick JJ",
+    "actorAvatar": "/avatars/a6.svg",
+    "text": "Kudos to the support team for keeping CSAT above 95% for the third week in a row!",
+    "tag": "CSAT95",
+    "fromName": "Ops",
+    "createdAt": "2025-09-05T15:20:00Z",
+    "reactions": { "like": 9, "celebrate": 10, "clap": 2 },
+    "comments": []
+  },
+  {
+    "id": "p4",
+    "actorId": "u_7",
+    "actorName": "Teddy Nbang",
+    "actorAvatar": "/avatars/a7.svg",
+    "text": "Big thanks to @Carlos for jumping in on the launch retro and unblocking the deployment!",
+    "tag": "Launch",
+    "fromName": "PM",
+    "createdAt": "2025-09-04T10:05:00Z",
+    "reactions": { "like": 5, "celebrate": 3, "clap": 1 },
+    "comments": []
+  },
+  {
+    "id": "p5",
+    "actorId": "u_4",
+    "actorName": "Carlos DD",
+    "actorAvatar": "/avatars/a4.svg",
+    "text": "Monthly townhall is this Thursday. Drop questions you want answered in the thread 👇",
+    "tag": "Townhall",
+    "fromName": "Comms",
+    "createdAt": "2025-09-03T08:00:00Z",
+    "reactions": { "like": 4, "celebrate": 1, "clap": 0 },
+    "comments": []
+  }
+]

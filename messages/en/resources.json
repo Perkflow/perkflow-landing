@@ -1,0 +1,16 @@
+{
+  "Resources_Page": {
+    "Hero": {
+      "heading": "Explore the Future of Performance-Driven Culture",
+      "subheading": "Our research and stories explore what truly motivates teams— and how forward-thinking companies turn recognition into momentum."
+    },
+    "recent_articles": {
+      "heading": "Recent Articles",
+      "failed_to_load": "Failed to load articles",
+      "load_more": "Load More Articles",
+      "show_less": "Show Less Articles"
+    },
+    "loading_text": "Loading articles...",
+    "no_articles": "No articles available"
+  }
+}

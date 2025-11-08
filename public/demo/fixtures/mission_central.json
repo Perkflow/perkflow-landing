@@ -1,0 +1,205 @@
+{
+  "mission": {
+    "title": "Our Mission",
+    "description": "To provide a seamless platform where workplaces can celebrate and reward remarkable achievem.",
+    "fullStatement": "To provide a seamless platform where workplaces can celebrate and reward remarkable achievement, fostering a culture of recognition and appreciation that drives engagement, motivation, and organizational success."
+  },
+  "strategicPlan": {
+    "title": "Strategic Plan FY25",
+    "progress": 45,
+    "daysUntilNextMilestone": 25
+  },
+  "liveGoals": [
+    {
+      "id": 1,
+      "title": "Employee Experience Revamp",
+      "owner": "Sandy",
+      "dueDate": "Oct 20",
+      "progress": 63
+    },
+    {
+      "id": 2,
+      "title": "Onboarding Flow",
+      "owner": "Team",
+      "dueDate": "Sept 30",
+      "progress": 100
+    },
+    {
+      "id": 3,
+      "title": "Launch Design System v2",
+      "owner": "Tasha",
+      "dueDate": "Nov 15",
+      "progress": 86
+    },
+    {
+      "id": 4,
+      "title": "Rank all Cover 9+",
+      "owner": "Team",
+      "dueDate": "Oct 20",
+      "progress": 60
+    },
+    {
+      "id": 5,
+      "title": "Employer for rising talent",
+      "owner": "Team",
+      "dueDate": "Oct 20",
+      "progress": 45
+    }
+  ],
+  "quickSummary": {
+    "recognitions": 9,
+    "badges": 4,
+    "activeGoals": 3
+  },
+  "myContributions": {
+    "recognitionsGiven": 12,
+    "recognitionsReceived": 9,
+    "recentActivity": [
+      {
+        "id": 1,
+        "type": "completed",
+        "description": "Completed onboarding checklist"
+      },
+      {
+        "id": 2,
+        "type": "submitted",
+        "description": "Submitted design proposal"
+      }
+    ],
+    "impact": "Your contributions boosted team velocity by +12% this month."
+  },
+  "missionBadges": [
+    {
+      "id": 1,
+      "name": "Best Team Builder",
+      "icon": "👥"
+    },
+    {
+      "id": 2,
+      "name": "Best Innovator",
+      "icon": "💡"
+    },
+    {
+      "id": 3,
+      "name": "Best Collaborator",
+      "icon": "⭐"
+    },
+    {
+      "id": 4,
+      "name": "Culture Champion",
+      "icon": "🏆"
+    }
+  ],
+  "milestones": [
+    {
+      "id": 1,
+      "title": "Design System Phase 2",
+      "date": "Oct 20",
+      "status": "On track",
+      "progress": 85
+    },
+    {
+      "id": 2,
+      "title": "Employee Experience Launch",
+      "date": "Nov 02",
+      "status": "Behind",
+      "progress": 55
+    },
+    {
+      "id": 3,
+      "title": "Employee Experience Launch",
+      "date": "Nov 02",
+      "status": "Behind",
+      "progress": 55
+    }
+  ],
+  "performanceData": {
+    "badges": 4,
+    "points": 1200,
+    "recognitions": 1200,
+    "impact": 12,
+    "monthlyPerformance": [
+      { "month": "Jan", "value": 15 },
+      { "month": "Feb", "value": 18 },
+      { "month": "Mar", "value": 22 },
+      { "month": "Apr", "value": 25 },
+      { "month": "May", "value": 28 },
+      { "month": "Jun", "value": 35 },
+      { "month": "Jul", "value": 32 }
+    ]
+  },
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Best Team Builder",
+      "date": "Jul 20",
+      "icon": "👥"
+    },
+    {
+      "id": 2,
+      "title": "Lunch with CEO",
+      "date": "Jul 10",
+      "icon": "🍽️"
+    },
+    {
+      "id": 3,
+      "title": "UX Masterclass",
+      "date": "Jul 05",
+      "icon": "📱"
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1,
+      "author": "Ahmad TX",
+      "avatar": "/avatars/a1.svg",
+      "timestamp": "2 hours ago",
+      "content": "Great ownership on the onboarding flow improved the new hire experience significantly.",
+      "reactions": {
+        "heart": 21,
+        "thumbsUp": 4,
+        "fire": 8
+      }
+    }
+  ],
+  "resources": [
+    {
+      "id": 1,
+      "title": "Vision and Mission Statement",
+      "lastUpdate": "Sep 2025",
+      "color": "purple"
+    },
+    {
+      "id": 2,
+      "title": "Goal Setting Worsheet",
+      "lastUpdate": "Jul 2025",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "title": "Quarterly Planning Template",
+      "lastUpdate": "Dec 2024",
+      "color": "blue"
+    },
+    {
+      "id": 4,
+      "title": "Quarterly Planning Templa",
+      "lastUpdate": "Dec 2024",
+      "color": "orange"
+    }
+  ],
+  "latestUpdates": [
+    {
+      "id": 1,
+      "title": "Wellbeing+ Program Launch",
+      "description": "Join our new initiative focused on mental balance and daily inspiration.",
+      "cta": "Read more"
+    },
+    {
+      "id": 2,
+      "title": "Recognition Timeline",
+      "description": "Nominations open until Oct 15",
+      "cta": "Read more"
+    }
+  ]
+}

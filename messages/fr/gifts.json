@@ -1,0 +1,52 @@
+{
+  "Gifts_Page": {
+    "Hero": {
+      "heading": "Offrez des récompenses qui encouragent votre équipe à faire davantage",
+      "subheading": "Motivez votre équipe avec des récompenses bien choisies.",
+      "contactForm": {
+        "title": "Construisez votre plan",
+        "desc": "Pour commencer à améliorer la culture de votre entreprise, veuillez remplir le formulaire ci-dessous et vous serez contacté.",
+        "button": "Construisez votre plan"
+      },
+      "button": "Réservez une démo",
+      "socialProof": {
+        "heading": "Approuvé par les équipes modernes",
+        "subheading": "(26 000 avis)"
+      }
+    },
+    "Why_Gifts_Work": {
+      "titleTag": "Pourquoi les cadeaux fonctionnent-ils ?",
+      "heading": "Les cadeaux sont un moyen puissant de garder votre équipe motivée.",
+      "subheading": "Quand les collaborateurs savent qu’il y a quelque chose qui les attend à la ligne d’arrivée, ils redoublent plus d’efforts.",
+      "point1": "Célébrez les grandes et les petites victoires",
+      "point2": "Maintenez l'élan pendant les projets",
+      "point3": "Récompensez les meilleurs collaborateurs",
+      "point4": "Montrez votre reconnaissance pour l'effort fourni"
+    },
+    "Make_Gifting_Easy": {
+      "heading": "Simplifiez l’offre de cadeaux",
+      "subheading": "Offrir le bon cadeau ne devrait pas être stressant. Voici comment nous vous aidons à récompenser vos collaborateurs sans effort supplémentaire.",
+      "card1": {
+        "title": "Un seul endroit pour toutes les récompenses",
+        "content": "Suivez chaque cadeau, de sa sélection à sa livraison. Découvrez qui est récompensé et permettez aux membres de votre équipe de se féliciter mutuellement, le tout-en-un seul endroit."
+      },
+      "card2": {
+        "title": "Fixez-vous des objectifs et regardez-les fonctionner",
+        "content": "Décidez ce que vous voulez que les équipes accomplissent, associez-y une récompense et laissez les cadeaux arriver au bon moment."
+      },
+      "card3": {
+        "title": "Gardez le contrôle des coûts",
+        "content": "Vous avez un professionnel à vos côtés pour vous aider à planifier et à respecter votre budget afin d'éviter tout coût imprévu."
+      }
+    },
+    "Recognize_Achievement": {
+      "titleTag": "Pourquoi offrir un cadeau avec nous marche-t-il ?",
+      "heading": "Reconnaître les réalisations au bon moment",
+      "subheading": "Que vous souhaitiez célébrer des victoires ou remonter le moral, nous vous facilitons l'envoi des bons cadeaux au bon moment.",
+      "point1": "Suivez et gérez les cadeaux dans un seul tableau de bord",
+      "point2": "Motivez par la visibilité",
+      "point3": "Automatisation basée sur les objectifs",
+      "point4": "Accompagnement professionnel"
+    }
+  }
+}

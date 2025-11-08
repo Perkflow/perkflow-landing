@@ -1,0 +1,32 @@
+{
+  "Footer": {
+    "body": "Des récompenses pour les étapes importantes aux moments privilégiés en équipe, PerkFlow vous aide à transformer les réalisations de vos employés en expériences enrichissantes, que ce soit par le biais de voyages, de cadeaux ou d'avantages inoubliables. Célébrez avec un objectif précis. Inspirez la loyauté. Faites en sorte que chaque récompense compte.",
+    "Company": {
+      "heading": "Entreprise",
+      "link": {
+        "support": "Support",
+        "blog": "Blog",
+        "why_us": "Pourquoi nous",
+        "terms": "Conditions d’utilisation",
+        "jobs": "Offres d’emploi",
+        "news": "Actualités",
+        "privacy": "Politique de confidentialité",
+        "refund": "Politique de remboursement"
+      }
+    },
+    "Features": {
+      "heading": "Fonctionnalités",
+      "link": {
+        "gifts": "Cadeaux",
+        "automated_rewards": "Récompenses automatisées",
+        "trips": "Voyages"
+      }
+    },
+    "Contact": {
+      "heading": "Contactez-nous"
+    },
+    "Copywrite": {
+      "text": "Tous droits réservés."
+    }
+  }
+}
