@@ -232,7 +232,7 @@ export default function HeroSection() {
       {/* Bottom gradient overlay (on all slides) */}
       {isHome && (
         <div
-          className={`pointer-events-none absolute inset-x-0 bottom-0 z-[2] ${currentHeroIndex === 1 ? "h-48 md:h-[28rem]" : "h-32 md:h-64"}`}
+          className={`pointer-events-none absolute inset-x-0 bottom-0 z-2 ${currentHeroIndex === 1 ? "h-48 md:h-[28rem]" : "h-32 md:h-64"}`}
           style={{
             backgroundImage:
               "linear-gradient(to top, rgba(247,249,251,1) 0%, rgba(247,249,251,0.97) 55%, rgba(247,249,251,0.7) 75%, rgba(247,249,251,0) 100%)",
