@@ -1,13 +1,19 @@
-import "./globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { ThemeProvider } from "next-themes";
+import { Inter } from "next/font/google";
 import { ProviderWrapper } from "./provider-wrapper";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import FooterSection from "@/features/(trip-website)/components/footer";
 import Header from "@/features/(trip-website)/components/header";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: false,
+});
 
 type Props = {
   children: React.ReactNode;
@@ -41,14 +47,44 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body className="antialiased">
+      <head>
+        {/* Critical background images */}
+        <link rel="preload" as="image" href="/assets/hero-bg.png" />
+
+        {/* Hero carousel images - prioritize first one */}
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/hero-one.webp"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/hero-ai.webp"
+          fetchPriority="low"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/hero-two.webp"
+          fetchPriority="low"
+        />
+
+        {/* Preload critical CSS background images */}
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/optimized/service-bg.webp"
+          fetchPriority="low"
+        />
+      </head>
+      <body className={`${inter.className} antialiased`}>
         <ProviderWrapper>
           <NextIntlClientProvider messages={messages}>
-            <ThemeProvider attribute="class" defaultTheme="light">
-              <Header />
-              {children}
-              <FooterSection />
-            </ThemeProvider>
+            <Header />
+            {children}
+            <FooterSection />
           </NextIntlClientProvider>
         </ProviderWrapper>
       </body>

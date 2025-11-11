@@ -6,8 +6,8 @@
     },
     "about_us": {
       "caption": "À PROPOS DE NOUS",
-      "heading": "Donner la priorité aux gens",
-      "body": "Chez Perkflow, nous pensons que la reconnaissance va au-delà des mots. Elle consiste aussi à créer des moments inoubliables qui inspirent et qui motivent. Notre mission est de transformer la façon dont les entreprises récompensent leurs équipes en proposant des expériences de voyage fluides et percutantes qui célèbrent les réussites et favorisent une culture de reconnaissance."
+      "heading": "Donner la priorité aux personnes",
+      "body": "Chez Perkflow, nous pensons que la reconnaissance va au-delà des mots. Elle consiste aussi à créer des moments inoubliables qui inspirent et qui motivent. Notre mission est de transformer la façon dont les entreprises récompensent leurs équipes en proposant des expériences fluides et percutantes qui célèbrent les réussites et favorisent une culture de reconnaissance."
     },
     "philosophy": {
       "caption": "NOTRE PHILOSOPHIE",
@@ -24,6 +24,43 @@
         "title": "Impact stratégique",
         "content": "Nos programmes sont conçus non seulement pour récompenser, mais aussi pour stimuler la performance. En alignant les incitations aux voyages sur les objectifs de votre entreprise, nous contribuons à accroître la productivité, à renforcer l'engagement des employés et à améliorer les taux de rétention."
       }
+    },
+    "values": {
+      "caption": "Valeurs",
+      "heading": "Nos valeurs",
+      "subheading": "Ce que nous défendons et comment nous nous présentons.",
+      "card1": {
+        "title": "Construire avec un objectif",
+        "content": "Nous ne créons pas pour suivre les tendances, mais pour résoudre des problèmes concrets qui ont un impact sur la façon dont les gens se sentent et performent au travail."
+      },
+      "card2": {
+        "title": "Célébrer le parcours",
+        "content": "Nous valorisons chaque étape qui mène au succès. La croissance, l'apprentissage et les efforts méritent d'être reconnus."
+      },
+      "card3": {
+        "title": "Diriger avec empathie",
+        "content": "Nous dirigeons par l'écoute. Nous partons du principe que les intentions sont bonnes et trouvons le juste équilibre entre bienveillance et responsabilité"
+      },
+      "card4": {
+        "title": "Pratique de ce que nous prêchons",
+        "content": "Nous utilisons Perkflow pour célébrer nos propres réalisations parce que nous croyons en notre produit et nous vivons notre mission au quotidien."
+      },
+      "card5": {
+        "title": "Grandir par la propriété",
+        "content": "Nous prenons des initiatives, assumons nos résultats et nous soutenons mutuellement en faisant preuve de responsabilité."
+      },
+      "card6": {
+        "title": "S’améliorer sans cesse",
+        "content": "Nous posons des questions. Nous remettons en question ce qui est obsolète. Et nous continuons d'évoluer ensemble."
+      }
+    },
+    "our_team": {
+      "caption": "Notre équipe",
+      "heading": "Équipe de direction",
+      "subheading": "Notre équipe diversifiée rassemble une vaste expérience dans les domaines des ressources humaines, de la technologie et de la conception de produits, animée par la vision de créer des espaces de travail où les employés peuvent véritablement s'épanouir."
+    },
+    "leading_companies": {
+      "text": "Nous sommes soutenus par des programmes mis en place par des entreprises leaders dans les domaines de l'IA, des infrastructures, de la conformité et du cloud."
     }
   }
 }

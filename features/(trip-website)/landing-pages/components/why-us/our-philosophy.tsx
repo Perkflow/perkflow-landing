@@ -39,11 +39,11 @@ export default function OurPhilosophy() {
         </h1>
       </div>
 
-      <div className="flex w-full flex-col md:flex-row md:justify-between">
+      <div className="flex z-20 w-full flex-col md:flex-row md:justify-between">
         {philosophy.map(({ icon, title, content }) => (
           <div
             key={title}
-            className="bg-muted mb-5 flex flex-col items-center gap-7 rounded-lg px-4 py-6 md:mx-2 md:mb-0 md:items-start"
+            className="bg-[#F5F8FB] mb-5 flex flex-col items-center gap-7 rounded-lg px-4 py-6 md:mx-2 md:mb-0 md:items-start"
           >
             <Image src={icon} alt={`${title} icon`} className="h-10 w-10" />
 

@@ -24,6 +24,43 @@
         "title": "Strategic Impact",
         "content": "Our programs are designed not just to reward but to drive performance. By aligning travel incentives with your company's goals, we help boost productivity, enhance employee engagement, and improve retention rates."
       }
+    },
+    "values": {
+      "caption": "Values",
+      "heading": "Our Values",
+      "subheading": "What we stand for and how we show up.",
+      "card1": {
+        "title": "Build with purpose",
+        "content": "We don’t build for buzz, we solve real problems that impact how people feel and perform at work."
+      },
+      "card2": {
+        "title": "Celebrate the journey",
+        "content": "We value the steps it takes to succeed. Growth, learning, and effort are worth recognizing."
+      },
+      "card3": {
+        "title": "Lead with empathy",
+        "content": "We lead by listening. We assume good intentions,  and balance kindness with accountability."
+      },
+      "card4": {
+        "title": "Practice what we preach",
+        "content": "We use Perkflow to celebrate each other because we believe in our product, and we live our mission."
+      },
+      "card5": {
+        "title": "Grow through ownership",
+        "content": "We take initiative, own our outcomes, and support one another with accountability."
+      },
+      "card6": {
+        "title": "Continuous improvment",
+        "content": "We ask questions. We challenge what’s outdated. And we keep evolving—together."
+      }
+    },
+    "our_team": {
+      "caption": "Our team",
+      "heading": "Leadership team",
+      "subheading": "Our diverse team brings together extensive experience in HR, tech, and product design, ignited by a vision to create workspaces where employees can truly thrive."
+    },
+    "leading_companies": {
+      "text": "We are backed by programs from leading companies in Ai, Infra, Compliance & Cloud"
     }
   }
 }
