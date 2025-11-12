@@ -13,8 +13,10 @@ export default function EnterprisePage() {
   return (
     <>
       <Enterprise />
-      <Partners />
-      <Incentives />
+      <div className="max-w-7xl mx-auto">
+        <Partners />
+        <Incentives />
+      </div>
       <Purpose />
       <Objectives />
       <Features />
