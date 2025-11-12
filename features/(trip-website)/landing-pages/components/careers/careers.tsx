@@ -15,7 +15,7 @@ import { useTranslations } from "next-intl";
 export default function Careers() {
   const t = useTranslations("Careers_Page");
   return (
-    <div className="bg-background text-foreground relative mt-16 overflow-hidden py-12">
+    <div className="bg-background text-foreground relative mt-16 overflow-hidden py-20">
       <div className="relative z-[1] flex max-h-[500px] w-full flex-col items-center justify-center gap-10 px-4 sm:px-8 lg:px-20">
         <div className="flex max-w-4xl flex-col items-center gap-4 text-center">
           <h1 className="text-2xl font-bold text-balance sm:text-3xl md:text-4xl lg:text-5xl">
