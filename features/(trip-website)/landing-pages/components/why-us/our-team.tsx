@@ -1,11 +1,11 @@
 import { useTranslations } from "next-intl";
 import abigailImage from "@/assets/images/team/abigail.svg";
 import abrahamImage from "@/assets/images/team/abraham.svg";
-import vincentImage from "@/assets/images/team/precious.svg";
+import vincentImage from "@/assets/images/team/vincent.svg";
 import claraImage from "@/assets/images/team/clara_abbey.svg";
 import francisImage from "@/assets/images/team/francis_ufam.svg";
 import ousmaneImage from "@/assets/images/team/ousmane_diop.svg";
-import steveImage from "@/assets/images/team/steve.svg";
+import steveImage from "@/assets/images/team/steven.svg";
 import linkedinIcon from "@/assets/icons/linkedin-linear-icon.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,7 +91,7 @@ export default function OurTeam() {
         </p>
       </div>
 
-      <div className="z-20 grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:w-[80%] lg:grid-cols-3">
+      <div className="z-20 grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {members.map((member) => (
           <div
             key={member.id}
@@ -101,10 +101,9 @@ export default function OurTeam() {
             <div className="relative overflow-hidden">
               <Image
                 src={member.image}
-                alt={`${member.name}`}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                style={{ objectPosition: member.objectPosition }}
+                alt={`${member.name}`}             
+                className="transition-transform duration-300 group-hover:scale-105 object-cover"
+                height={300}
               />
             </div>
 
