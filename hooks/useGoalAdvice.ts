@@ -29,10 +29,11 @@ export const useGoalAdvice = () => {
 
   return useMutation({
     mutationFn: async (
-      request: AIChatRequest & { goalId?: number },
+      request: AIChatRequest,
     ): Promise<AIChatResponse> => {
       const goalId = request.goalId;
-      const milestones = request.context.milestones || [];
+      const context = typeof request.context === 'object' ? request.context : {};
+      const milestones = context.milestones || [];
       const milestoneHash = generateMilestoneHash(milestones);
 
       // Check cache first

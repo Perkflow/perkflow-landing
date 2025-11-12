@@ -1,0 +1,90 @@
+name: Amplify Deployment Notifications
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get commit info
+        id: commit
+        run: |
+          echo "message=$(git log -1 --pretty=%B | head -n 1)" >> $GITHUB_OUTPUT
+          echo "author=$(git log -1 --pretty=%an)" >> $GITHUB_OUTPUT
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Notify deployment start
+        if: github.event_name == 'push'
+        run: |
+          echo "🚀 Deployment started for commit ${{ steps.commit.outputs.sha_short }}"
+          echo "📝 Message: ${{ steps.commit.outputs.message }}"
+          echo "👤 Author: ${{ steps.commit.outputs.author }}"
+
+      # Slack notification (optional - requires SLACK_WEBHOOK_URL secret)
+      - name: Send Slack notification
+        if: github.event_name == 'push' && vars.ENABLE_SLACK == 'true'
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "🚀 Amplify Deployment",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Deployment Started*\n*Repository:* ${{ github.repository }}\n*Branch:* ${{ github.ref_name }}\n*Commit:* ${{ steps.commit.outputs.sha_short }}\n*Message:* ${{ steps.commit.outputs.message }}\n*Author:* ${{ steps.commit.outputs.author }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+      # Discord notification (optional - requires DISCORD_WEBHOOK secret)
+      - name: Send Discord notification
+        if: github.event_name == 'push' && vars.ENABLE_DISCORD == 'true'
+        run: |
+          curl -X POST "${{ secrets.DISCORD_WEBHOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "embeds": [{
+                "title": "🚀 Amplify Deployment Started",
+                "color": 3447003,
+                "fields": [
+                  {"name": "Repository", "value": "${{ github.repository }}", "inline": true},
+                  {"name": "Branch", "value": "${{ github.ref_name }}", "inline": true},
+                  {"name": "Commit", "value": "${{ steps.commit.outputs.sha_short }}", "inline": true},
+                  {"name": "Author", "value": "${{ steps.commit.outputs.author }}", "inline": true},
+                  {"name": "Message", "value": "${{ steps.commit.outputs.message }}"}
+                ],
+                "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.000Z)'"
+              }]
+            }'
+
+      # Email notification using GitHub's built-in notifications
+      - name: Create deployment summary
+        if: always()
+        run: |
+          echo "### 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository:** ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ steps.commit.outputs.sha_short }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Message:** ${{ steps.commit.outputs.message }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Author:** ${{ steps.commit.outputs.author }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[View Amplify Console](https://console.aws.amazon.com/amplify/)" >> $GITHUB_STEP_SUMMARY
