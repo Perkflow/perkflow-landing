@@ -1,5 +1,9 @@
 import { AxiosError } from "axios";
-import { APIErrorResponse } from "@/types/auth";
+
+export interface APIErrorResponse {
+  message?: string;
+  detail?: Array<{ msg: string }>;
+}
 
 /**
  * Type guard to detect if error is an Axios error with APIErrorResponse
