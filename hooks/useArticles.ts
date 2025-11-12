@@ -18,7 +18,7 @@ export function useArticles() {
         setArticles(loadedArticles);
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : "Failed to load articles",
+          err instanceof Error ? err.message : "Failed to load articles"
         );
         console.error("Error loading articles:", err);
       } finally {
