@@ -63,7 +63,7 @@ export default function Story() {
     direction === "prev" ? "slide-in-left" : "slide-in-right";
 
   return (
-    <div className="bg-white px-4 md:px-15">
+    <div className="bg-white px-4 md:px-20">
       <div className="flex flex-col gap-10 max-w-7xl mx-auto pb-10">
         <div className="flex justify-between gap-2 md:gap-0">
           <div className="w-full">

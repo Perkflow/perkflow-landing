@@ -20,7 +20,6 @@ export default function OurTeam() {
       role: "CEO & FOUNDER",
       linkedin: "https://www.linkedin.com/in/steve-mbenoun/",
       image: steveImage,
-      objectPosition: "center",
     },
     {
       id: 2,
@@ -28,7 +27,6 @@ export default function OurTeam() {
       role: "CTO",
       linkedin: "https://www.linkedin.com/in/mr-tanta/",
       image: abrahamImage,
-      objectPosition: "center",
     },
     {
       id: 3,
@@ -37,7 +35,6 @@ export default function OurTeam() {
       linkedin:
         "https://www.linkedin.com/in/abiguail-yakam-she-her-elle-mba-90a227143/",
       image: abigailImage,
-      objectPosition: "top",
     },
     {
       id: 4,
@@ -45,7 +42,6 @@ export default function OurTeam() {
       role: "Engineering",
       linkedin: "https://www.linkedin.com/in/precious-vincent-327abb1a3/",
       image: vincentImage,
-      objectPosition: "center",
     },
     {
       id: 5,
@@ -53,7 +49,6 @@ export default function OurTeam() {
       role: "SALES MANAGER NIGERIA",
       linkedin: "https://www.linkedin.com/in/clara-abbey-7291961b0/",
       image: claraImage,
-      objectPosition: "center",
     },
     {
       id: 6,
@@ -61,7 +56,6 @@ export default function OurTeam() {
       role: "Communication",
       linkedin: "https://www.linkedin.com/in/ufan-abasi-francis-9604bb30a/",
       image: francisImage,
-      objectPosition: "center",
     },
     {
       id: 7,
@@ -69,7 +63,6 @@ export default function OurTeam() {
       role: "Partnerships Senegal",
       linkedin: "",
       image: ousmaneImage,
-      objectPosition: "top",
     },
   ];
 
@@ -92,7 +85,7 @@ export default function OurTeam() {
           </p>
         </div>
 
-        <div className="z-20 grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="z-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {members.map((member) => (
             <div
               key={member.id}

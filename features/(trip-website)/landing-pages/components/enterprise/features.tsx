@@ -33,8 +33,8 @@ export default function Features() {
   return (
     <div className="flex flex-col items-center gap-10 bg-white px-4 py-10 md:px-20 md:py-20">
       <div className="flex flex-col gap-10 max-w-7xl mx-auto">
-        <div className="w-full md:w-2/3">
-          <h1 className="text-2xl font-bold text-gray-900 md:text-4xl">
+        <div className="w-full text-center md:text-start">
+          <h1 className="text-2xl  font-bold text-gray-900 md:text-4xl">
             {t("heading")}
           </h1>
         </div>

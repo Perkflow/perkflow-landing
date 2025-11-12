@@ -28,7 +28,7 @@ export default function Purpose() {
   ];
 
   return (
-    <div className="relative flex w-full flex-col items-start justify-center gap-10 overflow-hidden bg-(--chart-8) px-4 py-10 text-white md:flex-row md:px-20">
+    <div className="relative flex w-full flex-col items-start gap-10 overflow-hidden bg-(--chart-8) px-4 py-10 text-white md:flex-row md:px-20">
       <div
         className="absolute bottom-20 left-30 hidden h-[100px] w-[150px] translate-x-[-50%] translate-y-[50%] bg-contain bg-no-repeat md:block lg:h-[150px] lg:w-[200px]"
         style={{ backgroundImage: `url(${EnterpriseBgImg1.src})` }}
@@ -38,7 +38,7 @@ export default function Purpose() {
         className="absolute top-0 right-[-120px] hidden h-[180px] w-[250px] translate-x-[39%] bg-contain bg-no-repeat md:block lg:h-[220px] lg:w-[300px]"
         style={{ backgroundImage: `url(${EnterpriseBgImg2.src})` }}
       />
-      <div className="flex max-w-7xl flex-col md:flex-row justify-center gap-10">
+      <div className="flex max-w-7xl mx-auto flex-col md:flex-row justify-center gap-10">
         <div className="w-full">
           <h2 className="mb-2 text-xl font-bold md:mb-4 md:text-4xl">
             {t("Purpose.heading")}

@@ -36,22 +36,24 @@ export default function Benefit() {
         style={{ backgroundImage: `url(${EnterpriseBgImg2.src})` }}
       />
 
-      <div className="w-full md:w-1/2">
-        <h2 className="mb-2 text-xl font-bold md:mb-4 md:text-4xl">
-          {t("Benefits.heading")}
-        </h2>
-        <p className="text-sm text-(--chart-9) md:text-base">
-          {t("Benefits.subheading")}
-        </p>
-      </div>
+      <div className="flex max-w-7xl mx-auto flex-col md:flex-row justify-center gap-10">
+        <div className="w-full md:w-1/2">
+          <h2 className="mb-2 text-xl font-bold md:mb-4 md:text-4xl">
+            {t("Benefits.heading")}
+          </h2>
+          <p className="text-sm text-(--chart-9) md:text-base">
+            {t("Benefits.subheading")}
+          </p>
+        </div>
 
-      <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:w-1/2">
-        {purpose.map(({ title, content }) => (
-          <div key={title} className="flex flex-col gap-1">
-            <h3 className="text-base font-semibold md:text-lg">{title}</h3>
-            <p className="text-sm text-(--chart-9)">{content}</p>
-          </div>
-        ))}
+        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:w-1/2">
+          {purpose.map(({ title, content }) => (
+            <div key={title} className="flex flex-col gap-1">
+              <h3 className="text-base font-semibold md:text-lg">{title}</h3>
+              <p className="text-sm text-(--chart-9)">{content}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

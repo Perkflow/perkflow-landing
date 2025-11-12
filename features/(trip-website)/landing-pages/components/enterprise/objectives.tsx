@@ -23,8 +23,8 @@ export default function Objectives() {
 
   return (
     <div className="flex justify-center px-4 py-10 md:px-20">
-      <div className="flex max-w-7xl flex-col-reverse items-center gap-10 overflow-hidden rounded-lg bg-(--lavender-mist) md:flex-row">
-        <div className="flex w-full flex-col justify-center gap-6 p-4 md:w-1/2 md:p-8">
+      <div className="flex max-w-7xl mx-auto flex-col-reverse items-center gap-10 overflow-hidden rounded-lg bg-(--lavender-mist) lg:flex-row">
+        <div className="flex w-full flex-col justify-center gap-6">
           <h2 className="text-xl font-bold text-gray-900 md:text-3xl">
             {t("Objectives.heading")}
           </h2>
@@ -55,7 +55,7 @@ export default function Objectives() {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2">
+        <div className="w-full">
           <div className="relative h-[250px] min-h-[300px] w-full md:h-full">
             <Image
               src={incentivesImg}
