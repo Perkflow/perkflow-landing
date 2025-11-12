@@ -75,7 +75,7 @@ export default function OurTeam() {
 
   return (
     <div className="z-10 flex flex-col items-center gap-8 bg-white px-4 py-10 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <div className="flex w-full flex-col items-center gap-5">
           <div className="text-primary w-fit rounded-full bg-white text-sm font-semibold">
             <div className="bg-primary/10 flex gap-2 rounded-full px-3 py-1">
@@ -92,39 +92,39 @@ export default function OurTeam() {
           </p>
         </div>
 
-        <div className="z-20 grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="z-20 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {members.map((member) => (
             <div
               key={member.id}
               className="group flex h-full flex-col overflow-hidden rounded-lg bg-[#F5F8FB] shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
             >
-              {/* Image - takes 2/3 of the card */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden">
+              {/* Image */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden">
                 <Image
                   src={member.image}
                   alt={`${member.name}`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   style={{ objectPosition: member.objectPosition }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 />
               </div>
 
-              {/* Content - takes 1/3 of the card */}
-              <div className="flex flex-1 flex-col items-center justify-center gap-2 p-4">
+              {/* Content */}
+              <div className="flex flex-1 flex-col items-center justify-center gap-1.5 p-3">
                 <Link href={member.linkedin} target="blank">
                   <Image
                     src={linkedinIcon}
                     alt="Likedin icon"
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   />
                 </Link>
 
                 <div className="text-center">
-                  <h3 className="line-clamp-1 font-semibold text-gray-900">
+                  <h3 className="line-clamp-1 text-sm font-semibold text-gray-900">
                     {member.name}
                   </h3>
-                  <span className="text-sm text-gray-600 uppercase">
+                  <span className="text-xs uppercase text-gray-600">
                     {member.role}
                   </span>
                 </div>
