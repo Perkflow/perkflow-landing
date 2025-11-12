@@ -10,7 +10,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="flex justify-center p-10 md:p-20">
+    <div className="flex justify-center py-10 px-4 md:p-20 max-w-7xl mx-auto">
       <div className="bg-muted flex flex-col-reverse items-start gap-10 overflow-hidden rounded-lg md:flex-row md:gap-20">
         <div className="w-full md:w-1/2">
           <Image

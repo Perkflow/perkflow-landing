@@ -75,59 +75,61 @@ export default function OurTeam() {
 
   return (
     <div className="z-10 flex flex-col items-center gap-8 bg-white px-4 py-10 md:px-20">
-      <div className="flex w-full flex-col items-center gap-5">
-        <div className="text-primary w-fit rounded-full bg-white text-sm font-semibold">
-          <div className="bg-primary/10 flex gap-2 rounded-full px-3 py-1">
-            <span aria-hidden="true">•</span>
-            <span className="uppercase">{t("our_team.caption")}</span>
+      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+        <div className="flex w-full flex-col items-center gap-5">
+          <div className="text-primary w-fit rounded-full bg-white text-sm font-semibold">
+            <div className="bg-primary/10 flex gap-2 rounded-full px-3 py-1">
+              <span aria-hidden="true">•</span>
+              <span className="uppercase">{t("our_team.caption")}</span>
+            </div>
           </div>
+
+          <h2 className="text-center text-xl font-bold text-gray-900 md:text-2xl lg:text-4xl">
+            {t("our_team.heading")}
+          </h2>
+          <p className="w-full text-center text-gray-600 lg:w-[60%]">
+            {t("our_team.subheading")}
+          </p>
         </div>
 
-        <h2 className="text-center text-xl font-bold text-gray-900 md:text-2xl lg:text-4xl">
-          {t("our_team.heading")}
-        </h2>
-        <p className="w-full text-center text-gray-600 lg:w-[60%]">
-          {t("our_team.subheading")}
-        </p>
-      </div>
-
-      <div className="z-20 grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {members.map((member) => (
-          <div
-            key={member.id}
-            className="group grid h-100 grid-rows-[6fr_3fr] overflow-hidden rounded-lg bg-[#F5F8FB] shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-          >
-            {/* Image - first half */}
-            <div className="relative overflow-hidden">
-              <Image
-                src={member.image}
-                alt={`${member.name}`}             
-                className="transition-transform duration-300 group-hover:scale-105 object-cover"
-                height={300}
-              />
-            </div>
-
-            {/* Content - second half */}
-            <div className="flex flex-col items-center justify-center gap-2">
-              <Link href={member.linkedin} target="blank">
+        <div className="z-20 grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {members.map((member) => (
+            <div
+              key={member.id}
+              className="group grid h-100 grid-rows-[6fr_3fr] overflow-hidden rounded-lg bg-[#F5F8FB] shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+            >
+              {/* Image - first half */}
+              <div className="relative overflow-hidden">
                 <Image
-                  src={linkedinIcon}
-                  alt="Likedin icon"
-                  className="h-6 w-6"
+                  src={member.image}
+                  alt={`${member.name}`}
+                  className="transition-transform duration-300 group-hover:scale-105 object-cover"
+                  height={300}
                 />
-              </Link>
+              </div>
 
-              <div className="text-center">
-                <h3 className="line-clamp-1 font-semibold text-gray-900">
-                  {member.name}
-                </h3>
-                <span className="text-sm text-gray-600 uppercase">
-                  {member.role}
-                </span>
+              {/* Content - second half */}
+              <div className="flex flex-col items-center justify-center gap-2">
+                <Link href={member.linkedin} target="blank">
+                  <Image
+                    src={linkedinIcon}
+                    alt="Likedin icon"
+                    className="h-6 w-6"
+                  />
+                </Link>
+
+                <div className="text-center">
+                  <h3 className="line-clamp-1 font-semibold text-gray-900">
+                    {member.name}
+                  </h3>
+                  <span className="text-sm text-gray-600 uppercase">
+                    {member.role}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

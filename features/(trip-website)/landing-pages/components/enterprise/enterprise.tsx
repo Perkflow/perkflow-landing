@@ -12,7 +12,7 @@ export default function Enterprise() {
   const t = useTranslations("Enterprise_Page");
   return (
     <div
-      className="relative mt-16 overflow-hidden bg-(--chart-8) py-8 text-white"
+      className="relative mt-16 overflow-hidden bg-(--chart-8) text-white py-20"
       style={{
         backgroundImage: `url(${EnterpriseBgImg1.src}), url(${EnterpriseBgImg2.src})`,
         backgroundRepeat: "no-repeat, no-repeat",
@@ -52,7 +52,7 @@ export default function Enterprise() {
           </div>
         </div>
 
-        <div className="relative h-[250px] w-full overflow-hidden rounded-lg sm:h-[300px] md:h-[400px] lg:h-[450px]">
+        <div className="relative h-[250px] w-full max-w-7xl mb-10 overflow-hidden rounded-lg sm:h-[300px] md:h-[400px] lg:h-[450px]">
           <Image
             src={EnterpriseBgImg}
             alt="Enterprise Main"

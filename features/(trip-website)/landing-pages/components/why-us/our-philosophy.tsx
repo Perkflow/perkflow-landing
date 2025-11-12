@@ -26,35 +26,37 @@ export default function OurPhilosophy() {
 
   return (
     <div className="flex flex-col items-center gap-8 bg-white px-4 py-10 md:p-20">
-      <div className="flex w-full flex-col items-center gap-5 md:w-1/2">
-        <div className="text-primary w-fit rounded-full bg-white text-sm font-semibold">
-          <div className="bg-primary/10 flex gap-2 rounded-full px-3 py-1">
-            <span aria-hidden="true">•</span>
-            <span>{t("philosophy.caption")}</span>
-          </div>
-        </div>
-
-        <h1 className="text-center text-xl font-bold text-gray-900 md:text-2xl lg:text-4xl">
-          {t("philosophy.heading")}
-        </h1>
-      </div>
-
-      <div className="flex z-20 w-full flex-col md:flex-row md:justify-between">
-        {philosophy.map(({ icon, title, content }) => (
-          <div
-            key={title}
-            className="bg-[#F5F8FB] mb-5 flex flex-col items-center gap-7 rounded-lg px-4 py-6 md:mx-2 md:mb-0 md:items-start"
-          >
-            <Image src={icon} alt={`${title} icon`} className="h-10 w-10" />
-
-            <div>
-              <h3 className="text-center text-lg font-semibold text-gray-900 md:text-left">
-                {title}
-              </h3>
-              <p className="text-gray-600">{content}</p>
+      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+        <div className="flex w-full flex-col items-center gap-5">
+          <div className="text-primary w-fit rounded-full bg-white text-sm font-semibold">
+            <div className="bg-primary/10 flex gap-2 rounded-full px-3 py-1">
+              <span aria-hidden="true">•</span>
+              <span>{t("philosophy.caption")}</span>
             </div>
           </div>
-        ))}
+
+          <h1 className="text-center text-xl font-bold text-gray-900 md:text-2xl lg:text-4xl">
+            {t("philosophy.heading")}
+          </h1>
+        </div>
+
+        <div className="z-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {philosophy.map(({ icon, title, content }) => (
+            <div
+              key={title}
+              className="flex flex-col items-center gap-2 rounded-xl bg-[#F5F8FB] px-4 py-6 md:items-start"
+            >
+              <Image src={icon} alt={`${title} icon`} className="h-10 w-10" />
+
+              <div>
+                <h3 className="text-center text-lg font-semibold text-gray-900 md:text-left">
+                  {title}
+                </h3>
+                <p className="text-gray-600">{content}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
