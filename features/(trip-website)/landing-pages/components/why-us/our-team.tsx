@@ -96,20 +96,22 @@ export default function OurTeam() {
           {members.map((member) => (
             <div
               key={member.id}
-              className="group grid h-100 grid-rows-[6fr_3fr] overflow-hidden rounded-lg bg-[#F5F8FB] shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+              className="group flex h-full flex-col overflow-hidden rounded-lg bg-[#F5F8FB] shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
             >
-              {/* Image - first half */}
-              <div className="relative overflow-hidden">
+              {/* Image - takes 2/3 of the card */}
+              <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <Image
                   src={member.image}
                   alt={`${member.name}`}
-                  className="transition-transform duration-300 group-hover:scale-105 object-cover"
-                  height={300}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  style={{ objectPosition: member.objectPosition }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
 
-              {/* Content - second half */}
-              <div className="flex flex-col items-center justify-center gap-2">
+              {/* Content - takes 1/3 of the card */}
+              <div className="flex flex-1 flex-col items-center justify-center gap-2 p-4">
                 <Link href={member.linkedin} target="blank">
                   <Image
                     src={linkedinIcon}
