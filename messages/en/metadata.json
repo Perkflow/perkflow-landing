@@ -4,5 +4,131 @@
       "default": "Your All-in-One Platform for Rewards That Work"
     },
     "description": "Turn goals into Motivation. Motivation into rewards. Whether it is for personalized gifts or for company reward trips, PerkFlow experiences help you plan smarter and recognize with purpose."
+  },
+  "HomeMetadata": {
+    "title": "PerkFlow – Your All-in-One Platform for Rewards That Work",
+    "description": "PerkFlow helps companies turn goals into motivation and motivation into rewards — an integrated platform for automated incentives, gifting, trips and ceremonies.",
+    "imageAlt": "PerkFlow platform overview",
+    "og": {
+      "title": "PerkFlow – Your All-in-One Platform for Rewards That Work",
+      "description": "Turn business objectives into meaningful experiences with PerkFlow: automated reward journeys, curated gifts, incentive trips and memorable award ceremonies."
+    },
+    "twitter": {
+      "title": "PerkFlow – Your All-in-One Platform for Rewards That Work",
+      "description": "Empower your teams with PerkFlow: seamless incentive programs, gifts, trips and award ceremonies that boost performance."
+    },
+    "keywords": "PerkFlow, employee rewards platform, incentive travel, automated incentives, team motivation, corporate gifting, award ceremony software"
+  },
+  "AutomatedRewardsMetadata": {
+    "title": "Automated Rewards",
+    "description": "Learn how PerkFlow’s automated reward journeys can trigger incentives the moment goals are achieved — reducing manual effort and keeping teams engaged.",
+    "imageAlt": "PerkFlow automated rewards dashboard",
+    "og": {
+      "title": "Automated Rewards – PerkFlow",
+      "description": "Set up performance-based incentives that activate automatically when milestones are hit. With PerkFlow, recognition becomes timely and seamless."
+    },
+    "twitter": {
+       "title": "Automated Rewards – PerkFlow",
+      "description": "Discover how PerkFlow automates incentives based on goal attainment, keeping teams motivated without constant admin overhead."
+    },
+    "keywords": "PerkFlow, automated rewards, incentive automation, employee incentive platform, goal-based rewards"
+  },
+  "GiftsMetadata": {
+    "title": "Gifts",
+    "description": "Explore how PerkFlow curates personalised gift experiences for your team — turning goal completion into meaningful recognition moments.",
+    "imageAlt": "PerkFlow curated gifts",
+    "og": {
+      "title" : "Gifts – PerkFlow",
+      "description": "From milestone achievements to curated team rewards, PerkFlow delivers gifts that resonate and drive engagement."
+    },
+    "twitter": {
+      "title" : "Gifts – PerkFlow",
+      "description": "See how PerkFlow helps you turn team achievements into personalised rewards that inspire and engage."
+    },
+    "keywords": "employee gifts, corporate gifting, rewards gifts platform, PerkFlow gifts, milestone rewards gifts"
+  },
+  "TripsMetadata": {
+    "title": "Trips",
+    "description": "Transform performance into unforgettable travel incentives with PerkFlow. Plan milestone-based team or solo trips that boost motivation and reward top performers.",
+    "imageAlt": "PerkFlow incentive travel trip",
+    "og": {
+      "title" : "Trips – PerkFlow",
+      "description": "Create incentive travel experiences for your team with PerkFlow: track goals, engage participants and unlock travel rewards that drive results."
+    },
+    "twitter": {
+      "title" : "Trips – PerkFlow",
+      "description": "Incentive travel made easy: PerkFlow helps you design, track and unlock travel rewards that energise teams and drive performance."
+    },
+    "keywords": "incentive travel, team trips reward platform, travel incentives, employee trip rewards, PerkFlow trips"
+  },
+  "AwardCeremonyMetadata": {
+    "title": "Award Ceremony",
+    "description": "Host memorable award ceremonies — digital or in-person — with PerkFlow. Recognise milestones when they happen, celebrate your team and build a culture of achievement.",
+    "imageAlt": "PerkFlow award ceremony celebration",
+    "og": {
+      "title" : "Award Ceremony – PerkFlow",
+      "description": "Turn accomplishments into moments of pride. With PerkFlow you can automate recognition, personalise celebrations and make every award count."
+    },
+    "twitter": {
+      "title" : "Award Ceremony – PerkFlow",
+      "description": "Celebrate your team’s achievements with ceremony-style recognition. PerkFlow enables timely, personal and visible awards that build momentum."
+    },
+    "keywords": "award ceremony software, employee recognition ceremony, corporate awards platform, PerkFlow award ceremony, milestone celebration"
+  },
+    "ResourcesMetadata": {
+    "title": "Resources",
+    "description": "Explore PerkFlow’s library of insights, articles and guides on employee motivation, recognition, performance culture and incentive programs. Stay ahead with expert content.",
+    "imageAlt": "PerkFlow resources content library",
+    "og": {
+      "title" : "Resources – PerkFlow",
+      "description": "Dive into the PerkFlow resource centre: articles, guides and best practices to help you build motivation-driven teams and effective reward strategies."
+    },
+    "twitter": {
+      "title" : "Resources – PerkFlow",
+      "description": "Access expert articles and guides from PerkFlow to help you craft rewards, recognition and culture strategies that work."
+    },
+    "keywords": "PerkFlow resources, employee recognition guides, reward strategy articles, performance culture insights, incentive program best practices"
+  },
+  "EnterpriseMetadata": {
+    "title": "Enterprise",
+    "description": "For companies scaling culture and performance: PerkFlow’s enterprise-grade reward platform drives recognition, engagement and goal achievement across large teams.",
+    "imageAlt": "PerkFlow enterprise reward platform",
+    "og": {
+      "title" : "Enterprise – PerkFlow",
+      "description": "PerkFlow empowers enterprise teams to recognise milestones, reward top performers and build momentum through personalised experiences and robust tools."
+    },
+    "twitter": {
+      "title" : "Enterprise – PerkFlow",
+      "description": "Scale your reward and recognition programs with PerkFlow’s enterprise-ready platform — purpose-built for motivation, performance and culture."
+    },
+    "keywords": "enterprise reward platform, corporate incentive management, PerkFlow enterprise, employee engagement for large teams, recognition at scale"
+  },
+  "WhyUsMetadata": {
+    "title": "Why Us",
+    "description": "Discover what makes PerkFlow different: our mission, values, people-first approach and culture of meaningful recognition that drives real results.",
+    "imageAlt": "PerkFlow why us philosophy",
+    "og": {
+      "title" : "Why Us – PerkFlow",
+      "description": "At PerkFlow, we believe recognition isn’t just a bonus — it’s a driver of growth. See how our philosophy, process and platform align to create meaningful impact."
+    },
+    "twitter": {
+      "title" : "Why Us – PerkFlow",
+      "description": "Learn why PerkFlow stands out: people-centred rewards, seamless execution and strategic impact that aligns with your company goals."
+    },
+    "keywords": "why choose PerkFlow, PerkFlow philosophy, people-centred rewards, why us recognition platform, culture of recognition"
+  },
+  "CareersMetadata": {
+    "title": "Careers",
+    "description": "Join PerkFlow’s team and help build the future of employee rewards, recognition and culture. Explore roles, values and what it’s like to work here.",
+    "imageAlt": "PerkFlow careers opportunities",
+    "og": {
+      "title" : "Careers – PerkFlow",
+      "description": "At PerkFlow, we’re on a mission to make motivation measurable and rewards meaningful. If you’re driven, creative and team-oriented, you’ll fit right in."
+    },
+    "twitter": {
+      "title" : "Careers – PerkFlow",
+      "description": "Build your career at PerkFlow — where recognition, growth and team-spirit matter. See our values, culture and open roles."
+    },
+    "keywords": "PerkFlow careers, work at PerkFlow, employee rewards company jobs, recognition technology careers, PerkFlow team culture"
   }
 }

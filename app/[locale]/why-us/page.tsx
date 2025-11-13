@@ -4,12 +4,64 @@ import OurPhilosophy from "@/features/(trip-website)/landing-pages/components/wh
 import OurValues from "@/features/(trip-website)/landing-pages/components/why-us/our-values";
 import OurTeam from "@/features/(trip-website)/landing-pages/components/why-us/our-team";
 import LeadingCompanies from "@/features/(trip-website)/landing-pages/components/why-us/leading-companies";
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  description:
-    "Why choose PerkFlow? Because personalized recognition drives real results. Discover how we help companies build happier, high-performing teams.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale,
+    namespace: "WhyUsMetadata",
+  });
+  const baseUrl = "https://perkflow.io";
+  const canonicalUrl =
+    locale === "en" ? `${baseUrl}/why-us` : `${baseUrl}/${locale}/why-us`;
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: t("og.title"),
+      description: t("og.description"),
+      phoneNumbers: "+1 (716) 451-3912",
+      emails: "hello@perkflow.io",
+      images: [
+        {
+          url: "/assets/og/why-us.webp",
+          width: 1200,
+          height: 628,
+          alt: t("imageAlt"),
+          type: "image/webp",
+        },
+      ],
+      url: canonicalUrl,
+      type: "website",
+      locale: locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@PerkFlow",
+      title: t("twitter.title"),
+      description: t("twitter.description"),
+      images: [
+        {
+          url: "/assets/og/why-us.webp",
+          alt: t("imageAlt"),
+        },
+      ],
+    },
+    keywords: t("keywords"),
+    robots: "index, follow",
+    publisher: "@PerkFlow",
+  };
+}
 
 export default function WhyUs() {
   return (
