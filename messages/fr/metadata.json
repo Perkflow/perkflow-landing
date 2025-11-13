@@ -4,5 +4,131 @@
       "default": "Votre plateforme tout-en-un pour des récompenses qui motivent."
     },
     "description": "Transformez vos objectifs en motivation. La motivation en récompenses. Que ce soit pour des cadeaux personnalisés ou des voyages de récompense d’entreprise, les expériences PerkFlow vous aident à mieux planifier et à reconnaître vos efforts avec intention."
+  },
+  "HomeMetadata": {
+    "title": "PerkFlow – Votre Plateforme Tout-en-Un pour des Récompenses Efficaces",
+    "description": "PerkFlow aide les entreprises à transformer les objectifs en motivation et la motivation en récompenses — une plateforme intégrée pour les incitations automatisées, les cadeaux, les voyages et les cérémonies.",
+    "imageAlt": "Vue d'ensemble de la plateforme PerkFlow",
+    "og": {
+      "title": "PerkFlow – Votre Plateforme Tout-en-Un pour des Récompenses Efficaces",
+      "description": "Transformez les objectifs commerciaux en expériences significatives avec PerkFlow : parcours de récompense automatisés, cadeaux sélectionnés, voyages d'incitation et cérémonies de récompense mémorables."
+    },
+    "twitter": {
+      "title": "PerkFlow – Votre Plateforme Tout-en-Un pour des Récompenses Efficaces",
+      "description": "Donnez du pouvoir à vos équipes avec PerkFlow : programmes d'incitation fluides, cadeaux, voyages et cérémonies de récompense qui boostent les performances."
+    },
+    "keywords": "PerkFlow, plateforme de récompenses employés, voyages d'incitation, incitations automatisées, motivation d'équipe, cadeaux d'entreprise, logiciel de cérémonie de récompense"
+  },
+  "AutomatedRewardsMetadata": {
+    "title": "Récompenses Automatisées",
+    "description": "Découvrez comment les parcours de récompense automatisés de PerkFlow peuvent déclencher des incitations dès que les objectifs sont atteints — réduisant l'effort manuel et maintenant l'engagement des équipes.",
+    "imageAlt": "Tableau de bord des récompenses automatisées PerkFlow",
+    "og": {
+      "title": "Récompenses Automatisées – PerkFlow",
+      "description": "Configurez des incitations basées sur la performance qui s'activent automatiquement lorsque les étapes sont franchies. Avec PerkFlow, la reconnaissance devient opportune et fluide."
+    },
+    "twitter": {
+      "title": "Récompenses Automatisées – PerkFlow",
+      "description": "Découvrez comment PerkFlow automatise les incitations en fonction de l'atteinte des objectifs, maintenant la motivation des équipes sans surcharge administrative constante."
+    },
+    "keywords": "PerkFlow, récompenses automatisées, automatisation des incitations, plateforme d'incitation employés, récompenses basées sur les objectifs"
+  },
+  "GiftsMetadata": {
+    "title": "Cadeaux",
+    "description": "Explorez comment PerkFlow crée des expériences de cadeaux personnalisées pour votre équipe — transformant l'achèvement des objectifs en moments de reconnaissance significatifs.",
+    "imageAlt": "Cadeaux sélectionnés PerkFlow",
+    "og": {
+      "title": "Cadeaux – PerkFlow",
+      "description": "Des réalisations d'étape aux récompenses d'équipe sélectionnées, PerkFlow offre des cadeaux qui font sens et stimulent l'engagement."
+    },
+    "twitter": {
+      "title": "Cadeaux – PerkFlow",
+      "description": "Découvrez comment PerkFlow vous aide à transformer les réussites de l'équipe en récompenses personnalisées qui inspirent et engagent."
+    },
+    "keywords": "cadeaux employés, cadeaux d'entreprise, plateforme de cadeaux de récompense, cadeaux PerkFlow, cadeaux de récompense pour étapes clés"
+  },
+  "TripsMetadata": {
+    "title": "Voyages",
+    "description": "Transformez la performance en incitations voyage inoubliables avec PerkFlow. Planifiez des voyages en équipe ou individuels basés sur des étapes qui boostent la motivation et récompensent les meilleurs performeurs.",
+    "imageAlt": "Voyage d'incitation PerkFlow",
+    "og": {
+      "title": "Voyages – PerkFlow",
+      "description": "Créez des expériences de voyage d'incitation pour votre équipe avec PerkFlow : suivez les objectifs, engagez les participants et débloquez des récompenses voyage qui génèrent des résultats."
+    },
+    "twitter": {
+      "title": "Voyages – PerkFlow",
+      "description": "Les voyages d'incitation simplifiés : PerkFlow vous aide à concevoir, suivre et débloquer des récompenses voyage qui dynamisent les équipes et améliorent les performances."
+    },
+    "keywords": "voyage d'incitation, plateforme de récompense voyages d'équipe, incitations voyage, récompenses voyage employés, voyages PerkFlow"
+  },
+  "AwardCeremonyMetadata": {
+    "title": "Cérémonie de Récompense",
+    "description": "Organisez des cérémonies de récompense mémorables — digitales ou en présentiel — avec PerkFlow. Reconnaissez les étapes clés quand elles se produisent, célébrez votre équipe et construisez une culture de la réussite.",
+    "imageAlt": "Célébration de cérémonie de récompense PerkFlow",
+    "og": {
+      "title": "Cérémonie de Récompense – PerkFlow",
+      "description": "Transformez les accomplissements en moments de fierté. Avec PerkFlow, vous pouvez automatiser la reconnaissance, personnaliser les célébrations et donner de l'importance à chaque récompense."
+    },
+    "twitter": {
+      "title": "Cérémonie de Récompense – PerkFlow",
+      "description": "Célébrez les réussites de votre équipe avec une reconnaissance style cérémonie. PerkFlow permet des récompenses opportunes, personnelles et visibles qui créent une dynamique."
+    },
+    "keywords": "logiciel de cérémonie de récompense, cérémonie de reconnaissance employés, plateforme de récompenses d'entreprise, cérémonie de récompense PerkFlow, célébration d'étape clé"
+  },
+  "ResourcesMetadata": {
+    "title": "Ressources",
+    "description": "Explorez la bibliothèque d'aperçus, d'articles et de guides de PerkFlow sur la motivation des employés, la reconnaissance, la culture de performance et les programmes d'incitation. Restez en avance avec un contenu d'expert.",
+    "imageAlt": "Bibliothèque de contenu des ressources PerkFlow",
+    "og": {
+      "title": "Ressources – PerkFlow",
+      "description": "Plongez dans le centre de ressources PerkFlow : articles, guides et meilleures pratiques pour vous aider à construire des équipes motivées et des stratégies de récompense efficaces."
+    },
+    "twitter": {
+      "title": "Ressources – PerkFlow",
+      "description": "Accédez aux articles et guides experts de PerkFlow pour vous aider à concevoir des stratégies de récompenses, de reconnaissance et de culture qui fonctionnent."
+    },
+    "keywords": "Ressources PerkFlow, guides de reconnaissance employés, articles sur la stratégie de récompense, aperçus sur la culture de performance, meilleures pratiques pour les programmes d'incitation"
+  },
+  "EnterpriseMetadata": {
+    "title": "Entreprise",
+    "description": "Pour les entreprises qui font évoluer leur culture et leur performance : la plateforme de récompense de niveau enterprise de PerkFlow stimule la reconnaissance, l'engagement et l'atteinte des objectifs au sein des grandes équipes.",
+    "imageAlt": "Plateforme de récompense enterprise PerkFlow",
+    "og": {
+      "title": "Entreprise – PerkFlow",
+      "description": "PerkFlow permet aux équipes enterprises de reconnaître les étapes clés, de récompenser les meilleurs performeurs et de construire une dynamique grâce à des expériences personnalisées et des outils robustes."
+    },
+    "twitter": {
+      "title": "Entreprise – PerkFlow",
+      "description": "Étendez vos programmes de récompense et de reconnaissance avec la plateforme prête pour l'enterprise de PerkFlow — conçue pour la motivation, la performance et la culture."
+    },
+    "keywords": "plateforme de récompense enterprise, gestion des incitations d'entreprise, PerkFlow enterprise, engagement des employés pour les grandes équipes, reconnaissance à grande échelle"
+  },
+  "WhyUsMetadata": {
+    "title": "Pourquoi Nous Choisir",
+    "description": "Découvrez ce qui rend PerkFlow différent : notre mission, nos valeurs, notre approche centrée sur les personnes et notre culture de la reconnaissance significative qui génère des résultats concrets.",
+    "imageAlt": "Philosophie PerkFlow Pourquoi Nous Choisir",
+    "og": {
+      "title": "Pourquoi Nous Choisir – PerkFlow",
+      "description": "Chez PerkFlow, nous croyons que la reconnaissance n'est pas juste un bonus — c'est un moteur de croissance. Découvrez comment notre philosophie, processus et plateforme s'alignent pour créer un impact significatif."
+    },
+    "twitter": {
+      "title": "Pourquoi Nous Choisir – PerkFlow",
+      "description": "Découvrez pourquoi PerkFlow se distingue : des récompenses centrées sur les personnes, une exécution fluide et un impact stratégique aligné sur les objectifs de votre entreprise."
+    },
+    "keywords": "pourquoi choisir PerkFlow, philosophie PerkFlow, récompenses centrées sur les personnes, plateforme de reconnaissance Pourquoi Nous Choisir, culture de la reconnaissance"
+  },
+  "CareersMetadata": {
+    "title": "Carrières",
+    "description": "Rejoignez l'équipe PerkFlow et aidez à construire le futur des récompenses, de la reconnaissance et de la culture employés. Explorez les postes, les valeurs et l'ambiance de travail.",
+    "imageAlt": "Opportunités de carrières PerkFlow",
+    "og": {
+      "title": "Carrières – PerkFlow",
+      "description": "Chez PerkFlow, notre mission est de rendre la motivation mesurable et les récompenses significatives. Si vous êtes motivé(e), créatif(ve) et axé(e) sur l'équipe, vous vous sentirez chez vous."
+    },
+    "twitter": {
+      "title": "Carrières – PerkFlow",
+      "description": "Construisez votre carrière chez PerkFlow — où la reconnaissance, la croissance et l'esprit d'équipe comptent. Découvrez nos valeurs, notre culture et nos postes ouverts."
+    },
+    "keywords": "Carrières PerkFlow, travailler chez PerkFlow, emplois dans une entreprise de récompenses employés, carrières dans les technologies de reconnaissance, culture d'équipe PerkFlow"
   }
 }

@@ -9,7 +9,7 @@ import type {
 
 // Payload CMS API Configuration
 const PAYLOAD_CMS_BASE_URL =
-  process.env.PAYLOAD_CMS_URL || "http://localhost:3001";
+  process.env.PAYLOAD_CMS_URL || "https://cms.perkflow.io";
 
 const isServer = typeof window === "undefined";
 

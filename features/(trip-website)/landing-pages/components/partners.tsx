@@ -12,6 +12,8 @@ import partnerIcon9 from "@/assets/icons/patner-9.svg";
 import partnerIcon10 from "@/assets/icons/patner-10.svg";
 import partnerIcon11 from "@/assets/icons/patner-11.svg";
 import partnerIcon12 from "@/assets/icons/patner-12.svg";
+import Container from "@/components/layouts/container";
+
 
 const logosTop = [
   partnerIcon1,
@@ -38,20 +40,26 @@ export default function Partners() {
   const t = useTranslations("HomePage");
 
   return (
-    <div className="dark:bg-grid-white/[0.05] relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-md bg-white/20 px-2 py-6 antialiased md:px-4 dark:bg-black">
-      <h1 className="mb-4 mt-4 text-center text-xl font-medium text-[#495057] md:text-2xl">
-        {t("Partners.heading")}
-      </h1>
-      <div className="max-w-6xl">
-        <InfiniteMovingCards items={logosTop} direction="right" speed="fast" />
+    <Container className="px-2 sm:px-3 lg:px-4">
+      <div className="dark:bg-grid-white/[0.05] relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-md bg-white/20 px-2 py-6 antialiased md:px-4 dark:bg-black">
+        <h1 className="mb-4 mt-4 text-center text-xl font-medium text-[#495057] md:text-2xl">
+          {t("Partners.heading")}
+        </h1>
+        <div className="max-w-6xl">
+          <InfiniteMovingCards
+            items={logosTop}
+            direction="right"
+            speed="fast"
+          />
+        </div>
+        <div className="max-w-3xl">
+          <InfiniteMovingCards
+            items={logosBottom}
+            direction="left"
+            speed="fast"
+          />
+        </div>
       </div>
-      <div className="max-w-3xl">
-        <InfiniteMovingCards
-          items={logosBottom}
-          direction="left"
-          speed="fast"
-        />
-      </div>
-    </div>
+    </Container>
   );
 }
