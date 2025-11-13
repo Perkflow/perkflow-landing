@@ -32,7 +32,7 @@ export default function Careers() {
         </div>
 
         {/* Image Layout */}
-        <div className="flex max-h-[315px] w-full gap-4">
+        <div className="flex max-h-[315px] w-full gap-4 max-w-7xl">
           {/* Column 1 */}
           <div className="flex flex-col gap-4">
             <div
