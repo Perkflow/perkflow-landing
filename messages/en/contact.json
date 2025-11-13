@@ -24,7 +24,12 @@
         "placeholder": "Type your message here..."
       },
       "submitButton": {
-        "text": "Submit"
+        "text": "Submit",
+        "submitting": "Sending..."
+      },
+      "errorMessage": {
+        "requiredFields": "Please fill in the required fields",
+        "generic": "Error sending message"
       },
       "successMessage": {
         "text": "Thank you for your message! We'll get back to you soon."
