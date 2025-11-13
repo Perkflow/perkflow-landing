@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   return {
     title: {
-      template: "%s | Perkflow",
+      template: "%s – PerkFlow",
       default: t("title.default"),
     },
     description: t("description"),

@@ -12,16 +12,51 @@ import { Lora } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { SocialShareButtons } from "@/features/(trip-website)/landing-pages/components/articles/social-share-buttons";
 import { getTranslations } from "next-intl/server";
+// import type { Metadata, ResolvingMetadata } from 'next';
+
 const articleFont = Lora({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
+// type Props = {
+//   params: { slug: string };
+//   searchParams: { [key: string]: string | string[] | undefined };
+// };
+
+// export async function generateMetadata(
+//   { params }: Props,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> {
+
+//   const article: Article | null = await loadArticleBySlug(
+//     params.slug,
+//     params.locale
+//   );
+
+//   // 2. Optionally, access and extend parent metadata
+//   const previousImages = (await parent).openGraph?.images || [];
+
+//   // 3. Return the dynamic metadata
+//   return {
+//     title: article.title,
+//     description: article.excerpt, // Or a more detailed description
+//     openGraph: {
+//       images: [
+//         article.featuredImage || "/default-og-image.jpg",
+//         ...previousImages,
+//       ],
+//       // Add other Open Graph properties as needed
+//     },
+//     // Add other metadata properties like keywords, author, etc.
+//   };
+// }
+
 export default async function ArticleDetailPage({ params }: any) {
   const resolvedParams = await params;
   const article: Article | null = await loadArticleBySlug(
     resolvedParams.slug,
-    resolvedParams.locale,
+    resolvedParams.locale
   );
   if (!article) {
     notFound();

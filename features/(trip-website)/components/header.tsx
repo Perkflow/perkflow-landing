@@ -63,7 +63,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-16">
             <Logo />
-            <div className="hidden md:flex md:items-center md:space-x-8">
+            <div className="hidden lg:flex md:items-center md:space-x-8">
               <div
                 className=""
                 onMouseEnter={() => setOpen(true)}
@@ -97,11 +97,11 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="hidden space-x-4 md:flex">
+            <div className="hidden space-x-4 lg:flex">
               <LanguageSwitcher />
               <AuthButtons />
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <MobileToggle
                 open={mobileOpen}
                 onToggle={() => setMobileOpen((prev) => !prev)}
