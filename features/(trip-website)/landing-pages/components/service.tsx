@@ -52,7 +52,7 @@ export default function Service() {
 
   return (
     <section className="relative bg-[#003B4A] py-20 text-white">
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         <div className="relative z-10 mx-auto max-w-2xl space-y-4 px-2 text-center">
           <div className="inline-block rounded-full bg-white/10 px-5 py-2 text-xs font-semibold tracking-wider text-white uppercase md:text-sm">
             • {t("Service.caption")}
@@ -75,7 +75,7 @@ export default function Service() {
             }}
           />
 
-          <div className="relative z-10 mt-12 grid grid-cols-1 gap-8 gap-y-8 px-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="relative z-10 mt-12 grid grid-cols-1 gap-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((svc) => (
               <div
                 key={svc.title}

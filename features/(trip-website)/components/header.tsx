@@ -59,11 +59,11 @@ export default function Header() {
         isOpaque ? "bg-white/50" : "bg-white",
       )}
     >
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-16">
+          <div className="flex items-center lg:gap-16">
             <Logo />
-            <div className="hidden lg:flex md:items-center md:space-x-8">
+            <div className="hidden lg:flex items-center gap-8">
               <div
                 className=""
                 onMouseEnter={() => setOpen(true)}
@@ -96,8 +96,8 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="hidden space-x-4 lg:flex">
+          <div className="flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3">
               <LanguageSwitcher />
               <AuthButtons />
             </div>

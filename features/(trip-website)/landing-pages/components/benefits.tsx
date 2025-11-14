@@ -57,7 +57,7 @@ export default function Benefits() {
           filter: "blur(6px)",
         }}
       />
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         <div className="relative z-10 gap-12 px-2">
           {/* Text Column */}
           <div className="w-full">

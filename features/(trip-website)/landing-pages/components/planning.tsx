@@ -10,7 +10,7 @@ export default function Planning() {
 
   return (
     <section className="bg-[#003B4A] py-32 text-white">
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         <div className="flex flex-col items-center justify-between gap-12 px-2 md:flex-row md:items-center">
           <Image
             src={planningImg}
