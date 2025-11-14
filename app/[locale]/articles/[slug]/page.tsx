@@ -12,45 +12,110 @@ import { Lora } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { SocialShareButtons } from "@/features/(trip-website)/landing-pages/components/articles/social-share-buttons";
 import { getTranslations } from "next-intl/server";
-// import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata } from "next";
 
 const articleFont = Lora({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
-// type Props = {
-//   params: { slug: string };
-//   searchParams: { [key: string]: string | string[] | undefined };
-// };
+// Fonction pour générer les métadonnées
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const resolvedParams = await params;
+  const article: Article | null = await loadArticleBySlug(
+    resolvedParams.slug,
+    resolvedParams.locale
+  );
 
-// export async function generateMetadata(
-//   { params }: Props,
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
+  if (!article) {
+    return {
+      title: "Article not found",
+      description: "The item you are looking for does not exist.",
+    };
+  }
 
-//   const article: Article | null = await loadArticleBySlug(
-//     params.slug,
-//     params.locale
-//   );
+  const locale = await getLocale();
+  const baseUrl = "https://perkflow.io";
+  const canonicalUrl =
+    locale === "en"
+      ? `${baseUrl}/articles/${article.slug}`
+      : `${baseUrl}/${locale}/articles/${article.slug}`;
 
-//   // 2. Optionally, access and extend parent metadata
-//   const previousImages = (await parent).openGraph?.images || [];
+  // Get article image
+  const getArticleImage = (current: Article | null) => {
+    if (!current) return null;
+    const candidates = [
+      current.featuredImage?.url,
+      current.featuredImage?.originalUrl,
+      current.featuredImage?.normalizedPath,
+      current.image,
+    ];
 
-//   // 3. Return the dynamic metadata
-//   return {
-//     title: article.title,
-//     description: article.excerpt, // Or a more detailed description
-//     openGraph: {
-//       images: [
-//         article.featuredImage || "/default-og-image.jpg",
-//         ...previousImages,
-//       ],
-//       // Add other Open Graph properties as needed
-//     },
-//     // Add other metadata properties like keywords, author, etc.
-//   };
-// }
+    for (const candidate of candidates) {
+      const resolved = resolveMediaUrl(candidate);
+      if (resolved) return resolved;
+    }
+    return null;
+  };
+
+  const heroImage = getArticleImage(article);
+  const imageUrl = heroImage
+    ? new URL(heroImage, canonicalUrl).toString()
+    : null;
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: article.seo?.metaTitle || article.title,
+    description: article.seo?.metaDescription || article.excerpt,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    keywords: article.seo?.keywords?.join(", "),
+
+    // Open Graph (Facebook, LinkedIn, etc.)
+    openGraph: {
+      title: article.seo?.metaTitle || article.title,
+      description: article.seo?.metaDescription || article.excerpt,
+      type: "article",
+      phoneNumbers: "+1 (716) 451-3912",
+      emails: "hello@perkflow.io",
+      url: canonicalUrl,
+      ...(imageUrl && {
+        images: [
+          {
+            url: imageUrl,
+            width: article.featuredImage?.width,
+            height: article.featuredImage?.height,
+            alt: article.featuredImage?.alt,
+          },
+        ],
+      }),
+      locale: locale,
+      siteName: "@PerkFlow",
+      publishedTime: article.publishedAt,
+      authors: article.author ? [article.author] : undefined,
+    },
+
+    // Twitter Card
+    twitter: {
+      card: "summary_large_image",
+      title: article.seo?.metaTitle || article.title,
+      description: article.seo?.metaDescription || article.excerpt,
+      ...(imageUrl && {
+        images: {
+          url: imageUrl,
+          alt: article.featuredImage?.alt,
+        },
+      }),
+      site: "@PerkFlow",
+    },
+
+    authors: article.author ? [{ name: article.author }] : undefined,
+    ...(article.publishedAt && {
+      publishedTime: article.publishedAt,
+    }),
+  };
+}
 
 export default async function ArticleDetailPage({ params }: any) {
   const resolvedParams = await params;
