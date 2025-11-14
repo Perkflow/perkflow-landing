@@ -1,4 +1,5 @@
 import flowerImg from "@/assets/icons/feature-flower.svg";
+import Container from "@/components/layouts/container";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -34,29 +35,30 @@ export default function Impact() {
       <div className="absolute top-1/2 -right-12 -translate-y-1/5 transform opacity-20">
         <Image src={flowerImg} alt="bg image" className="h-auto w-52" />
       </div>
-
-      {/* Content */}
-      <h2 className="mx-auto mb-4 max-w-2xl text-center text-3xl font-semibold lg:text-5xl">
-        {t("Impact.heading")}
-      </h2>
-      <p className="mx-auto mb-10 max-w-xl text-center text-sm text-white lg:text-base">
-        {t("Impact.subheading")}
-      </p>
-      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
-        {stats.map((stat, idx) => (
-          <div
-            key={idx}
-            className="group h-[150px] rounded-2xl bg-[#004557] px-4 py-6 transition-all duration-500 ease-in-out hover:bg-[#005C73] lg:h-[200px]"
-          >
-            <h1 className="mb-2 text-3xl font-semibold text-[#F8F9FA] group-hover:text-[#9AD3BC]">
-              {stat.value}
-            </h1>
-            <p className="w-[70%] text-sm text-[#CED4DA] group-hover:text-[#9DD4BE]">
-              {stat.description}
-            </p>
-          </div>
-        ))}
-      </div>
+      <Container>
+        {/* Content */}
+        <h2 className="mx-auto mb-4 max-w-2xl text-center text-3xl font-semibold lg:text-5xl">
+          {t("Impact.heading")}
+        </h2>
+        <p className="mx-auto mb-10 max-w-xl text-center text-sm text-white lg:text-base">
+          {t("Impact.subheading")}
+        </p>
+        <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+          {stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="group h-[150px] rounded-2xl bg-[#004557] px-4 py-6 transition-all duration-500 ease-in-out hover:bg-[#005C73] lg:h-[200px]"
+            >
+              <h1 className="mb-2 text-3xl font-semibold text-[#F8F9FA] group-hover:text-[#9AD3BC]">
+                {stat.value}
+              </h1>
+              <p className="w-[70%] text-sm text-[#CED4DA] group-hover:text-[#9DD4BE]">
+                {stat.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
     </div>
   );
 }

@@ -20,7 +20,9 @@ export async function generateMetadata({
   });
   const baseUrl = "https://perkflow.io";
   const canonicalUrl =
-    locale === "en" ? `${baseUrl}/enterprise` : `${baseUrl}/${locale}/enterprise`;
+    locale === "en"
+      ? `${baseUrl}/enterprise`
+      : `${baseUrl}/${locale}/enterprise`;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -69,10 +71,8 @@ export default function EnterprisePage() {
   return (
     <>
       <Enterprise />
-      <div className="max-w-7xl mx-auto">
-        <Partners />
-        <Incentives />
-      </div>
+      <Partners />
+      <Incentives />
       <Purpose />
       <Objectives />
       <Features />

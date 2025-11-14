@@ -244,14 +244,14 @@ export default function HeroSection() {
           }}
         />
       )}
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         {/* Hero content - Two column layout for home, centered for waitlist */}
-        <div className="relative z-10 mx-auto h-full px-4">
+        <div className="relative z-10 h-full">
           {isHome ? (
             // Two-column layout for home page with rotating content
             <div className="grid min-h-[500px] grid-cols-1 items-center gap-8 lg:min-h-[600px] lg:grid-cols-2 lg:gap-12">
               {/* Right Column - Visual Content */}
-              <div className="relative order-2 flex justify-center lg:order-2 lg:justify-start">
+              <div className="relative order-2 flex justify-center lg:order-2 lg:justify-end">
                 <div
                   className={`transition-all duration-1000 ease-in-out ${
                     currentHeroIndex === 1 ? "mt-6 md:mt-10 md:scale-115" : ""

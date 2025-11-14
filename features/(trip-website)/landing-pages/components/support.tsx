@@ -33,7 +33,7 @@ export default function Support() {
 
   return (
     <section className="bg-[#f5f7fa] py-20" id="support">
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         <div className="flex flex-col-reverse items-center justify-between gap-12 px-2 md:flex-row-reverse">
           {/* Text Column */}
           <div className="w-full space-y-6 md:w-[40%]">

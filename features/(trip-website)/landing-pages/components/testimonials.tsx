@@ -64,7 +64,7 @@ export default function Testimonials() {
           {t("Testimonials.subheading")}
         </p>
       </div>
-      <Container className="px-2 sm:px-3 lg:px-4">
+      <Container>
         <div className="mt-12 grid grid-cols-1 gap-8 px-2 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((i) => (
             <div

@@ -3,6 +3,7 @@ import nvidiaLogo from "@/assets/images/logo-nvidia.svg";
 import awsLogo from "@/assets/images/logo-aws.svg";
 import microsoftLogo from "@/assets/images/logo-microsoft.svg";
 import googleCloudLogo from "@/assets/images/logo-google-cloud.svg";
+import Container from "@/components/layouts/container";
 import Image from "next/image";
 
 export default function LeadingCompanies() {
@@ -31,12 +32,13 @@ export default function LeadingCompanies() {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-8 bg-white px-4 py-10 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8 items-center justify-center">
-        <p className="w-full text-center text-gray-700 lg:w-[60%]">
+    <div className="flex flex-col items-center gap-8 bg-white px-4 py-10">
+      <Container>
+      <div className="max-w-5xl mx-auto flex flex-col gap-8 items-center justify-center">
+        <p className="w-full text-center text-gray-700">
           {t("leading_companies.text")}
         </p>
-        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-4 lg:w-[80%]">
+        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-4">
           {logos.map((logo) => (
             <div
               key={logo.id}
@@ -47,6 +49,7 @@ export default function LeadingCompanies() {
           ))}
         </div>
       </div>
+      </Container>
     </div>
   );
 }

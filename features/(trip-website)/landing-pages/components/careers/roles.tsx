@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDown, Briefcase } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Container from "@/components/layouts/container";
 
 interface RoleItem {
   name: string;
@@ -112,8 +113,8 @@ export default function Roles() {
   );
 
   return (
-    <div id="open-roles" className="bg-white px-4 py-6">
-      <div className="mx-auto max-w-7xl">
+    <div id="open-roles" className="bg-white py-6">
+      <Container>
         <h1 className="mb-6 text-2xl font-bold">{t("openRole.heading")}</h1>
 
         {/* Filters */}
@@ -265,7 +266,7 @@ export default function Roles() {
             />
           )}
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

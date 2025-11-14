@@ -4,6 +4,7 @@ import feature2 from "@/assets/icons/feature-2.svg";
 import feature3 from "@/assets/icons/feature-3.svg";
 import feature4 from "@/assets/icons/feature-4.svg";
 import { useTranslations } from "next-intl";
+import Container from "@/components/layouts/container";
 
 export default function Features() {
   const t = useTranslations("Enterprise_Page.Features");
@@ -31,33 +32,35 @@ export default function Features() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-10 bg-white px-4 py-10 md:px-20 md:py-20">
-      <div className="flex flex-col gap-10 max-w-7xl mx-auto">
-        <div className="w-full text-center md:text-start">
-          <h1 className="text-2xl  font-bold text-gray-900 md:text-4xl">
-            {t("heading")}
-          </h1>
-        </div>
+    <div className="flex flex-col items-center gap-10 bg-white py-10  md:py-20">
+      <Container>
+        <div className="flex flex-col gap-10">
+          <div className="w-full text-center md:text-start">
+            <h1 className="text-2xl  font-bold text-gray-900 md:text-4xl">
+              {t("heading")}
+            </h1>
+          </div>
 
-        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {philosophy.map(({ icon, title, content }) => (
-            <div
-              key={title}
-              className="flex flex-col items-center gap-4 rounded-lg bg-(--lavender-mist) p-6 transition hover:shadow-md md:items-start"
-            >
-              <Image src={icon} alt={`${title} icon`} className="h-10 w-10" />
-              <div>
-                <h2 className="text-center text-lg font-semibold text-(--chart-10) md:text-left">
-                  {title}
-                </h2>
-                <p className="text-center text-sm text-(--chart-11) md:text-left md:text-base">
-                  {content}
-                </p>
+          <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {philosophy.map(({ icon, title, content }) => (
+              <div
+                key={title}
+                className="flex flex-col items-center gap-4 rounded-lg bg-(--lavender-mist) p-6 transition hover:shadow-md md:items-start"
+              >
+                <Image src={icon} alt={`${title} icon`} className="h-10 w-10" />
+                <div>
+                  <h2 className="text-center text-lg font-semibold text-(--chart-10) md:text-left">
+                    {title}
+                  </h2>
+                  <p className="text-center text-sm text-(--chart-11) md:text-left md:text-base">
+                    {content}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }
