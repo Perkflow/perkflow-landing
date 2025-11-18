@@ -51,41 +51,38 @@ jobs:
           
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
       
-      - name: Deploy to EC2
-        env:
-          EC2_HOST: ${{ secrets.EC2_HOST }}
-          EC2_USER: ec2-user
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Deploy to EC2 via SSM
         run: |
-          # Setup SSH
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
+          # Get first running EC2 instance
+          INSTANCE_ID=$(aws ec2 describe-instances \
+            --filters "Name=tag:Project,Values=Perflow" "Name=instance-state-name,Values=running" \
+            --query "Reservations[0].Instances[0].InstanceId" \
+            --output text \
+            --region us-east-1)
           
-          # Deploy to EC2
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST << 'EOF'
-            # Login to ECR
-            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 048204778361.dkr.ecr.us-east-1.amazonaws.com
-            
-            # Pull latest image
-            docker pull 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest
-            
-            # Stop and remove old container
-            docker stop perkflow-landing || true
-            docker rm perkflow-landing || true
-            
-            # Run new container
-            docker run -d \
-              --name perkflow-landing \
-              --restart unless-stopped \
-              -p 3000:3000 \
-              -e PAYLOAD_CMS_URL=${{ secrets.PAYLOAD_CMS_URL }} \
-              -e NEXT_PUBLIC_HOST=${{ secrets.NEXT_PUBLIC_HOST }} \
-              048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest
-            
-            # Clean up old images
-            docker image prune -af --filter "until=24h"
-          EOF
+          echo "Deploying to instance: $INSTANCE_ID"
+          
+          # Deploy via SSM
+          aws ssm send-command \
+            --instance-ids $INSTANCE_ID \
+            --document-name "AWS-RunShellScript" \
+            --parameters 'commands=[
+              "echo \"Logging into ECR...\"",
+              "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 048204778361.dkr.ecr.us-east-1.amazonaws.com",
+              "echo \"Pulling latest image...\"",
+              "docker pull 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
+              "echo \"Stopping old container...\"",
+              "docker stop perkflow-landing || true",
+              "docker rm perkflow-landing || true",
+              "echo \"Starting new container...\"",
+              "docker run -d --name perkflow-landing --restart unless-stopped -p 3000:3000 -e PAYLOAD_CMS_URL='"'"'${{ secrets.PAYLOAD_CMS_URL }}'"'"' -e NEXT_PUBLIC_HOST='"'"'${{ secrets.NEXT_PUBLIC_HOST }}'"'"' 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
+              "echo \"Cleaning up old images...\"",
+              "docker image prune -af --filter \"until=24h\"",
+              "echo \"✅ Deployment complete!\"",
+              "docker ps | grep perkflow-landing"
+            ]' \
+            --region us-east-1 \
+            --output text
       
       - name: Notify Slack - Success
         if: success()
