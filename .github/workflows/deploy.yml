@@ -53,18 +53,18 @@ jobs:
       
       - name: Deploy to EC2 via SSM
         run: |
-          # Get first running EC2 instance
-          INSTANCE_ID=$(aws ec2 describe-instances \
+          # Get all running EC2 instances
+          INSTANCE_IDS=$(aws ec2 describe-instances \
             --filters "Name=tag:Project,Values=Perflow" "Name=instance-state-name,Values=running" \
-            --query "Reservations[0].Instances[0].InstanceId" \
+            --query "Reservations[*].Instances[*].InstanceId" \
             --output text \
-            --region us-east-1)
+            --region us-east-1 | tr '\t' ' ')
           
-          echo "Deploying to instance: $INSTANCE_ID"
+          echo "Deploying to instances: $INSTANCE_IDS"
           
-          # Deploy via SSM
+          # Deploy via SSM to all instances
           aws ssm send-command \
-            --instance-ids $INSTANCE_ID \
+            --targets "Key=tag:Project,Values=Perflow" \
             --document-name "AWS-RunShellScript" \
             --parameters 'commands=[
               "echo \"Logging into ECR...\"",
