@@ -75,7 +75,7 @@ jobs:
               "docker stop perkflow-landing || true",
               "docker rm perkflow-landing || true",
               "echo \"Starting new container...\"",
-              "docker run -d --name perkflow-landing --restart unless-stopped -p 3000:3000 -e PAYLOAD_CMS_URL='"'"'${{ secrets.PAYLOAD_CMS_URL }}'"'"' -e NEXT_PUBLIC_HOST='"'"'${{ secrets.NEXT_PUBLIC_HOST }}'"'"' 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
+              "docker run -d --name perkflow-landing --restart unless-stopped -p 80:3000 -e PAYLOAD_CMS_URL='"'"'${{ secrets.PAYLOAD_CMS_URL }}'"'"' -e NEXT_PUBLIC_HOST='"'"'${{ secrets.NEXT_PUBLIC_HOST }}'"'"' 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
               "echo \"Cleaning up old images...\"",
               "docker image prune -af --filter \"until=24h\"",
               "echo \"✅ Deployment complete!\"",
