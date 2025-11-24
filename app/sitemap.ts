@@ -31,9 +31,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: route === "" ? 1.0 : 0.8,
-    })),
+    }))
   );
-
 
   // Fetch dynamic articles from your CMS
   const articleEntries = await getArticleEntries();
@@ -43,15 +42,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
   try {
-    const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_CMS_URL || process.env.PAYLOAD_CMS_URL || "https://cms.perkflow.io";
+    const PAYLOAD_URL =
+      process.env.NEXT_PUBLIC_PAYLOAD_CMS_URL ||
+      process.env.PAYLOAD_CMS_URL ||
+      "https://cms.perkflow.io";
 
     if (!PAYLOAD_URL) {
       console.warn("NEXT_PUBLIC_PAYLOAD_CMS_URL not set, skipping articles");
       return [];
     }
 
-    // Fetch articles from Payload CMS
-    const response = await fetch(`${PAYLOAD_URL}/api/posts?limit=1000`, {
+    const queryParams = new URLSearchParams({
+      limit: "1000",
+      where: JSON.stringify({ status: { equals: "published" } }),
+      depth: "0",
+    });
+
+    // Fetch published articles from Payload CMS
+    const response = await fetch(`${PAYLOAD_URL}/api/posts?${queryParams.toString()}`, {
       next: { revalidate: 3600 }, // Revalidate every hour
     });
 
@@ -66,11 +74,13 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
     // Generate sitemap entries for each article in all locales
     return articles.flatMap((article: { slug: string; updatedAt: string }) =>
       LOCALES.map((locale) => ({
-        url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${article.slug}`,
+        url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${
+          article.slug
+        }`,
         lastModified: new Date(article.updatedAt),
         changeFrequency: "monthly" as const,
         priority: 0.6,
-      })),
+      }))
     );
   } catch (error) {
     console.error("Error fetching articles for sitemap:", error);
