@@ -43,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
   try {
-    const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_CMS_URL;
+    const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_CMS_URL || process.env.PAYLOAD_CMS_URL || "https://cms.perkflow.io";
 
     if (!PAYLOAD_URL) {
       console.warn("NEXT_PUBLIC_PAYLOAD_CMS_URL not set, skipping articles");
@@ -51,7 +51,7 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Fetch articles from Payload CMS
-    const response = await fetch(`${PAYLOAD_URL}/api/articles?limit=1000`, {
+    const response = await fetch(`${PAYLOAD_URL}/api/posts?limit=1000`, {
       next: { revalidate: 3600 }, // Revalidate every hour
     });
 
