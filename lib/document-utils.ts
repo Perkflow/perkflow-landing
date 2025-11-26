@@ -23,6 +23,35 @@ export function getLocalizedSlug(
   return translation?.slug || post.slug || "";
 }
 
+// Get available languages for a post (from documentation)
+export function getAvailableLanguages(post: Article | CMSPost): string[] {
+  const languages = ["en"]; // Default slug is typically English
+
+  if (post.languageSlugs) {
+    post.languageSlugs.forEach((item) => {
+      languages.push(item.language);
+    });
+  }
+
+  return languages;
+}
+
+// Get slug for a specific language (from documentation)
+export function getSlugForLanguage(
+  post: Article | CMSPost,
+  language: string,
+): string | null {
+  if (language === "en") {
+    return post.slug || null;
+  }
+
+  const translation = post.languageSlugs?.find(
+    (item) => item.language === language,
+  );
+
+  return translation?.slug || null;
+}
+
 // Function to get content preview (first two lines)
 export function getContentPreview(content: string): string {
   const lines = content.split("\n").filter((line) => line.trim().length > 0);
