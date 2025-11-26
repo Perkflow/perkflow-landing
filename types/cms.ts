@@ -53,6 +53,11 @@ export interface CMSPost {
   id: string;
   title: string;
   slug: string;
+  languageSlugs?: Array<{
+    language: "en" | "fr";
+    slug: string;
+    id: string;
+  }> | null;
   excerpt?: string;
   content?: any; // Lexical editor content
   category: CMSCategory;
@@ -113,6 +118,11 @@ export interface Article {
   contentPreview: string;
   // Additional CMS fields
   slug?: string;
+  languageSlugs?: Array<{
+    language: "en" | "fr";
+    slug: string;
+    id: string;
+  }> | null;
   excerpt?: string;
   category?: {
     id: string;

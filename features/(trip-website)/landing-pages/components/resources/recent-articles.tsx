@@ -24,6 +24,7 @@ export default async function RecentArticles() {
             articles={articles}
             loadMoreLabel={t("recent_articles.load_more")}
             showLessLabel={t("recent_articles.show_less")}
+            locale={locale}
           />
         ) : (
           <div className="flex items-center justify-center py-12">

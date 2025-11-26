@@ -4,6 +4,25 @@ import { resolveMediaUrl } from "@/lib/media";
 
 // Removed TXT extraction and fallback
 
+// Helper function to get localized slug for a given language
+export function getLocalizedSlug(
+  post: Article | CMSPost,
+  language: string,
+): string {
+  // For English or if no languageSlugs, return default slug
+  if (language === "en" || !post.languageSlugs) {
+    return post.slug || "";
+  }
+
+  // Find translation for the requested language
+  const translation = post.languageSlugs.find(
+    (item) => item.language === language,
+  );
+
+  // Return translated slug or fallback to default
+  return translation?.slug || post.slug || "";
+}
+
 // Function to get content preview (first two lines)
 export function getContentPreview(content: string): string {
   const lines = content.split("\n").filter((line) => line.trim().length > 0);
@@ -149,6 +168,7 @@ export function convertPayloadPostToArticle(post: CMSPost): Article {
     contentPreview,
     // Additional CMS fields
     slug: post.slug,
+    languageSlugs: post.languageSlugs,
     excerpt: post.excerpt,
     category: post.category
       ? {

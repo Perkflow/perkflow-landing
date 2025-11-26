@@ -15,7 +15,7 @@ const isServer = typeof window === "undefined";
 
 async function serverFetchJSON<T>(
   input: string,
-  init?: RequestInit,
+  init?: RequestInit
 ): Promise<T> {
   const res = await fetch(input, init);
   if (!res.ok) {
@@ -38,7 +38,7 @@ class PayloadAPI {
 
   // Posts API
   async getPosts(
-    filters?: CMSPostFilters,
+    filters?: CMSPostFilters
   ): Promise<CMSPaginatedResponse<CMSPost>> {
     try {
       // On the server, fetch directly from Payload CMS to avoid a self HTTP hop
@@ -68,7 +68,7 @@ class PayloadAPI {
               CMSPaginatedResponse<CMSCategory>
             >(
               `${PAYLOAD_CMS_BASE_URL}/api/categories?${catParams.toString()}`,
-              { cache: "no-store" },
+              { cache: "no-store" }
             );
             const categoryId = catData?.docs?.[0]?.id;
             if (categoryId) {
@@ -86,7 +86,7 @@ class PayloadAPI {
 
         const data = await serverFetchJSON<CMSPaginatedResponse<CMSPost>>(
           `${PAYLOAD_CMS_BASE_URL}/api/posts?${queryParams.toString()}`,
-          { next: { revalidate: 300 } },
+          { next: { revalidate: 300 } }
         );
         return data;
       }
@@ -112,6 +112,32 @@ class PayloadAPI {
   async getPostBySlug(slug: string, locale: string): Promise<CMSPost | null> {
     try {
       if (isServer) {
+        // Try language-specific slug first (if not English)
+        if (locale !== "en") {
+          const localizedQueryParams = new URLSearchParams();
+          localizedQueryParams.set("where[languageSlugs.slug][equals]", slug);
+          localizedQueryParams.set("where[status][equals]", "published");
+          localizedQueryParams.set("limit", "1");
+          localizedQueryParams.set("depth", "2");
+          localizedQueryParams.set("locale", locale);
+
+          const localizedData = await serverFetchJSON<{
+            docs?: CMSPost[];
+          }>(
+            `${PAYLOAD_CMS_BASE_URL}/api/posts?${localizedQueryParams.toString()}`,
+            {
+              cache: "no-store",
+            }
+          );
+
+          const localizedDoc =
+            (localizedData?.docs && localizedData.docs[0]) || null;
+          if (localizedDoc) {
+            return localizedDoc;
+          }
+        }
+
+        // Fallback to default slug
         const queryParams = new URLSearchParams();
         queryParams.set("where[slug][equals]", slug);
         queryParams.set("where[status][equals]", "published");
@@ -139,7 +165,7 @@ class PayloadAPI {
       if (isServer) {
         const data = await serverFetchJSON<CMSPost | null>(
           `${PAYLOAD_CMS_BASE_URL}/api/posts/${id}`,
-          { cache: "no-store" },
+          { cache: "no-store" }
         );
         return data;
       }
@@ -153,7 +179,7 @@ class PayloadAPI {
 
   // Categories API
   async getCategories(
-    filters?: CMSCategoryFilters,
+    filters?: CMSCategoryFilters
   ): Promise<CMSPaginatedResponse<CMSCategory>> {
     try {
       if (isServer) {
@@ -171,7 +197,7 @@ class PayloadAPI {
         }
         const data = await serverFetchJSON<CMSPaginatedResponse<CMSCategory>>(
           `${PAYLOAD_CMS_BASE_URL}/api/categories?${queryParams.toString()}`,
-          { next: { revalidate: 300 } },
+          { next: { revalidate: 300 } }
         );
         return data;
       }
@@ -184,7 +210,7 @@ class PayloadAPI {
         });
       }
       const response = await axios.get(
-        `/api/cms/categories?${queryParams.toString()}`,
+        `/api/cms/categories?${queryParams.toString()}`
       );
       return response.data;
     } catch (error) {
@@ -213,14 +239,14 @@ class PayloadAPI {
   // Search functionality
   async searchPosts(
     query: string,
-    filters?: Omit<CMSPostFilters, "search">,
+    filters?: Omit<CMSPostFilters, "search">
   ): Promise<CMSPaginatedResponse<CMSPost>> {
     return this.getPosts({ ...filters, search: query });
   }
 
   // Featured content
   async getFeaturedPosts(
-    limit: number = 5,
+    limit: number = 5
   ): Promise<CMSPaginatedResponse<CMSPost>> {
     return this.getPosts({
       limit,

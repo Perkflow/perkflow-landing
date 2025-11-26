@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { getResourceArticles } from "./resources-data";
 import { getLocale } from "next-intl/server";
 import Container from "@/components/layouts/container";
+import { getLocalizedSlug } from "@/lib/document-utils";
 
 function getArticleImage(imageSrc?: string | null) {
   return resolveMediaUrl(imageSrc) || recentEvent;
@@ -37,7 +38,7 @@ export default async function Recognition() {
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-[#ABDEC980] via-[#D5EEE480] to-transparent" />
         {/* Left Featured Article */}
         <div className="w-full md:w-1/2">
-          <Link href={`/articles/${featured.slug}`} className="block">
+          <Link href={`/articles/${getLocalizedSlug(featured, locale)}`} className="block">
             <div className="relative h-[280px] w-full md:h-[300px]">
               <Image
                 src={getArticleImage(
@@ -68,7 +69,7 @@ export default async function Recognition() {
           {sideArticles.map((article) => (
             <Link
               key={article.id}
-              href={`/articles/${article.slug}`}
+              href={`/articles/${getLocalizedSlug(article, locale)}`}
               className="flex flex-col gap-4 md:flex-row md:items-start"
             >
               <div className="relative h-[180px] w-full md:h-[110px] md:w-[110px]">
