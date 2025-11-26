@@ -12,17 +12,14 @@ export async function GET(
   try {
     const { slug } = await params;
 
-    // Build query parameters
-    const queryParams = new URLSearchParams({
-      where: JSON.stringify({
-        slug: { equals: slug },
-        status: { equals: "published" },
-      }),
-      limit: "1",
-      depth: "2", // Include related data
-    });
+    // First try to find by languageSlugs (for localized slugs)
+    let queryParams = new URLSearchParams();
+    queryParams.set("where[languageSlugs.slug][equals]", slug);
+    queryParams.set("where[status][equals]", "published");
+    queryParams.set("limit", "1");
+    queryParams.set("depth", "2");
 
-    const response = await fetch(
+    let response = await fetch(
       `${PAYLOAD_CMS_BASE_URL}/api/posts?${queryParams.toString()}`
     );
 
@@ -30,10 +27,29 @@ export async function GET(
       throw new Error(`CMS API error: ${response.status}`);
     }
 
-    const data = await response.json();
+    let data = await response.json();
 
+    // If not found in languageSlugs, try default slug field
     if (!data.docs || data.docs.length === 0) {
-      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+      queryParams = new URLSearchParams();
+      queryParams.set("where[slug][equals]", slug);
+      queryParams.set("where[status][equals]", "published");
+      queryParams.set("limit", "1");
+      queryParams.set("depth", "2");
+
+      response = await fetch(
+        `${PAYLOAD_CMS_BASE_URL}/api/posts?${queryParams.toString()}`
+      );
+
+      if (!response.ok) {
+        throw new Error(`CMS API error: ${response.status}`);
+      }
+
+      data = await response.json();
+
+      if (!data.docs || data.docs.length === 0) {
+        return NextResponse.json({ error: "Post not found" }, { status: 404 });
+      }
     }
 
     const doc = data.docs[0];
