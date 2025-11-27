@@ -1,4 +1,6 @@
 import { MetadataRoute } from "next";
+import { getLocalizedSlug } from "@/lib/document-utils";
+import type { CMSPost } from "@/types/cms";
 
 const BASE_URL = "https://perkflow.io";
 const LOCALES = ["en", "fr"] as const;
@@ -55,7 +57,7 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
     const queryParams = new URLSearchParams({
       limit: "1000",
       where: JSON.stringify({ status: { equals: "published" } }),
-      depth: "0",
+      depth: "1", // Need depth to get languageSlugs
     });
 
     // Fetch published articles from Payload CMS
@@ -72,15 +74,16 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
     const articles = data.docs || [];
 
     // Generate sitemap entries for each article in all locales
-    return articles.flatMap((article: { slug: string; updatedAt: string }) =>
-      LOCALES.map((locale) => ({
-        url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${
-          article.slug
-        }`,
-        lastModified: new Date(article.updatedAt),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      }))
+    return articles.flatMap((article: CMSPost) =>
+      LOCALES.map((locale) => {
+        const localizedSlug = getLocalizedSlug(article, locale);
+        return {
+          url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${localizedSlug}`,
+          lastModified: new Date(article.updatedAt),
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        };
+      })
     );
   } catch (error) {
     console.error("Error fetching articles for sitemap:", error);

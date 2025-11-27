@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { Article } from "@/types/cms";
 import recentEvent from "@/assets/images/recent-event.jpg";
 import { resolveMediaUrl } from "@/lib/media";
+import { getLocalizedSlug } from "@/lib/document-utils";
 
 function getArticleImage(imageSrc?: string | null) {
   return resolveMediaUrl(imageSrc) || recentEvent;
@@ -15,12 +16,14 @@ interface RecentArticlesClientProps {
   articles: Article[];
   loadMoreLabel: string;
   showLessLabel: string;
+  locale: string;
 }
 
 export function RecentArticlesClient({
   articles,
   loadMoreLabel,
   showLessLabel,
+  locale,
 }: RecentArticlesClientProps) {
   const [visibleCount, setVisibleCount] = useState(6);
   const canShowMore = visibleCount < articles.length;
@@ -31,7 +34,7 @@ export function RecentArticlesClient({
         {articles.slice(0, visibleCount).map((article) => (
           <Link
             key={article.id}
-            href={`/articles/${article.slug}`}
+            href={`/articles/${getLocalizedSlug(article, locale)}`}
             className="block transition-transform hover:scale-[1.02]"
           >
             <article className="bg-card flex h-[400px] cursor-pointer flex-col overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(34,197,94,0.35)]">

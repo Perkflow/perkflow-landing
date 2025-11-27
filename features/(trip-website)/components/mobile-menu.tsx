@@ -46,12 +46,12 @@ const getCOMPANY = (t: (key: string) => string) => [
   },
   {
     name: t("navItems.company.item3.name"),
-    href: "/news",
+    href: "/trips",
     content: t("navItems.company.item3.content"),
   },
   {
     name: t("navItems.company.item4.name"),
-    href: "/customers",
+    href: "/award-ceremony",
     content: t("navItems.company.item2.content"),
   },
 ];
