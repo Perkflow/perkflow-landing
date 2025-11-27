@@ -5,6 +5,7 @@ import { ProviderWrapper } from "./provider-wrapper";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
+import { Toaster } from "sonner";
 import FooterSection from "@/features/(trip-website)/components/footer";
 import Header from "@/features/(trip-website)/components/header";
 import "./globals.css";
@@ -34,7 +35,7 @@ export async function generateMetadata({
 
   return {
     title: {
-      template: "%s | Perkflow",
+      template: "%s – PerkFlow",
       default: t("title.default"),
     },
     description: t("description"),
@@ -87,6 +88,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <FooterSection />
           </NextIntlClientProvider>
         </ProviderWrapper>
+        <Toaster richColors />
       </body>
     </html>
   );

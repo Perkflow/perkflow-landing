@@ -24,7 +24,12 @@
         "placeholder": "Écrivez votre message ici..."
       },
       "submitButton": {
-        "text": "Soumettre"
+        "text": "Submit",
+        "submitting": "Envoi en cours..."
+      },
+      "errorMessage": {
+        "requiredFields": "Veuillez remplir les champs obligatoires",
+        "generic": "Erreur lors de l'envoi du message"
       },
       "successMessage": {
         "text": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."

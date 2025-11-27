@@ -1,11 +1,12 @@
 import { GiftIcon, PiggyBankIcon, TargetIcon } from "lucide-react";
+import Container from "@/components/layouts/container";
 import { useTranslations } from "next-intl";
 
 export default function MakeGiftingSection() {
   const t = useTranslations("Gifts_Page.Make_Gifting_Easy");
   return (
     <section className="bg-[#003B4A] py-20 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 xl:px-0">
+      <Container>
         <h2 className="text-center text-2xl font-semibold text-white sm:text-5xl lg:text-5xl">
           {t("heading")}
         </h2>
@@ -42,7 +43,7 @@ export default function MakeGiftingSection() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

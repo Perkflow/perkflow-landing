@@ -2,7 +2,7 @@ import goalIcon from "@/assets/icons/goal.svg";
 import inviteIcon from "@/assets/icons/invite.svg";
 import setIcon from "@/assets/icons/set.svg";
 import rewardIcon from "@/assets/icons/reward.svg";
-
+import Container from "@/components/layouts/container";
 import benefitBg from "@/assets/images/benefit.png";
 import TitleTag from "@/components/atoms/title-tag";
 
@@ -57,69 +57,75 @@ export default function Benefits() {
           filter: "blur(6px)",
         }}
       />
-      <div className="relative z-10 mx-auto max-w-7xl gap-12 px-2">
-        {/* Text Column */}
-        <div className="w-full">
-          <div className="space-y-3">
-            <TitleTag title={t("Benefits.caption")} />
-            <h2 className="text-3xl font-semibold text-[#212529] md:text-4xl">
-              {t("Benefits.heading")}
-            </h2>
-            <p className="text-base text-[#495057]">
-              {t("Benefits.subheading")}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-between gap-20 md:flex-row">
-            <div className="flex flex-col md:w-2/4 md:flex-row">
-              <div className="flex flex-col">
-                <ul className="space-y-6">
-                  {BENEFITS.map(({ title, description, icon }) => (
-                    <li className="flex items-start space-x-3" key={title}>
-                      <Image
-                        src={icon}
-                        alt={title}
-                        className="h-6 w-6 text-orange-500"
-                      />
-                      <div>
-                        <h4 className="font-medium text-[#0B0019]">{title}</h4>
-                        <p className="mt-2 text-sm text-[#495057]">
-                          {description}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="">
-                  <ContactFormDialog
-                    title={t("ContactFormDialog.getStarted.title")}
-                    description={t("ContactFormDialog.getStarted.description")}
-                  >
-                    <Button variant="default" className="mt-6">
-                      {t("ContactFormDialog.getStarted.title")}
-                    </Button>
-                  </ContactFormDialog>
-                </div>
-              </div>
+      <Container>
+        <div className="relative z-10 gap-12 px-2">
+          {/* Text Column */}
+          <div className="w-full">
+            <div className="space-y-3">
+              <TitleTag title={t("Benefits.caption")} />
+              <h2 className="text-3xl font-semibold text-[#212529] md:text-4xl">
+                {t("Benefits.heading")}
+              </h2>
+              <p className="text-base text-[#495057]">
+                {t("Benefits.subheading")}
+              </p>
             </div>
 
-            {/* Image Column */}
-            <div className="mx-8 w-full md:w-1/2">
-              <div className="overflow-hidden">
-                <Image
-                  src={benefitBg}
-                  alt="Team celebrating goals"
-                  width={720}
-                  height={20}
-                  quality={100}
-                  className="h-auto w-full object-cover"
-                />
+            <div className="flex flex-col items-center justify-between gap-20 md:flex-row">
+              <div className="flex flex-col md:w-2/4 md:flex-row">
+                <div className="flex flex-col">
+                  <ul className="space-y-6">
+                    {BENEFITS.map(({ title, description, icon }) => (
+                      <li className="flex items-start space-x-3" key={title}>
+                        <Image
+                          src={icon}
+                          alt={title}
+                          className="h-6 w-6 text-orange-500"
+                        />
+                        <div>
+                          <h4 className="font-medium text-[#0B0019]">
+                            {title}
+                          </h4>
+                          <p className="mt-2 text-sm text-[#495057]">
+                            {description}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="">
+                    <ContactFormDialog
+                      title={t("ContactFormDialog.getStarted.title")}
+                      description={t(
+                        "ContactFormDialog.getStarted.description"
+                      )}
+                    >
+                      <Button variant="default" className="mt-6">
+                        {t("ContactFormDialog.getStarted.title")}
+                      </Button>
+                    </ContactFormDialog>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Column */}
+              <div className="mx-8 w-full md:w-1/2">
+                <div className="overflow-hidden">
+                  <Image
+                    src={benefitBg}
+                    alt="Team celebrating goals"
+                    width={720}
+                    height={20}
+                    quality={100}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -6,6 +6,7 @@ import heroCongratulationsImg1 from "@/assets/images/hero-congratulation-1.png";
 import heroCongratulationsImg2 from "@/assets/images/hero-congratulation-2.png";
 import heroGiftIcon from "@/assets/icons/hero-gift.svg";
 import heroImg4 from "@/assets/icons/shopping-cart.svg";
+import Container from "@/components/layouts/container";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -114,7 +115,7 @@ export default function HeroSection() {
 
     const interval = setInterval(() => {
       setCurrentHeroIndex(
-        (prevIndex) => (prevIndex + 1) % heroVariations.length,
+        (prevIndex) => (prevIndex + 1) % heroVariations.length
       );
     }, 8000);
 
@@ -134,7 +135,7 @@ export default function HeroSection() {
       {
         onSuccess: (response) => {
           toast.success(
-            response.message || "Successfully joined the waitlist!",
+            response.message || "Successfully joined the waitlist!"
           );
 
           // Use the form refresh hook to handle success and page refresh
@@ -151,7 +152,7 @@ export default function HeroSection() {
           }
           toast.error(apiError);
         },
-      },
+      }
     );
   };
 
@@ -193,7 +194,9 @@ export default function HeroSection() {
 
   return (
     <section
-      className={`relative w-full min-w-0 overflow-x-hidden px-4 py-20 transition-all duration-1000 ease-in-out ${isHome ? currentHero.backgroundColor : "bg-white"}`}
+      className={`relative w-full min-w-0 overflow-x-hidden px-4 py-20 transition-all duration-1000 ease-in-out ${
+        isHome ? currentHero.backgroundColor : "bg-white"
+      }`}
     >
       <div
         className="absolute inset-0 z-0 opacity-60"
@@ -232,258 +235,263 @@ export default function HeroSection() {
       {/* Bottom gradient overlay (on all slides) */}
       {isHome && (
         <div
-          className={`pointer-events-none absolute inset-x-0 bottom-0 z-2 ${currentHeroIndex === 1 ? "h-48 md:h-[28rem]" : "h-32 md:h-64"}`}
+          className={`pointer-events-none absolute inset-x-0 bottom-0 z-2 ${
+            currentHeroIndex === 1 ? "h-48 md:h-[28rem]" : "h-32 md:h-64"
+          }`}
           style={{
             backgroundImage:
               "linear-gradient(to top, rgba(247,249,251,1) 0%, rgba(247,249,251,0.97) 55%, rgba(247,249,251,0.7) 75%, rgba(247,249,251,0) 100%)",
           }}
         />
       )}
-
-      {/* Hero content - Two column layout for home, centered for waitlist */}
-      <div className="relative z-10 mx-auto h-full max-w-6xl px-4">
-        {isHome ? (
-          // Two-column layout for home page with rotating content
-          <div className="grid min-h-[500px] grid-cols-1 items-center gap-8 lg:min-h-[600px] lg:grid-cols-2 lg:gap-12">
-            {/* Right Column - Visual Content */}
-            <div className="relative order-2 flex justify-center lg:order-2 lg:justify-start">
-              <div
-                className={`transition-all duration-1000 ease-in-out ${
-                  currentHeroIndex === 1 ? "mt-6 md:mt-10 md:scale-115" : ""
-                }`}
-              >
-                {/* Platform slide */}
+      <Container>
+        {/* Hero content - Two column layout for home, centered for waitlist */}
+        <div className="relative z-10 h-full">
+          {isHome ? (
+            // Two-column layout for home page with rotating content
+            <div className="grid min-h-[500px] grid-cols-1 items-center gap-8 lg:min-h-[600px] lg:grid-cols-2 lg:gap-12">
+              {/* Right Column - Visual Content */}
+              <div className="relative order-2 flex justify-center lg:order-2 lg:justify-end">
                 <div
-                  className={`${currentHeroIndex === 0 ? "block" : "hidden"}`}
+                  className={`transition-all duration-1000 ease-in-out ${
+                    currentHeroIndex === 1 ? "mt-6 md:mt-10 md:scale-115" : ""
+                  }`}
                 >
-                  <div className="mx-auto w-full max-w-xl">
-                    <Image
-                      src={"/hero/hero-one.webp"}
-                      alt={"platform image"}
-                      width={560}
-                      height={448}
-                      priority={currentHeroIndex === 0}
-                      fetchPriority={currentHeroIndex === 0 ? "high" : "low"}
-                      loading={currentHeroIndex === 0 ? "eager" : "lazy"}
-                      sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
-                      className="h-auto w-full object-contain"
-                    />
+                  {/* Platform slide */}
+                  <div
+                    className={`${currentHeroIndex === 0 ? "block" : "hidden"}`}
+                  >
+                    <div className="mx-auto w-full max-w-xl">
+                      <Image
+                        src={"/hero/hero-one.webp"}
+                        alt={"platform image"}
+                        width={560}
+                        height={448}
+                        priority={currentHeroIndex === 0}
+                        fetchPriority={currentHeroIndex === 0 ? "high" : "low"}
+                        loading={currentHeroIndex === 0 ? "eager" : "lazy"}
+                        sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
+                        className="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  {/* AI slide */}
+                  <div
+                    className={`${currentHeroIndex === 1 ? "block" : "hidden"}`}
+                  >
+                    <div className="mx-auto w-full max-w-xl">
+                      <Image
+                        src={"/hero/hero-ai.webp"}
+                        alt={"ai assistant image"}
+                        width={560}
+                        height={448}
+                        priority={currentHeroIndex === 1}
+                        fetchPriority={currentHeroIndex === 1 ? "high" : "low"}
+                        loading={currentHeroIndex === 1 ? "eager" : "lazy"}
+                        sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
+                        className="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Celebration slide */}
+                  <div
+                    className={`${currentHeroIndex === 2 ? "block" : "hidden"}`}
+                  >
+                    <div className="mx-auto w-full max-w-xl">
+                      <Image
+                        src={"/hero/hero-two.webp"}
+                        alt={"celebration image"}
+                        width={560}
+                        height={448}
+                        priority={currentHeroIndex === 2}
+                        fetchPriority={currentHeroIndex === 2 ? "high" : "low"}
+                        loading={currentHeroIndex === 2 ? "eager" : "lazy"}
+                        sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
+                        className="h-auto w-full object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                {/* AI slide */}
-                <div
-                  className={`${currentHeroIndex === 1 ? "block" : "hidden"}`}
-                >
-                  <div className="mx-auto w-full max-w-xl">
-                    <Image
-                      src={"/hero/hero-ai.webp"}
-                      alt={"ai assistant image"}
-                      width={560}
-                      height={448}
-                      priority={currentHeroIndex === 1}
-                      fetchPriority={currentHeroIndex === 1 ? "high" : "low"}
-                      loading={currentHeroIndex === 1 ? "eager" : "lazy"}
-                      sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
-                      className="h-auto w-full object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Celebration slide */}
-                <div
-                  className={`${currentHeroIndex === 2 ? "block" : "hidden"}`}
-                >
-                  <div className="mx-auto w-full max-w-xl">
-                    <Image
-                      src={"/hero/hero-two.webp"}
-                      alt={"celebration image"}
-                      width={560}
-                      height={448}
-                      priority={currentHeroIndex === 2}
-                      fetchPriority={currentHeroIndex === 2 ? "high" : "low"}
-                      loading={currentHeroIndex === 2 ? "eager" : "lazy"}
-                      sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
-                      className="h-auto w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-              {currentHeroIndex === 1 && (
-                <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 md:h-96"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(0deg, rgba(247,249,251,1) 0%, rgba(247,249,251,0.85) 60%, rgba(247,249,251,0.2) 85%, rgba(247,249,251,0) 100%)",
-                    WebkitMaskImage:
-                      "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-                    maskImage:
-                      "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-                  }}
-                />
-              )}
-              {/* Gift icon moved to text column */}
-            </div>
-
-            {/* Left Column - Text Content */}
-            <div className="relative order-1 space-y-6 text-left lg:order-1">
-              {/* Decorative gift icon: shown on slides 1 and 3, positioned relative to text */}
-              {currentHeroIndex === 0 && (
-                <Image
-                  src={heroGiftIcon}
-                  alt="gift icon"
-                  className="absolute top-44 right-28 size-[48px] sm:top-44 sm:right-20 md:size-[72px]"
-                />
-              )}
-              {currentHeroIndex === 0 && (
-                <Image
-                  src={heroImg4}
-                  alt="shopping cart icon"
-                  className="absolute top-64 left-52 size-[48px] sm:top-84 sm:left-56 md:size-[48px]"
-                />
-              )}
-              {currentHeroIndex === 2 && (
-                <Image
-                  src={heroGiftIcon}
-                  alt="gift icon"
-                  className="absolute top-40 right-28 size-[48px] sm:top-52 sm:right-20 md:size-[72px]"
-                />
-              )}
-              {/* Tagline */}
-              {currentHero.showTagline && (
-                <div className="transition-all duration-1000 ease-in-out">
-                  <p className="text-md bg-gradient-to-r from-[#005C73] to-[#72E0D6] bg-clip-text font-semibold tracking-wide text-transparent md:text-lg">
-                    {currentHero.tagline
-                      .split(/(?<=[.!?])\s+/)
-                      .map((part, idx) => (
-                        <span key={idx} className="block">
-                          {part}
-                        </span>
-                      ))}
-                  </p>
-                </div>
-              )}
-
-              {/* Title with icon */}
-              <div className="relative">
-                {(currentHeroIndex === 0 || currentHeroIndex === 2) && (
-                  <Image
-                    src={heroMapIcon}
-                    alt="reward icon"
-                    className="absolute -top-8 -left-16 z-0 size-[80px] md:-top-12 md:-left-20 md:size-[80px]"
+                {currentHeroIndex === 1 && (
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 md:h-96"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(0deg, rgba(247,249,251,1) 0%, rgba(247,249,251,0.85) 60%, rgba(247,249,251,0.2) 85%, rgba(247,249,251,0) 100%)",
+                      WebkitMaskImage:
+                        "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+                      maskImage:
+                        "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+                    }}
                   />
                 )}
-                <h1 className="relative z-10 text-[34px] leading-[130%] font-semibold tracking-tight transition-all duration-1000 ease-in-out md:text-[52px]">
-                  {currentHero.title}
-                </h1>
+                {/* Gift icon moved to text column */}
               </div>
 
-              {/* Subtitle */}
-              <p className="max-w-md text-base whitespace-pre-line text-[#495057] transition-all duration-1000 ease-in-out md:text-[18px]">
-                {currentHero.subtitle}
+              {/* Left Column - Text Content */}
+              <div className="relative order-1 space-y-6 text-left lg:order-1">
+                {/* Decorative gift icon: shown on slides 1 and 3, positioned relative to text */}
+                {currentHeroIndex === 0 && (
+                  <Image
+                    src={heroGiftIcon}
+                    alt="gift icon"
+                    className="absolute top-44 right-28 size-[48px] sm:top-44 sm:right-20 md:size-[72px]"
+                  />
+                )}
+                {currentHeroIndex === 0 && (
+                  <Image
+                    src={heroImg4}
+                    alt="shopping cart icon"
+                    className="absolute top-64 left-52 size-[48px] sm:top-84 sm:left-56 md:size-[48px]"
+                  />
+                )}
+                {currentHeroIndex === 2 && (
+                  <Image
+                    src={heroGiftIcon}
+                    alt="gift icon"
+                    className="absolute top-40 right-28 size-[48px] sm:top-52 sm:right-20 md:size-[72px]"
+                  />
+                )}
+                {/* Tagline */}
+                {currentHero.showTagline && (
+                  <div className="transition-all duration-1000 ease-in-out">
+                    <p className="text-md bg-gradient-to-r from-[#005C73] to-[#72E0D6] bg-clip-text font-semibold tracking-wide text-transparent md:text-lg">
+                      {currentHero.tagline
+                        .split(/(?<=[.!?])\s+/)
+                        .map((part, idx) => (
+                          <span key={idx} className="block">
+                            {part}
+                          </span>
+                        ))}
+                    </p>
+                  </div>
+                )}
+
+                {/* Title with icon */}
+                <div className="relative">
+                  {(currentHeroIndex === 0 || currentHeroIndex === 2) && (
+                    <Image
+                      src={heroMapIcon}
+                      alt="reward icon"
+                      className="absolute -top-8 -left-16 z-0 size-[80px] md:-top-12 md:-left-20 md:size-[80px]"
+                    />
+                  )}
+                  <h1 className="relative z-10 text-[34px] leading-[130%] font-semibold tracking-tight transition-all duration-1000 ease-in-out md:text-[52px]">
+                    {currentHero.title}
+                  </h1>
+                </div>
+
+                {/* Subtitle */}
+                <p className="max-w-md text-base whitespace-pre-line text-[#495057] transition-all duration-1000 ease-in-out md:text-[18px]">
+                  {currentHero.subtitle}
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="transition-all duration-1000 ease-in-out">
+                  {renderCTAButtons(currentHero)}
+                </div>
+              </div>
+            </div>
+          ) : (
+            // Centered layout for waitlist page
+            <div
+              className={`mx-auto ${
+                locale === "en" ? "max-w-3xl" : "max-w-4xl"
+              } px-6 py-12 text-center text-black`}
+            >
+              <div className="relative">
+                <h1 className="mb-4 text-[38px] leading-[130%] font-semibold tracking-tight md:text-[60px]">
+                  {tw("heading")}
+                </h1>
+                <Image
+                  src={heroMapIcon}
+                  alt="reward icon"
+                  className="absolute -top-4 -left-8 -z-10 size-[60px] md:-left-24 md:size-[100px]"
+                />
+                <Image
+                  src={heroGiftIcon}
+                  alt="gift icon"
+                  className="absolute -right-8 -bottom-0 -z-10 size-[60px] md:-right-20 md:-bottom-12 md:size-[100px]"
+                />
+              </div>
+
+              <p className="mb-6 text-base text-[#495057] md:text-[22px]">
+                {tw("text")}
               </p>
 
-              {/* CTA Buttons */}
-              <div className="transition-all duration-1000 ease-in-out">
-                {renderCTAButtons(currentHero)}
-              </div>
-            </div>
-          </div>
-        ) : (
-          // Centered layout for waitlist page
-          <div
-            className={`mx-auto ${locale === "en" ? "max-w-3xl" : "max-w-4xl"} px-6 py-12 text-center text-black`}
-          >
-            <div className="relative">
-              <h1 className="mb-4 text-[38px] leading-[130%] font-semibold tracking-tight md:text-[60px]">
-                {tw("heading")}
-              </h1>
-              <Image
-                src={heroMapIcon}
-                alt="reward icon"
-                className="absolute -top-4 -left-8 -z-10 size-[60px] md:-left-24 md:size-[100px]"
-              />
-              <Image
-                src={heroGiftIcon}
-                alt="gift icon"
-                className="absolute -right-8 -bottom-0 -z-10 size-[60px] md:-right-20 md:-bottom-12 md:size-[100px]"
-              />
-            </div>
-
-            <p className="mb-6 text-base text-[#495057] md:text-[22px]">
-              {tw("text")}
-            </p>
-
-            <form
-              onSubmit={handleSubmit}
-              className="mx-auto flex w-full flex-col items-center gap-2 sm:w-100 sm:flex-row"
-            >
-              <Input
-                type="email"
-                placeholder={tw("form.placeholder")}
-                className="w-full flex-1 px-4 sm:w-auto"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={isPending}
-              />
-              <Button
-                type="submit"
-                disabled={isPending}
-                className="min-w-[120px]"
+              <form
+                onSubmit={handleSubmit}
+                className="mx-auto flex w-full flex-col items-center gap-2 sm:w-100 sm:flex-row"
               >
-                {isPending ? (
-                  <div className="flex items-center gap-2">
-                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                    <span>{tw("form.pendingButton")}</span>
-                  </div>
-                ) : (
-                  tw("form.button")
-                )}
-              </Button>
-            </form>
+                <Input
+                  type="email"
+                  placeholder={tw("form.placeholder")}
+                  className="w-full flex-1 px-4 sm:w-auto"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  disabled={isPending}
+                />
+                <Button
+                  type="submit"
+                  disabled={isPending}
+                  className="min-w-[120px]"
+                >
+                  {isPending ? (
+                    <div className="flex items-center gap-2">
+                      <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                      <span>{tw("form.pendingButton")}</span>
+                    </div>
+                  ) : (
+                    tw("form.button")
+                  )}
+                </Button>
+              </form>
 
-            <div className="mx-auto mt-8 md:mt-6 md:max-w-7xl">
-              <div className="transition-all duration-1000 ease-in-out">
-                <div className="mx-auto w-full max-w-lg">
-                  <Image
-                    src="/hero/hero-one.webp"
-                    alt="platform image"
-                    width={500}
-                    height={400}
-                    priority={false}
-                    fetchPriority="low"
-                    loading="lazy"
-                    sizes="(min-width: 1024px) 500px, (min-width: 768px) 70vw, 85vw"
-                    className="h-auto w-full object-contain"
-                  />
+              <div className="mx-auto mt-8 md:mt-6 md:max-w-7xl">
+                <div className="transition-all duration-1000 ease-in-out">
+                  <div className="mx-auto w-full max-w-lg">
+                    <Image
+                      src="/hero/hero-one.webp"
+                      alt="platform image"
+                      width={500}
+                      height={400}
+                      priority={false}
+                      fetchPriority="low"
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 500px, (min-width: 768px) 70vw, 85vw"
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Hero rotation indicator dots for home page */}
-        {isHome && (
-          <div className="relative z-10 mt-6 flex justify-center space-x-2 lg:mt-8">
-            {heroVariations.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentHeroIndex(index);
-                  setIsAutoPlaying(false);
-                }}
-                className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                  index === currentHeroIndex
-                    ? "bg-teal-600"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
-                aria-label={`Go to hero ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+          {/* Hero rotation indicator dots for home page */}
+          {isHome && (
+            <div className="relative z-10 mt-6 flex justify-center space-x-2 lg:mt-8">
+              {heroVariations.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setCurrentHeroIndex(index);
+                    setIsAutoPlaying(false);
+                  }}
+                  className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                    index === currentHeroIndex
+                      ? "bg-teal-600"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to hero ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </Container>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -34,6 +33,12 @@ export default function ContactFormDialog({
   const t = useTranslations("HomePage.ContactFormDialog");
   const [isOpen, setIsOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Prevent hydration mismatch by only rendering Dialog after mount
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Use the form refresh hook
   const { handleFormSuccess } = useFormRefresh({
@@ -66,15 +71,24 @@ export default function ContactFormDialog({
       handleFormSuccess(() => {
         setIsOpen(false);
       });
-    } catch (err: any) {
-      toast.error(
-        err?.response?.data?.error ||
-          "Failed to submit your request, please try again.",
-      );
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        toast.error(
+          err.response?.data?.error ||
+            "Failed to submit your request, please try again."
+        );
+      } else {
+        toast.error("Failed to submit your request, please try again.");
+      }
     } finally {
       setSubmitting(false);
     }
   };
+
+  // Render a placeholder button during SSR to avoid hydration mismatch
+  if (!isMounted) {
+    return <>{children}</>;
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

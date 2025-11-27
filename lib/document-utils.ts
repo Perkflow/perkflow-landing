@@ -4,6 +4,54 @@ import { resolveMediaUrl } from "@/lib/media";
 
 // Removed TXT extraction and fallback
 
+// Helper function to get localized slug for a given language
+export function getLocalizedSlug(
+  post: Article | CMSPost,
+  language: string,
+): string {
+  // For English or if no languageSlugs, return default slug
+  if (language === "en" || !post.languageSlugs) {
+    return post.slug || "";
+  }
+
+  // Find translation for the requested language
+  const translation = post.languageSlugs.find(
+    (item) => item.language === language,
+  );
+
+  // Return translated slug or fallback to default
+  return translation?.slug || post.slug || "";
+}
+
+// Get available languages for a post (from documentation)
+export function getAvailableLanguages(post: Article | CMSPost): string[] {
+  const languages = ["en"]; // Default slug is typically English
+
+  if (post.languageSlugs) {
+    post.languageSlugs.forEach((item) => {
+      languages.push(item.language);
+    });
+  }
+
+  return languages;
+}
+
+// Get slug for a specific language (from documentation)
+export function getSlugForLanguage(
+  post: Article | CMSPost,
+  language: string,
+): string | null {
+  if (language === "en") {
+    return post.slug || null;
+  }
+
+  const translation = post.languageSlugs?.find(
+    (item) => item.language === language,
+  );
+
+  return translation?.slug || null;
+}
+
 // Function to get content preview (first two lines)
 export function getContentPreview(content: string): string {
   const lines = content.split("\n").filter((line) => line.trim().length > 0);
@@ -149,6 +197,7 @@ export function convertPayloadPostToArticle(post: CMSPost): Article {
     contentPreview,
     // Additional CMS fields
     slug: post.slug,
+    languageSlugs: post.languageSlugs,
     excerpt: post.excerpt,
     category: post.category
       ? {
