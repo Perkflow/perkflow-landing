@@ -54,37 +54,52 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
       return [];
     }
 
-    const queryParams = new URLSearchParams({
-      limit: "1000",
-      where: JSON.stringify({ status: { equals: "published" } }),
-      depth: "1", // Need depth to get languageSlugs
-    });
+    const entries: MetadataRoute.Sitemap = [];
 
-    // Fetch published articles from Payload CMS
-    const response = await fetch(`${PAYLOAD_URL}/api/posts?${queryParams.toString()}`, {
-      next: { revalidate: 3600 }, // Revalidate every hour
-    });
+    for (const locale of LOCALES) {
+      const queryParams = new URLSearchParams({
+        limit: "1000",
+        where: JSON.stringify({ status: { equals: "published" } }),
+        depth: "1",
+        locale,
+        "fallback-locale": "none",
+      });
 
-    if (!response.ok) {
-      console.warn("Failed to fetch articles for sitemap");
-      return [];
+      // Fetch published articles from Payload CMS for the specific locale
+      const response = await fetch(
+        `${PAYLOAD_URL}/api/posts?${queryParams.toString()}`,
+        {
+          next: { revalidate: 3600 }, // Revalidate every hour
+        },
+      );
+
+      if (!response.ok) {
+        console.warn(
+          `Failed to fetch articles for sitemap (locale: ${locale})`,
+        );
+        continue;
+      }
+
+      const data = await response.json();
+      const articles = data.docs || [];
+
+      // Generate sitemap entries for this locale
+      const localeEntries = articles
+        .filter((article: CMSPost) => article.title) // Ensure title exists (filter out empty fallbacks)
+        .map((article: CMSPost) => {
+          const slug = getLocalizedSlug(article, locale);
+          return {
+            url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${slug}`,
+            lastModified: new Date(article.updatedAt),
+            changeFrequency: "monthly" as const,
+            priority: 0.6,
+          };
+        });
+
+      entries.push(...localeEntries);
     }
 
-    const data = await response.json();
-    const articles = data.docs || [];
-
-    // Generate sitemap entries for each article in all locales
-    return articles.flatMap((article: CMSPost) =>
-      LOCALES.map((locale) => {
-        const localizedSlug = getLocalizedSlug(article, locale);
-        return {
-          url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${localizedSlug}`,
-          lastModified: new Date(article.updatedAt),
-          changeFrequency: "monthly" as const,
-          priority: 0.6,
-        };
-      })
-    );
+    return entries;
   } catch (error) {
     console.error("Error fetching articles for sitemap:", error);
     return [];

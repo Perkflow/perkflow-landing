@@ -7,7 +7,7 @@ import { resolveMediaUrl } from "@/lib/media";
 // Helper function to get localized slug for a given language
 export function getLocalizedSlug(
   post: Article | CMSPost,
-  language: string,
+  language: string
 ): string {
   // For English or if no languageSlugs, return default slug
   if (language === "en" || !post.languageSlugs) {
@@ -16,7 +16,7 @@ export function getLocalizedSlug(
 
   // Find translation for the requested language
   const translation = post.languageSlugs.find(
-    (item) => item.language === language,
+    (item) => item.language === language
   );
 
   // Return translated slug or fallback to default
@@ -39,14 +39,14 @@ export function getAvailableLanguages(post: Article | CMSPost): string[] {
 // Get slug for a specific language (from documentation)
 export function getSlugForLanguage(
   post: Article | CMSPost,
-  language: string,
+  language: string
 ): string | null {
   if (language === "en") {
     return post.slug || null;
   }
 
   const translation = post.languageSlugs?.find(
-    (item) => item.language === language,
+    (item) => item.language === language
   );
 
   return translation?.slug || null;
@@ -98,7 +98,7 @@ export function extractPlainTextFromLexical(node: any): string {
 
 function joinPrefixAndFilename(
   prefix: string | undefined,
-  filename: string,
+  filename: string
 ): string {
   const safePrefix = (prefix || "").replace(/^\/+|\/+$/g, "");
   const safeFilename = filename.replace(/^\/+/, "");
@@ -138,8 +138,8 @@ function collectMediaCandidates(media?: CMSMedia | null): string[] {
         push(
           joinPrefixAndFilename(
             size.prefix ?? media.prefix ?? "uploads",
-            size.filename,
-          ),
+            size.filename
+          )
         );
       }
     });
@@ -169,7 +169,7 @@ export function convertPayloadPostToArticle(post: CMSPost): Article {
       .map((candidate) => resolveMediaUrl(candidate))
       .find((candidate): candidate is string => Boolean(candidate)) ?? null;
   const rawFeaturedImage = mediaCandidates.find((candidate) =>
-    Boolean(candidate),
+    Boolean(candidate)
   );
 
   // Get author name
@@ -233,9 +233,15 @@ export async function loadArticlesFromCMS(locale: string): Promise<Article[]> {
       locale,
     });
 
-    return response.docs
-      .filter(isPublishedPost)
-      .map(convertPayloadPostToArticle);
+    const publishedPosts = response.docs.filter(isPublishedPost);
+
+    const articles = publishedPosts
+      .map(convertPayloadPostToArticle)
+      .filter((article) => {
+        const isValid = article.title && article.title.trim().length > 0;
+        return isValid;
+      });
+    return articles;
   } catch (error) {
     console.error("Error loading articles from CMS:", error);
     return [];
@@ -245,7 +251,7 @@ export async function loadArticlesFromCMS(locale: string): Promise<Article[]> {
 // Function to load a single article by slug from CMS
 export async function loadArticleBySlug(
   slug: string,
-  locale: string,
+  locale: string
 ): Promise<Article | null> {
   try {
     const { payloadAPI } = await import("@/connection/payload-api");
@@ -262,7 +268,7 @@ export async function loadArticleBySlug(
 
 // Function to load articles by category
 export async function loadArticlesByCategory(
-  categorySlug: string,
+  categorySlug: string
 ): Promise<Article[]> {
   try {
     const { payloadAPI } = await import("@/connection/payload-api");
@@ -318,7 +324,7 @@ export async function loadCategories(): Promise<any[]> {
 
 // Function to load featured articles
 export async function loadFeaturedArticles(
-  limit: number = 5,
+  limit: number = 5
 ): Promise<Article[]> {
   try {
     const { payloadAPI } = await import("@/connection/payload-api");
@@ -331,6 +337,7 @@ export async function loadFeaturedArticles(
     return [];
   }
 }
+
 function isPublishedPost(post: CMSPost | null | undefined): boolean {
   if (!post) return false;
   const status = (post as any)?.status;

@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { FaGlobe } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { getSlugForLanguage } from "@/lib/document-utils";
-import type { Article } from "@/types/cms";
+import type { CMSPost } from "@/types/cms";
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
@@ -33,21 +33,29 @@ export default function LanguageSwitcher() {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();
       })
-      .then((article: Article) => {
+      .then((article: CMSPost) => {
         // Use the helper function from documentation
         const targetSlug = getSlugForLanguage(article, switchTo);
 
-        if (targetSlug) {
+        // Check if the target version is actually valid
+        // If switching to EN (default), check if title exists (API returns default locale by default)
+        const isEnTargetValid =
+          switchTo === "en" && article.title && article.title.trim().length > 0;
+
+        // If switching to other language, check if slug exists
+        const isOtherTargetValid = switchTo !== "en" && targetSlug;
+
+        if (isEnTargetValid || isOtherTargetValid) {
           setTargetPath(`/articles/${targetSlug}`);
         } else {
-          // No translation available, fallback to default slug
-          setTargetPath(`/articles/${article.slug}`);
+          // No translation available, fallback to resources index
+          setTargetPath(`/resources`);
         }
       })
       .catch((error) => {
         console.error("Error fetching article for language switch:", error);
-        // On error, use current pathname
-        setTargetPath(null);
+        // On error, fallback to resources to be safe
+        setTargetPath(`/resources`);
       });
   }, [pathname, switchTo]);
 
