@@ -63,9 +63,9 @@ export default function MegaMenu({
     >
       <div className="mx-auto grid max-w-7xl grid-cols-12 overflow-hidden px-4 sm:px-6 lg:px-9">
         <div className="relative col-span-4 w-full overflow-hidden rounded-bl-xl bg-[#F98A26] p-12 text-white">
-          <h3 className="mb-3 max-w-[350px] text-[32px] leading-[120%] font-medium tracking-[2%]">
+          <div className="mb-3 max-w-[350px] text-[32px] leading-[120%] font-medium tracking-[2%]">
             {t("featureMegaMenu.heading")}
-          </h3>
+          </div>
           <p className="z-2 max-w-[350px]">{t("featureMegaMenu.text")}</p>
           {/* <Link
             href="/learn-more"
@@ -147,9 +147,9 @@ export default function MegaMenu({
                       >
                         <div className="mb-1 flex items-center space-x-3">
                           <Icon className="mt-1 h-6 w-6 flex-shrink-0 text-gray-700" />
-                          <h4 className="font-semibold text-[#101828]">
+                          <span className="font-semibold text-[#101828]">
                             {title}
-                          </h4>
+                          </span>
                         </div>
                         <div>
                           <p className="text-sm text-gray-600">{desc}</p>
