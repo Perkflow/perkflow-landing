@@ -78,9 +78,9 @@ export default function CompanyMegaMenu({
                       className="flex w-[80%] flex-col items-start space-x-3 rounded-md p-4 transition"
                     >
                       <div className="mb-1 flex items-center space-x-3">
-                        <h4 className="font-semibold text-[#101828]">
+                        <span className="font-semibold text-[#101828]">
                           {title}
-                        </h4>
+                        </span>
                       </div>
                       <div>
                         <p className="text-sm text-gray-600">{desc}</p>

@@ -49,9 +49,9 @@ export default function Support() {
                     className="h-6 w-6 object-cover"
                   />
                   <div>
-                    <h4 className="text-base font-semibold text-[#0B0019]">
+                    <h3 className="text-base font-semibold text-[#0B0019]">
                       {title}
-                    </h4>
+                    </h3>
                     <p className="mt-1 text-sm leading-6 text-[#495057]">
                       {description}
                     </p>

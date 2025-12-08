@@ -53,9 +53,9 @@ export default function FooterSection() {
           <div className="flex max-w-[350px] flex-wrap justify-between gap-10 md:max-w-[600px]">
             {/* Company Links */}
             <div>
-              <h4 className="mb-4 font-medium md:text-lg">
+              <div className="mb-4 font-medium md:text-lg">
                 {t("Company.heading")}
-              </h4>
+              </div>
               <ul className="space-y-3 text-sm text-gray-200 md:text-base">
                 <li>
                   <Link href="#support" className="hover:text-white">
@@ -90,9 +90,9 @@ export default function FooterSection() {
 
             {/* Features Links */}
             <div>
-              <h4 className="mb-4 font-medium md:text-lg">
+              <div className="mb-4 font-medium md:text-lg">
                 {t("Features.heading")}
-              </h4>
+              </div>
               <ul className="space-y-3 text-sm text-gray-200 md:text-base">
                 <li>
                   <Link href="/gifts" className="hover:text-white">
@@ -114,9 +114,9 @@ export default function FooterSection() {
 
             {/* Contact Us */}
             <div>
-              <h4 className="mb-4 font-medium md:text-lg">
+              <div className="mb-4 font-medium md:text-lg">
                 {t("Contact.heading")}
-              </h4>
+              </div>
               <ul className="space-y-3 text-sm text-gray-200 md:text-base">
                 <li>+1 (716) 451-3912</li>
                 <li>

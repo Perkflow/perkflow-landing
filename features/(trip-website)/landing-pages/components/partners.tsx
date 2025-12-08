@@ -42,9 +42,9 @@ export default function Partners() {
   return (
     <Container>
       <div className="dark:bg-grid-white/[0.05] relative flex flex-col items-center justify-center overflow-hidden rounded-md bg-white/20  py-6 antialiased dark:bg-black">
-        <h1 className="mb-4 mt-4 text-center text-xl font-medium text-[#495057] md:text-2xl">
+        <h2 className="mb-4 mt-4 text-center text-xl font-medium text-[#495057] md:text-2xl">
           {t("Partners.heading")}
-        </h1>
+        </h2>
         <div className="max-w-6xl">
           <InfiniteMovingCards
             items={logosTop}
