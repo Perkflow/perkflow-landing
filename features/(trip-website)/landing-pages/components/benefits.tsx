@@ -83,9 +83,9 @@ export default function Benefits() {
                           className="h-6 w-6 text-orange-500"
                         />
                         <div>
-                          <h4 className="font-medium text-[#0B0019]">
+                          <h3 className="font-medium text-[#0B0019]">
                             {title}
-                          </h4>
+                          </h3>
                           <p className="mt-2 text-sm text-[#495057]">
                             {description}
                           </p>

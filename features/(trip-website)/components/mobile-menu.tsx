@@ -144,7 +144,7 @@ export default function MobileMenu({ open, onClose, onClose2 }: Props) {
                     className="h-6 w-6"
                   />
                   <div className="flex flex-col gap-1">
-                    <h4 className="font-semibold text-gray-900">{name}</h4>
+                    <span className="font-semibold text-gray-900">{name}</span>
                     <p className="text-sm text-gray-600">{content}</p>
                   </div>
                 </Link>
@@ -195,7 +195,7 @@ export default function MobileMenu({ open, onClose, onClose2 }: Props) {
                   className="flex items-start space-x-3"
                 >
                   <div className="flex flex-col gap-1">
-                    <h4 className="font-semibold text-gray-900">{name}</h4>
+                    <span className="font-semibold text-gray-900">{name}</span>
                     <p className="text-sm text-gray-600">{content}</p>
                   </div>
                 </Link>
