@@ -149,7 +149,10 @@ function collectMediaCandidates(media?: CMSMedia | null): string[] {
 }
 
 // Function to convert Payload CMS post to Article format
-export function convertPayloadPostToArticle(post: CMSPost): Article {
+export function convertPayloadPostToArticle(
+  post: CMSPost,
+  includeContent: boolean = true,
+): Article {
   // For the preview, generate plain text from the rich text content or excerpt
   const plainTextForPreview = post.content
     ? typeof post.content === "string"
@@ -193,7 +196,7 @@ export function convertPayloadPostToArticle(post: CMSPost): Article {
     time: `${readingTime} min read`,
     image: resolvedFeaturedImage ?? rawFeaturedImage ?? "",
     filePath: "", // Not needed for CMS posts
-    content: post.content, // Pass the raw Lexical JSON object
+    content: includeContent ? post.content : null, // Pass the raw Lexical JSON object only if requested
     contentPreview,
     // Additional CMS fields
     slug: post.slug,
@@ -236,7 +239,7 @@ export async function loadArticlesFromCMS(locale: string): Promise<Article[]> {
     const publishedPosts = response.docs.filter(isPublishedPost);
 
     const articles = publishedPosts
-      .map(convertPayloadPostToArticle)
+      .map((post) => convertPayloadPostToArticle(post, false))
       .filter((article) => {
         const isValid = article.title && article.title.trim().length > 0;
         return isValid;
@@ -280,7 +283,7 @@ export async function loadArticlesByCategory(
 
     return response.docs
       .filter(isPublishedPost)
-      .map(convertPayloadPostToArticle);
+      .map((post) => convertPayloadPostToArticle(post, false));
   } catch (error) {
     console.error("Error loading articles by category:", error);
     return [];
@@ -298,7 +301,7 @@ export async function searchArticles(query: string): Promise<Article[]> {
 
     return response.docs
       .filter(isPublishedPost)
-      .map(convertPayloadPostToArticle);
+      .map((post) => convertPayloadPostToArticle(post, false));
   } catch (error) {
     console.error("Error searching articles:", error);
     return [];
@@ -331,7 +334,7 @@ export async function loadFeaturedArticles(
     const response = await payloadAPI.getFeaturedPosts(limit);
     return response.docs
       .filter(isPublishedPost)
-      .map(convertPayloadPostToArticle);
+      .map((post) => convertPayloadPostToArticle(post, false));
   } catch (error) {
     console.error("Error loading featured articles:", error);
     return [];
