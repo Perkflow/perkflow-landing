@@ -7,20 +7,9 @@ import { resolveMediaUrl } from "@/lib/media";
 // Helper function to get localized slug for a given language
 export function getLocalizedSlug(
   post: Article | CMSPost,
-  language: string
+  language: string,
 ): string {
-  // For English or if no languageSlugs, return default slug
-  if (language === "en" || !post.languageSlugs) {
-    return post.slug || "";
-  }
-
-  // Find translation for the requested language
-  const translation = post.languageSlugs.find(
-    (item) => item.language === language
-  );
-
-  // Return translated slug or fallback to default
-  return translation?.slug || post.slug || "";
+  return getSlugForLanguage(post, language) || "";
 }
 
 // Get available languages for a post (from documentation)
@@ -41,15 +30,19 @@ export function getSlugForLanguage(
   post: Article | CMSPost,
   language: string
 ): string | null {
-  if (language === "en") {
-    return post.slug || null;
-  }
-
+  // First, try to find an explicit translation in languageSlugs
   const translation = post.languageSlugs?.find(
     (item) => item.language === language
   );
 
-  return translation?.slug || null;
+  if (translation) {
+    return translation.slug;
+  }
+
+  // If no explicit translation found, fallback to the default slug
+  // This assumes that if it's not in languageSlugs, the default slug corresponds to this language
+  // (or is the fallback we want to use)
+  return post.slug || null;
 }
 
 // Function to get content preview (first two lines)
@@ -151,7 +144,7 @@ function collectMediaCandidates(media?: CMSMedia | null): string[] {
 // Function to convert Payload CMS post to Article format
 export function convertPayloadPostToArticle(
   post: CMSPost,
-  includeContent: boolean = true,
+  includeContent: boolean = true
 ): Article {
   // For the preview, generate plain text from the rich text content or excerpt
   const plainTextForPreview = post.content
@@ -239,7 +232,15 @@ export async function loadArticlesFromCMS(locale: string): Promise<Article[]> {
     const publishedPosts = response.docs.filter(isPublishedPost);
 
     const articles = publishedPosts
-      .map((post) => convertPayloadPostToArticle(post, false))
+      .map((post) => {
+        const article = convertPayloadPostToArticle(post, false);
+        // Ensure we use the slug for the current locale
+        const localizedSlug = getSlugForLanguage(post, locale);
+        if (localizedSlug) {
+          article.slug = localizedSlug;
+        }
+        return article;
+      })
       .filter((article) => {
         const isValid = article.title && article.title.trim().length > 0;
         return isValid;

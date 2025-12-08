@@ -113,38 +113,40 @@ class PayloadAPI {
   async getPostBySlug(slug: string, locale: string): Promise<CMSPost | null> {
     try {
       if (isServer) {
-        // Try language-specific slug first (if not English)
-        if (locale !== "en") {
-          const localizedQueryParams = new URLSearchParams();
-          localizedQueryParams.set("where[languageSlugs.slug][equals]", slug);
-          localizedQueryParams.set("where[status][equals]", "published");
-          localizedQueryParams.set("limit", "1");
-          localizedQueryParams.set("depth", "2");
-          localizedQueryParams.set("locale", locale);
+        // 1. Try to find by languageSlugs (localized slug)
+        // This works for ANY locale, not just non-English
+        const localizedQueryParams = new URLSearchParams();
+        localizedQueryParams.set("where[languageSlugs.slug][equals]", slug);
+        localizedQueryParams.set("where[status][equals]", "published");
+        localizedQueryParams.set("limit", "1");
+        localizedQueryParams.set("depth", "2");
+        localizedQueryParams.set("locale", locale);
+        localizedQueryParams.set("fallback-locale", "none");
 
-          const localizedData = await serverFetchJSON<{
-            docs?: CMSPost[];
-          }>(
-            `${PAYLOAD_CMS_BASE_URL}/api/posts?${localizedQueryParams.toString()}`,
-            {
-              cache: "no-store",
-            }
-          );
-
-          const localizedDoc =
-            (localizedData?.docs && localizedData.docs[0]) || null;
-          if (localizedDoc) {
-            return localizedDoc;
+        const localizedData = await serverFetchJSON<{
+          docs?: CMSPost[];
+        }>(
+          `${PAYLOAD_CMS_BASE_URL}/api/posts?${localizedQueryParams.toString()}`,
+          {
+            cache: "no-store",
           }
+        );
+
+        const localizedDoc =
+          (localizedData?.docs && localizedData.docs[0]) || null;
+        if (localizedDoc) {
+          return localizedDoc;
         }
 
-        // Fallback to default slug
+        // 2. Fallback to default slug field
         const queryParams = new URLSearchParams();
         queryParams.set("where[slug][equals]", slug);
         queryParams.set("where[status][equals]", "published");
         queryParams.set("limit", "1");
         queryParams.set("depth", "2");
         queryParams.set("locale", locale);
+        queryParams.set("fallback-locale", "none");
+
         const data = await serverFetchJSON<{
           docs?: CMSPost[];
         }>(`${PAYLOAD_CMS_BASE_URL}/api/posts?${queryParams.toString()}`, {
