@@ -51,6 +51,7 @@ class PayloadAPI {
         const locale = (filters?.locale ?? "en").toString();
 
         queryParams.set("locale", locale);
+        queryParams.set("fallback-locale", "none");
         queryParams.set("page", page);
         queryParams.set("limit", limit);
         queryParams.set("sort", sort);
