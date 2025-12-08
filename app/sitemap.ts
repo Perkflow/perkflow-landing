@@ -63,6 +63,11 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
         depth: "1",
         locale,
         "fallback-locale": "none",
+        // Optimization: Select only necessary fields to reduce response size and fix cache error
+        "select[slug]": "true",
+        "select[updatedAt]": "true",
+        "select[title]": "true",
+        "select[languageSlugs]": "true",
       });
 
       // Fetch published articles from Payload CMS for the specific locale
@@ -70,17 +75,18 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
         `${PAYLOAD_URL}/api/posts?${queryParams.toString()}`,
         {
           next: { revalidate: 3600 }, // Revalidate every hour
-        },
+        }
       );
 
       if (!response.ok) {
         console.warn(
-          `Failed to fetch articles for sitemap (locale: ${locale})`,
+          `Failed to fetch articles for sitemap (locale: ${locale})`
         );
         continue;
       }
 
       const data = await response.json();
+      console.log(data);
       const articles = data.docs || [];
 
       // Generate sitemap entries for this locale
@@ -88,8 +94,11 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
         .filter((article: CMSPost) => article.title) // Ensure title exists (filter out empty fallbacks)
         .map((article: CMSPost) => {
           const slug = getLocalizedSlug(article, locale);
+          console.log("Sitemap article", locale, slug);
           return {
-            url: `${BASE_URL}${locale === "en" ? "" : `/${locale}`}/articles/${slug}`,
+            url: `${BASE_URL}${
+              locale === "en" ? "" : `/${locale}`
+            }/articles/${slug}`,
             lastModified: new Date(article.updatedAt),
             changeFrequency: "monthly" as const,
             priority: 0.6,
