@@ -94,7 +94,6 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
         .filter((article: CMSPost) => article.title) // Ensure title exists (filter out empty fallbacks)
         .map((article: CMSPost) => {
           const slug = getLocalizedSlug(article, locale);
-          console.log("Sitemap article", locale, slug);
           return {
             url: `${BASE_URL}${
               locale === "en" ? "" : `/${locale}`
