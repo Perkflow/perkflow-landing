@@ -247,7 +247,7 @@ export async function loadArticlesFromCMS(locale: string): Promise<Article[]> {
       });
     return articles;
   } catch (error) {
-    console.error("Error loading articles from CMS:", error);
+    console.error("Error loading articles from CMS :", error);
     return [];
   }
 }
