@@ -51,38 +51,22 @@ jobs:
           
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
       
-      - name: Deploy to EC2 via SSM
+      - name: Deploy to ECS
         run: |
-          # Get all running EC2 instances
-          INSTANCE_IDS=$(aws ec2 describe-instances \
-            --filters "Name=tag:Project,Values=Perflow" "Name=instance-state-name,Values=running" \
-            --query "Reservations[*].Instances[*].InstanceId" \
-            --output text \
-            --region us-east-1 | tr '\t' ' ')
+          echo "Forcing ECS service to redeploy with updated image..."
+          aws ecs update-service \
+            --cluster perflow-production \
+            --service landing-page-prod \
+            --force-new-deployment \
+            --region us-east-1
           
-          echo "Deploying to instances: $INSTANCE_IDS"
+          echo "Waiting for ECS deployment to complete..."
+          aws ecs wait services-stable \
+            --cluster perflow-production \
+            --services landing-page-prod \
+            --region us-east-1
           
-          # Deploy via SSM to all instances
-          aws ssm send-command \
-            --targets "Key=tag:Project,Values=Perflow" \
-            --document-name "AWS-RunShellScript" \
-            --parameters 'commands=[
-              "echo \"Logging into ECR...\"",
-              "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 048204778361.dkr.ecr.us-east-1.amazonaws.com",
-              "echo \"Pulling latest image...\"",
-              "docker pull 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
-              "echo \"Stopping old container...\"",
-              "docker stop perkflow-landing || true",
-              "docker rm perkflow-landing || true",
-              "echo \"Starting new container...\"",
-              "docker run -d --name perkflow-landing --restart unless-stopped -p 80:3000 -e PAYLOAD_CMS_URL='"'"'${{ secrets.PAYLOAD_CMS_URL }}'"'"' -e NEXT_PUBLIC_HOST='"'"'${{ secrets.NEXT_PUBLIC_HOST }}'"'"' 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
-              "echo \"Cleaning up old images...\"",
-              "docker image prune -af --filter \"until=24h\"",
-              "echo \"✅ Deployment complete!\"",
-              "docker ps | grep perkflow-landing"
-            ]' \
-            --region us-east-1 \
-            --output text
+          echo "✅ ECS landing page service updated successfully!"
       
       - name: Notify Slack - Success
         if: success()
