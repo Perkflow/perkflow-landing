@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const PAYLOAD_CMS_BASE_URL =
   process.env.PAYLOAD_CMS_URL ||
   process.env.NEXT_PUBLIC_PAYLOAD_CMS_URL ||
-  "http://localhost:3001";
+  "https://cms.perkflow.io";
 
 export async function GET(
   request: NextRequest,
