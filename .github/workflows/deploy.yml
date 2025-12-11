@@ -1,4 +1,4 @@
-name: Deploy Landing Page to AWS
+name: Deploy Landing Page to ECS
 
 on:
   push:
@@ -9,6 +9,8 @@ env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: perflow-production-landing-page
   ECS_CLUSTER: perflow-production
+  ECS_SERVICE: landing-page-prod
+  ECS_TASK_DEFINITION: perflow-production-landing-page
   
 jobs:
   deploy:
@@ -51,38 +53,45 @@ jobs:
           
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
       
-      - name: Deploy to EC2 via SSM
+      - name: Create new task definition
+        id: task-def
         run: |
-          # Get all running EC2 instances
-          INSTANCE_IDS=$(aws ec2 describe-instances \
-            --filters "Name=tag:Project,Values=Perflow" "Name=instance-state-name,Values=running" \
-            --query "Reservations[*].Instances[*].InstanceId" \
-            --output text \
-            --region us-east-1 | tr '\t' ' ')
+          # Get current task definition
+          TASK_DEF=$(aws ecs describe-task-definition \
+            --task-definition $ECS_TASK_DEFINITION \
+            --region $AWS_REGION \
+            --query 'taskDefinition' \
+            --output json)
           
-          echo "Deploying to instances: $INSTANCE_IDS"
+          # Update image in task definition
+          NEW_TASK_DEF=$(echo $TASK_DEF | jq --arg IMAGE "${{ steps.build-image.outputs.image }}" \
+            '.containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn) | del(.revision) | del(.status) | del(.requiresAttributes) | del(.placementConstraints) | del(.compatibilities) | del(.registeredAt) | del(.registeredBy)')
           
-          # Deploy via SSM to all instances
-          aws ssm send-command \
-            --targets "Key=tag:Project,Values=Perflow" \
-            --document-name "AWS-RunShellScript" \
-            --parameters 'commands=[
-              "echo \"Logging into ECR...\"",
-              "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 048204778361.dkr.ecr.us-east-1.amazonaws.com",
-              "echo \"Pulling latest image...\"",
-              "docker pull 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
-              "echo \"Stopping old container...\"",
-              "docker stop perkflow-landing || true",
-              "docker rm perkflow-landing || true",
-              "echo \"Starting new container...\"",
-              "docker run -d --name perkflow-landing --restart unless-stopped -p 80:3000 -e PAYLOAD_CMS_URL='"'"'${{ secrets.PAYLOAD_CMS_URL }}'"'"' -e NEXT_PUBLIC_HOST='"'"'${{ secrets.NEXT_PUBLIC_HOST }}'"'"' 048204778361.dkr.ecr.us-east-1.amazonaws.com/perflow-production-landing-page:latest",
-              "echo \"Cleaning up old images...\"",
-              "docker image prune -af --filter \"until=24h\"",
-              "echo \"✅ Deployment complete!\"",
-              "docker ps | grep perkflow-landing"
-            ]' \
-            --region us-east-1 \
-            --output text
+          # Register new task definition
+          NEW_TASK_DEF_ARN=$(echo $NEW_TASK_DEF | aws ecs register-task-definition \
+            --region $AWS_REGION \
+            --cli-input-json file:///dev/stdin \
+            --query 'taskDefinition.taskDefinitionArn' \
+            --output text)
+          
+          echo "task-definition-arn=$NEW_TASK_DEF_ARN" >> $GITHUB_OUTPUT
+      
+      - name: Deploy to ECS
+        run: |
+          # Update ECS service with new task definition
+          aws ecs update-service \
+            --cluster $ECS_CLUSTER \
+            --service $ECS_SERVICE \
+            --task-definition ${{ steps.task-def.outputs.task-definition-arn }} \
+            --region $AWS_REGION
+          
+          # Wait for deployment to complete
+          aws ecs wait services-stable \
+            --cluster $ECS_CLUSTER \
+            --services $ECS_SERVICE \
+            --region $AWS_REGION
+          
+          echo "✅ ECS deployment complete!"
       
       - name: Notify Slack - Success
         if: success()
@@ -90,13 +99,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "✅ Landing Page Deployment Successful",
+              "text": "✅ Landing Page ECS Deployment Successful",
               "blocks": [
                 {
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "✅ Perkflow Landing Page Deployed"
+                    "text": "✅ Perkflow Landing Page Deployed to ECS"
                   }
                 },
                 {
@@ -104,7 +113,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Environment:*\nProduction"
+                      "text": "*Environment:*\nECS Production"
                     },
                     {
                       "type": "mrkdwn",
@@ -141,13 +150,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "❌ Landing Page Deployment Failed",
+              "text": "❌ Landing Page ECS Deployment Failed",
               "blocks": [
                 {
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "❌ Deployment Failed"
+                    "text": "❌ ECS Deployment Failed"
                   }
                 },
                 {
