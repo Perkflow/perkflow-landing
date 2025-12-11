@@ -68,6 +68,7 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
         "select[updatedAt]": "true",
         "select[title]": "true",
         "select[languageSlugs]": "true",
+        "select[defaultLanguage]": "true",
       });
 
       // Fetch published articles from Payload CMS for the specific locale
@@ -86,12 +87,11 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
       }
 
       const data = await response.json();
-      console.log(data);
       const articles = data.docs || [];
 
       // Generate sitemap entries for this locale
       const localeEntries = articles
-        .filter((article: CMSPost) => article.title) // Ensure title exists (filter out empty fallbacks)
+        .filter((article: CMSPost) => article.title)
         .map((article: CMSPost) => {
           const slug = getLocalizedSlug(article, locale);
           return {
