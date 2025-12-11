@@ -56,21 +56,22 @@ jobs:
       - name: Create new task definition
         id: task-def
         run: |
-          # Get current task definition
-          TASK_DEF=$(aws ecs describe-task-definition \
+          # Get current task definition and save to file
+          aws ecs describe-task-definition \
             --task-definition $ECS_TASK_DEFINITION \
             --region $AWS_REGION \
             --query 'taskDefinition' \
-            --output json)
+            --output json > task-def.json
           
-          # Update image in task definition
-          NEW_TASK_DEF=$(echo $TASK_DEF | jq --arg IMAGE "${{ steps.build-image.outputs.image }}" \
-            '.containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn) | del(.revision) | del(.status) | del(.requiresAttributes) | del(.placementConstraints) | del(.compatibilities) | del(.registeredAt) | del(.registeredBy)')
+          # Update image in task definition and clean up fields
+          jq --arg IMAGE "${{ steps.build-image.outputs.image }}" \
+            'del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .placementConstraints, .compatibilities, .registeredAt, .registeredBy) | .containerDefinitions[0].image = $IMAGE' \
+            task-def.json > new-task-def.json
           
           # Register new task definition
-          NEW_TASK_DEF_ARN=$(echo $NEW_TASK_DEF | aws ecs register-task-definition \
+          NEW_TASK_DEF_ARN=$(aws ecs register-task-definition \
             --region $AWS_REGION \
-            --cli-input-json file:///dev/stdin \
+            --cli-input-json file://new-task-def.json \
             --query 'taskDefinition.taskDefinitionArn' \
             --output text)
           
