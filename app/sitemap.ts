@@ -109,7 +109,7 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
 
     return entries;
   } catch (error) {
-    console.error("Error fetching articles for sitemap:", error);
+    console.error("Error fetching articles for sitemap: ", error);
     return [];
   }
 }
