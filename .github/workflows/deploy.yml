@@ -1,4 +1,4 @@
-name: Deploy Landing Page to AWS
+name: Deploy Landing Page to ECS
 
 on:
   push:
@@ -9,6 +9,8 @@ env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: perflow-production-landing-page
   ECS_CLUSTER: perflow-production
+  ECS_SERVICE: landing-page-prod
+  ECS_TASK_DEFINITION: perflow-production-landing-page
   
 jobs:
   deploy:
@@ -51,22 +53,45 @@ jobs:
           
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
       
+      - name: Create new task definition
+        id: task-def
+        run: |
+          # Get current task definition
+          TASK_DEF=$(aws ecs describe-task-definition \
+            --task-definition $ECS_TASK_DEFINITION \
+            --region $AWS_REGION \
+            --query 'taskDefinition' \
+            --output json)
+          
+          # Update image in task definition
+          NEW_TASK_DEF=$(echo $TASK_DEF | jq --arg IMAGE "${{ steps.build-image.outputs.image }}" \
+            '.containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn) | del(.revision) | del(.status) | del(.requiresAttributes) | del(.placementConstraints) | del(.compatibilities) | del(.registeredAt) | del(.registeredBy)')
+          
+          # Register new task definition
+          NEW_TASK_DEF_ARN=$(echo $NEW_TASK_DEF | aws ecs register-task-definition \
+            --region $AWS_REGION \
+            --cli-input-json file:///dev/stdin \
+            --query 'taskDefinition.taskDefinitionArn' \
+            --output text)
+          
+          echo "task-definition-arn=$NEW_TASK_DEF_ARN" >> $GITHUB_OUTPUT
+      
       - name: Deploy to ECS
         run: |
-          echo "Forcing ECS service to redeploy with updated image..."
+          # Update ECS service with new task definition
           aws ecs update-service \
-            --cluster perflow-production \
-            --service landing-page-prod \
-            --force-new-deployment \
-            --region us-east-1
+            --cluster $ECS_CLUSTER \
+            --service $ECS_SERVICE \
+            --task-definition ${{ steps.task-def.outputs.task-definition-arn }} \
+            --region $AWS_REGION
           
-          echo "Waiting for ECS deployment to complete..."
+          # Wait for deployment to complete
           aws ecs wait services-stable \
-            --cluster perflow-production \
-            --services landing-page-prod \
-            --region us-east-1
+            --cluster $ECS_CLUSTER \
+            --services $ECS_SERVICE \
+            --region $AWS_REGION
           
-          echo "✅ ECS landing page service updated successfully!"
+          echo "✅ ECS deployment complete!"
       
       - name: Notify Slack - Success
         if: success()
@@ -74,13 +99,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "✅ Landing Page Deployment Successful",
+              "text": "✅ Landing Page ECS Deployment Successful",
               "blocks": [
                 {
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "✅ Perkflow Landing Page Deployed"
+                    "text": "✅ Perkflow Landing Page Deployed to ECS"
                   }
                 },
                 {
@@ -88,7 +113,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Environment:*\nProduction"
+                      "text": "*Environment:*\nECS Production"
                     },
                     {
                       "type": "mrkdwn",
@@ -125,13 +150,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "❌ Landing Page Deployment Failed",
+              "text": "❌ Landing Page ECS Deployment Failed",
               "blocks": [
                 {
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "❌ Deployment Failed"
+                    "text": "❌ ECS Deployment Failed"
                   }
                 },
                 {
