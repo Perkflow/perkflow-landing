@@ -75,6 +75,7 @@ export interface CMSPost {
   };
   createdAt: string;
   updatedAt: string;
+  defaultLanguage: string;
 }
 
 export interface CMSPaginatedResponse<T> {
@@ -145,4 +146,5 @@ export interface Article {
     metaDescription?: string;
     keywords?: string[];
   };
+  defaultLanguage: string;
 }
