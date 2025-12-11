@@ -7,7 +7,7 @@ import { resolveMediaUrl } from "@/lib/media";
 // Helper function to get localized slug for a given language
 export function getLocalizedSlug(
   post: Article | CMSPost,
-  language: string,
+  language: string
 ): string {
   return getSlugForLanguage(post, language) || "";
 }
@@ -30,19 +30,15 @@ export function getSlugForLanguage(
   post: Article | CMSPost,
   language: string
 ): string | null {
-  // First, try to find an explicit translation in languageSlugs
+  // If the requested language is the default language, always return the main slug
+  if (post.defaultLanguage === language) {
+    return post.slug || null;
+  }
+  // Otherwise, look for a translation in languageSlugs
   const translation = post.languageSlugs?.find(
     (item) => item.language === language
   );
-
-  if (translation) {
-    return translation.slug;
-  }
-
-  // If no explicit translation found, fallback to the default slug
-  // This assumes that if it's not in languageSlugs, the default slug corresponds to this language
-  // (or is the fallback we want to use)
-  return post.slug || null;
+  return translation?.slug || null;
 }
 
 // Function to get content preview (first two lines)
@@ -215,6 +211,7 @@ export function convertPayloadPostToArticle(
         }
       : undefined,
     seo: post.seo,
+    defaultLanguage: post.defaultLanguage,
   };
 }
 

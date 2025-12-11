@@ -12,49 +12,33 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const [targetPath, setTargetPath] = useState<string | null>(null);
 
+  // Dynamically determine the target language
   const switchTo = locale === "en" ? "fr" : "en";
-  const label = locale === "en" ? "FR" : "EN";
+  const label = switchTo.toUpperCase();
 
   useEffect(() => {
-    // Check if we're on an article page
+    // Check if we are on an article page
     const articleMatch = pathname.match(/^\/articles\/([^/]+)$/);
-
     if (!articleMatch) {
-      // Not on an article page, reset targetPath to use default behavior
       setTargetPath(null);
       return;
     }
-
     const currentSlug = articleMatch[1];
-
-    // Fetch article to get languageSlugs
     fetch(`/api/cms/posts/${currentSlug}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();
       })
       .then((article: CMSPost) => {
-        // Use the helper function from documentation
         const targetSlug = getSlugForLanguage(article, switchTo);
-
-        // Check if the target version is actually valid
-        // If switching to EN (default), check if title exists (API returns default locale by default)
-        const isEnTargetValid =
-          switchTo === "en" && article.title && article.title.trim().length > 0;
-
-        // If switching to other language, check if slug exists
-        const isOtherTargetValid = switchTo !== "en" && targetSlug;
-
-        if (isEnTargetValid || isOtherTargetValid) {
+        if (targetSlug) {
           setTargetPath(`/articles/${targetSlug}`);
         } else {
-          // No translation available, fallback to resources index
           setTargetPath(`/resources`);
         }
       })
       .catch((error) => {
         console.error("Error fetching article for language switch:", error);
-        // On error, fallback to resources to be safe
         setTargetPath(`/resources`);
       });
   }, [pathname, switchTo]);
