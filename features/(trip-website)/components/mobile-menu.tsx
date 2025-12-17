@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp, XIcon } from "lucide-react";
 import { NavItem } from "./navitem";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import airplaneIcon from "@/assets/icons/airplane.svg";
 import giftIcon from "@/assets/icons/gift.svg";
 import starIcon from "@/assets/icons/star.svg";
@@ -94,7 +94,7 @@ export default function MobileMenu({ open, onClose, onClose2 }: Props) {
     <div
       className={cn(
         "fixed inset-0 z-50 flex h-screen transform flex-col bg-white transition-transform duration-300 ease-in-out",
-        open ? "translate-x-0" : "translate-x-full",
+        open ? "translate-x-0" : "translate-x-full"
       )}
     >
       {/* Header */}
@@ -207,10 +207,18 @@ export default function MobileMenu({ open, onClose, onClose2 }: Props) {
 
       {/* Footer sticks to bottom */}
       <div className="flex flex-col space-y-4 px-4 py-6">
-        <Button className="font-semibold">Get a quote</Button>
-        <Button className="font-semibold" variant="outline">
+        <Link
+          href="/contact"
+          className="font-semibold px-4 py-2 rounded-full bg-primary text-primary-foreground text-center hover:bg-primary/90 transition-colors"
+        >
+          Get a quote
+        </Link>
+        <Link
+          href="https://sandbox.perkflow.io"
+          className="font-semibold px-4 py-2 rounded-full border border-input bg-background text-foreground text-center hover:bg-accent hover:text-accent-foreground transition-colors"
+        >
           Log in
-        </Button>
+        </Link>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export default function AuthButtons() {
 
   return (
     <div className="flex items-center gap-4">
-      <Link href="https://app.perkflow.io">
+      <Link href="https://sandbox.perkflow.io">
         <Button variant="ghost">{t("authButtons.login")}</Button>
       </Link>
       <ContactFormDialog
