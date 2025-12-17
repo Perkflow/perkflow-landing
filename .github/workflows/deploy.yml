@@ -64,8 +64,9 @@ jobs:
             --output json > task-def.json
           
           # Update image in task definition and clean up fields
+          # Find the landing-page container by name and update its image
           jq --arg IMAGE "${{ steps.build-image.outputs.image }}" \
-            'del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .placementConstraints, .compatibilities, .registeredAt, .registeredBy) | .containerDefinitions[0].image = $IMAGE' \
+            'del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .placementConstraints, .compatibilities, .registeredAt, .registeredBy) | .containerDefinitions = [.containerDefinitions[] | if .name == "landing-page" then .image = $IMAGE else . end]' \
             task-def.json > new-task-def.json
           
           # Register new task definition
