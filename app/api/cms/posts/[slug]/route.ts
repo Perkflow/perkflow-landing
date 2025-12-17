@@ -56,7 +56,7 @@ export async function GET(
 
     // Additional server-side check to ensure post is published
     if (doc.status !== "published") {
-      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+      return NextResponse.json({ error: "Post not found." }, { status: 404 });
     }
     if (doc?.featuredImage) {
       const img = doc.featuredImage;
