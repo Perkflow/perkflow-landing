@@ -2,8 +2,8 @@ import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import Link from "next/link";
-import { loadArticleBySlug, getLocalizedSlug } from "@/lib/document-utils";
+import { Link } from "@/i18n/navigation";
+import { loadArticleBySlug } from "@/lib/document-utils";
 import { resolveMediaUrl } from "@/lib/media";
 import type { Article } from "@/types/cms";
 import { RichText } from "@payloadcms/richtext-lexical/react";
@@ -36,13 +36,13 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 
   const locale = await getLocale();
   const baseUrl = "https://perkflow.io";
-  
-  // Use the localized slug for the canonical URL
-  const localizedSlug = getLocalizedSlug(article, locale);
+
+  // Use the localized slug (provided on the article) for the canonical URL
+  const articleSlug = article.slug;
   const canonicalUrl =
     locale === "en"
-      ? `${baseUrl}/articles/${localizedSlug}`
-      : `${baseUrl}/${locale}/articles/${localizedSlug}`;
+      ? `${baseUrl}/articles/${articleSlug}`
+      : `${baseUrl}/${locale}/articles/${articleSlug}`;
 
   // Get article image
   const getArticleImage = (current: Article | null) => {
@@ -152,7 +152,7 @@ export default async function ArticleDetailPage({ params }: any) {
     return null;
   };
 
-  const backHref = `/${resolvedParams.locale}/resources`;
+  const backHref = `/resources`;
 
   const heroImage = getArticleImage(article);
 
