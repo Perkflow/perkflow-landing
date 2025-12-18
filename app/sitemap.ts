@@ -1,5 +1,4 @@
 import { MetadataRoute } from "next";
-import { getLocalizedSlug } from "@/lib/document-utils";
 import type { CMSPost } from "@/types/cms";
 
 const BASE_URL = "https://perkflow.io";
