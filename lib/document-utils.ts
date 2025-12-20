@@ -2,43 +2,18 @@
 import type { CMSMedia, CMSPost, Article } from "@/types/cms";
 import { resolveMediaUrl } from "@/lib/media";
 
-// Removed TXT extraction and fallback
-
-// Helper function to get localized slug for a given language
-export function getLocalizedSlug(
-  post: Article | CMSPost,
-  language: string
-): string {
-  return getSlugForLanguage(post, language) || "";
-}
-
-// Get available languages for a post (from documentation)
-export function getAvailableLanguages(post: Article | CMSPost): string[] {
-  const languages = ["en"]; // Default slug is typically English
-
-  if (post.languageSlugs) {
-    post.languageSlugs.forEach((item) => {
-      languages.push(item.language);
-    });
-  }
-
-  return languages;
-}
-
 // Get slug for a specific language (from documentation)
-export function getSlugForLanguage(
-  post: Article | CMSPost,
-  language: string
-): string | null {
-  // If the requested language is the default language, always return the main slug
-  if (post.defaultLanguage === language) {
-    return post.slug || null;
+export async function getSlugForLanguage(
+  id: string,
+  locale: string
+): Promise<string | null> {
+  // Load the article by id for the requested locale and return its slug
+  try {
+    const article = await loadArticleById(id, locale);
+    return article?.slug ?? null;
+  } catch (e) {
+    return null;
   }
-  // Otherwise, look for a translation in languageSlugs
-  const translation = post.languageSlugs?.find(
-    (item) => item.language === language
-  );
-  return translation?.slug || null;
 }
 
 // Function to get content preview (first two lines)
@@ -189,7 +164,6 @@ export function convertPayloadPostToArticle(
     contentPreview,
     // Additional CMS fields
     slug: post.slug,
-    languageSlugs: post.languageSlugs,
     excerpt: post.excerpt,
     category: post.category
       ? {
@@ -211,7 +185,7 @@ export function convertPayloadPostToArticle(
         }
       : undefined,
     seo: post.seo,
-    defaultLanguage: post.defaultLanguage,
+    
   };
 }
 
@@ -230,16 +204,16 @@ export async function loadArticlesFromCMS(locale: string): Promise<Article[]> {
 
     const articles = publishedPosts
       .map((post) => {
+        // Convert and only keep posts that provide a localized slug
+        if (!post.slug) return null;
         const article = convertPayloadPostToArticle(post, false);
-        // Ensure we use the slug for the current locale
-        const localizedSlug = getSlugForLanguage(post, locale);
-        if (localizedSlug) {
-          article.slug = localizedSlug;
-        }
+        article.slug = post.slug;
         return article;
       })
-      .filter((article) => {
-        const isValid = article.title && article.title.trim().length > 0;
+      .filter((article): article is Article => {
+        if (!article) return false;
+        const isValid =
+          typeof article.title === "string" && article.title.trim().length > 0;
         return isValid;
       });
     return articles;
@@ -263,6 +237,19 @@ export async function loadArticleBySlug(
     return convertPayloadPostToArticle(post);
   } catch (error) {
     console.error("Error loading article by slug:", error);
+    return null;
+  }
+}
+
+// Load a single article by CMS post ID
+export async function loadArticleById(id: string, locale: string): Promise<Article | null> {
+  try {
+    const { payloadAPI } = await import("@/connection/payload-api");
+    const post = await payloadAPI.getPostById(id, locale);
+    if (!post || !isPublishedPost(post)) return null;
+    return convertPayloadPostToArticle(post);
+  } catch (error) {
+    console.error("Error loading article by id:", error);
     return null;
   }
 }

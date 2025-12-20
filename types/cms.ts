@@ -53,11 +53,6 @@ export interface CMSPost {
   id: string;
   title: string;
   slug: string;
-  languageSlugs?: Array<{
-    language: "en" | "fr";
-    slug: string;
-    id: string;
-  }> | null;
   excerpt?: string;
   content?: any; // Lexical editor content
   category: CMSCategory;
@@ -75,7 +70,6 @@ export interface CMSPost {
   };
   createdAt: string;
   updatedAt: string;
-  defaultLanguage: string;
 }
 
 export interface CMSPaginatedResponse<T> {
@@ -119,11 +113,6 @@ export interface Article {
   contentPreview: string;
   // Additional CMS fields
   slug?: string;
-  languageSlugs?: Array<{
-    language: "en" | "fr";
-    slug: string;
-    id: string;
-  }> | null;
   excerpt?: string;
   category?: {
     id: string;
@@ -146,5 +135,5 @@ export interface Article {
     metaDescription?: string;
     keywords?: string[];
   };
-  defaultLanguage: string;
+  // defaultLanguage removed for frontend Article (slugs are localized)
 }

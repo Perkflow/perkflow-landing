@@ -115,32 +115,9 @@ class PayloadAPI {
       if (isServer) {
         // 1. Try to find by languageSlugs (localized slug)
         // This works for ANY locale, not just non-English
-        const localizedQueryParams = new URLSearchParams();
-        localizedQueryParams.set("where[languageSlugs.slug][equals]", slug);
-        localizedQueryParams.set("where[status][equals]", "published");
-        localizedQueryParams.set("limit", "1");
-        localizedQueryParams.set("depth", "2");
-        localizedQueryParams.set("locale", locale);
-        localizedQueryParams.set("fallback-locale", "none");
-
-        const localizedData = await serverFetchJSON<{
-          docs?: CMSPost[];
-        }>(
-          `${PAYLOAD_CMS_BASE_URL}/api/posts?${localizedQueryParams.toString()}`,
-          {
-            cache: "no-store",
-          }
-        );
-
-        const localizedDoc =
-          (localizedData?.docs && localizedData.docs[0]) || null;
-        if (localizedDoc) {
-          return localizedDoc;
-        }
-
-        // 2. Fallback to default slug field
+        // Find the post by its localized `slug` (no languageSlugs fallback needed)
         const queryParams = new URLSearchParams();
-        queryParams.set("where[slug][equals]", slug);
+        queryParams.set(`where[slug.${locale}][equals]`, slug);
         queryParams.set("where[status][equals]", "published");
         queryParams.set("limit", "1");
         queryParams.set("depth", "2");
@@ -155,7 +132,7 @@ class PayloadAPI {
         const doc = (data?.docs && data.docs[0]) || null;
         return doc ?? null;
       }
-      const response = await axios.get(`/api/cms/posts/${slug}`);
+      const response = await axios.get(`/api/cms/posts/${slug}?locale=${locale}`);
       return response.data as CMSPost | null;
     } catch (error) {
       console.error("Error fetching post by slug:", error);
@@ -163,16 +140,20 @@ class PayloadAPI {
     }
   }
 
-  async getPostById(id: string): Promise<CMSPost | null> {
+  async getPostById(id: string, locale: string): Promise<CMSPost | null> {
     try {
       if (isServer) {
+        const params = new URLSearchParams();
+        params.set("depth", "2");
+        params.set("locale", locale);
+        params.set("fallback-locale", "none");
         const data = await serverFetchJSON<CMSPost | null>(
-          `${PAYLOAD_CMS_BASE_URL}/api/posts/${id}`,
+          `${PAYLOAD_CMS_BASE_URL}/api/posts/${id}?${params.toString()}`,
           { cache: "no-store" }
         );
         return data;
       }
-      const response = await axios.get(`/api/cms/posts/by-id/${id}`);
+      const response = await axios.get(`/api/cms/posts/by-id/${id}?locale=${locale}`);
       return response.data as CMSPost | null;
     } catch (error) {
       console.error("Error fetching post by ID:", error);

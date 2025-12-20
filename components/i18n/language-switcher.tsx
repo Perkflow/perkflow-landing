@@ -4,7 +4,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { FaGlobe } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { getSlugForLanguage } from "@/lib/document-utils";
+import { getSlugForLanguage, loadArticleBySlug } from "@/lib/document-utils";
 import type { CMSPost } from "@/types/cms";
 
 export default function LanguageSwitcher() {
@@ -24,13 +24,13 @@ export default function LanguageSwitcher() {
       return;
     }
     const currentSlug = articleMatch[1];
-    fetch(`/api/cms/posts/${currentSlug}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch");
-        return res.json();
-      })
-      .then((article: CMSPost) => {
-        const targetSlug = getSlugForLanguage(article, switchTo);
+    loadArticleBySlug(currentSlug, locale)
+      .then(async (article) => {
+        if (!article) {
+          setTargetPath(`/resources`);
+          return;
+        }
+        const targetSlug = await getSlugForLanguage(article.id, switchTo);
         if (targetSlug) {
           setTargetPath(`/articles/${targetSlug}`);
         } else {
