@@ -28,6 +28,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...(await import(`../messages/${locale}/company.json`)).default,
       ...(await import(`../messages/${locale}/articles.json`)).default,
       ...(await import(`../messages/${locale}/metadata.json`)).default,
+      ...(await import(`../messages/${locale}/shop.json`)).default,
     },
   };
 });

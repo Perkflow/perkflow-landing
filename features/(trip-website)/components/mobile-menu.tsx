@@ -167,6 +167,12 @@ export default function MobileMenu({ open, onClose, onClose2 }: Props) {
         >
           {t("navItems.enterprise.title")}
         </NavItem>
+        <NavItem
+          href="/shop"
+          className="block text-lg font-semibold text-gray-900"
+        >
+          {t("navItems.shop.title")}
+        </NavItem>
 
         <div
           className="flex w-full items-center justify-between font-semibold text-gray-800"

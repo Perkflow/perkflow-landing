@@ -4,7 +4,8 @@
       "title1": "Features",
       "title2": "Resources",
       "title3": "Enterprise",
-      "title4": "Company"
+      "title4": "Company",
+      "title5": "Shop"
     },
     "authButtons": {
       "login": "Log in",
@@ -95,6 +96,9 @@
         },
         "enterprise": {
           "title": "Enterprise"
+        },
+        "shop": {
+          "title": "Shop"
         }
       }
     }
