@@ -64,22 +64,20 @@ import { usePathname } from "@/i18n/navigation";
 function NavLink({ cat, t, Icon }: { cat: any, t: any, Icon: any }) {
     const pathname = usePathname();
 
-    // Logic to determine active state
-    // /en/shop -> gift-card
-    // /en/flights -> flights
-    // etc.
-    // Basic string matching.
-
+    // Logic to determine active state based on /shop/* routes
     let isActive = false;
-    if (cat.id === "gift-card" && pathname === "/shop") isActive = true;
-    else if (pathname.includes(`/${cat.id}`)) isActive = true;
+    if (cat.id === "gift-card" && (pathname === "/shop" || pathname.match(/^\/shop\/[^/]+$/))) {
+        // Active for /shop and /shop/[slug] (product detail pages)
+        // But not for /shop/flights, /shop/hotels, etc.
+        if (!pathname.match(/^\/shop\/(flights|experiences|hotels|gadgets|mobile-topup)/)) {
+            isActive = true;
+        }
+    } else if (pathname.includes(`/shop/${cat.id}`)) {
+        isActive = true;
+    }
 
-    // Specific fix for "gadgets" vs "electronics" if legacy ID exists, but we fixed that.
-
-    const href = cat.id === "gift-card" ? "/shop" :
-        cat.id === "gadgets" ? "/gadgets" :
-            cat.id === "mobile-topup" ? "/mobile-topup" :
-                `/${cat.id}`; // Default fallback
+    // Build href - all routes are now under /shop
+    const href = cat.id === "gift-card" ? "/shop" : `/shop/${cat.id}`;
 
     return (
         <Link

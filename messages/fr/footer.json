@@ -17,9 +17,11 @@
     "Features": {
       "heading": "Fonctionnalités",
       "link": {
+        "shop": "Boutique",
         "gifts": "Cadeaux",
         "automated_rewards": "Récompenses automatisées",
-        "trips": "Voyages"
+        "trips": "Voyages",
+        "award_ceremony": "Cérémonie de remise de prix"
       }
     },
     "Contact": {

@@ -2,11 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { useRouter, usePathname, Link } from "@/i18n/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import { ShopHeaderNav } from "@/features/(trip-website)/components/shop-header-nav";
-import { Search, Gift, Plane, Sparkles, Building2, Smartphone, Phone } from "lucide-react";
 import { useDebouncedCallback } from "use-debounce";
 import Container from "@/components/layouts/container";
 import ProductGrid from "./product-grid";
@@ -17,19 +14,8 @@ import {
   paginateProducts,
   ITEMS_PER_PAGE,
   categories,
-  topNavCategories,
 } from "../data/products";
 import { cn } from "@/lib/utils";
-
-const iconMap = {
-  Gift,
-  Plane,
-  Sparkles,
-  Building2,
-  Smartphone,
-  Gadget: Smartphone,
-  Phone,
-};
 
 interface ShopContentProps {
   initialProducts: GiftCardProduct[];
@@ -93,26 +79,9 @@ export default function ShopContent({
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F8FB]">
-      {/* Spacer for fixed header */}
-      <div className="h-16" />
-
-      {/* Top Navigation Bar */}
-      <ShopHeaderNav>
-        <div className="relative hidden sm:block sm:w-80 lg:w-96">
-          <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
-          <Input
-            type="search"
-            defaultValue={search}
-            onChange={(e) => debouncedSearch(e.target.value)}
-            placeholder={t("search.placeholder")}
-            className="h-12 rounded-full border-gray-300 bg-gray-50 pl-12 pr-4 focus:bg-white"
-          />
-        </div>
-      </ShopHeaderNav>
-
+    <>
       {/* Hero Section */}
-      <div className="w-full bg-gradient-to-r from-[#E0F7FA]/40 to-[#FFF3E0]/40 py-12 md:py-20">
+      <div className="w-full bg-linear-to-r from-[#E0F7FA]/40 to-[#FFF3E0]/40 py-12 md:py-20">
         <Container>
           <div className="grid gap-12 items-center md:grid-cols-2">
             <div className="max-w-2xl">
@@ -124,7 +93,7 @@ export default function ShopContent({
               </p>
             </div>
             <div className="relative flex justify-center md:justify-end">
-              <div className="relative w-full max-w-[600px] aspect-[4/3] md:h-[400px] lg:h-[450px]">
+              <div className="relative w-full max-w-[600px] aspect-4/3 md:h-[400px] lg:h-[450px]">
                 <Image
                   src="/shop/hero-cards.png"
                   alt="Gift Cards"
@@ -180,6 +149,6 @@ export default function ShopContent({
           </main>
         </div>
       </Container>
-    </div>
+    </>
   );
 }

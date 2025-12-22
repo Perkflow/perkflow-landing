@@ -80,7 +80,6 @@ export default function Header() {
               </div>
               <NavItem href="/resources">{t("navItem.title2")}</NavItem>
               <NavItem href="/enterprise">{t("navItem.title3")}</NavItem>
-              <NavItem href="/shop">{t("navItem.title5")}</NavItem>
               <div
                 className=""
                 onMouseEnter={() => setOpen2(true)}

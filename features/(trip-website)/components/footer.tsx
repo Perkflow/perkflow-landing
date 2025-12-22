@@ -95,6 +95,11 @@ export default function FooterSection() {
               </div>
               <ul className="space-y-3 text-sm text-gray-200 md:text-base">
                 <li>
+                  <Link href="/shop" className="hover:text-white">
+                    {t("Features.link.shop")}
+                  </Link>
+                </li>
+                <li>
                   <Link href="/gifts" className="hover:text-white">
                     {t("Features.link.gifts")}
                   </Link>

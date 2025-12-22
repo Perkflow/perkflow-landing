@@ -34,6 +34,7 @@ const iconMap = {
   Building2,
   Smartphone,
   Phone,
+  Gadget: Smartphone,
 };
 
 interface ProductDetailContentProps {

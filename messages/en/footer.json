@@ -17,9 +17,11 @@
     "Features": {
       "heading": "Features",
       "link": {
+        "shop": "Shop",
         "gifts": "Gifts",
         "automated_rewards": "Automated rewards",
-        "trips": "Trips"
+        "trips": "Trips",
+        "award_ceremony": "Award ceremony"
       }
     },
     "Contact": {
