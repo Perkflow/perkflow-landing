@@ -1,0 +1,77 @@
+{
+  "Shop_Page": {
+    "hero": {
+      "heading": "Obtenez vos récompenses maintenant",
+      "subheading": "Choisissez parmi des centaines de cartes cadeaux pour toute occasion"
+    },
+    "topNav": {
+      "giftCard": "Carte Cadeau",
+      "flights": "Vols",
+      "experience": "Expérience",
+      "hotels": "Hôtels",
+      "gadgets": "Gadgets",
+      "mobileTopup": "Recharge Mobile"
+    },
+    "search": {
+      "placeholder": "Rechercher des cartes cadeaux"
+    },
+    "sidebar": {
+      "title": "Catégories"
+    },
+    "categories": {
+      "all": "Toutes",
+      "fashionLifestyle": "Mode & Lifestyle",
+      "foodRestaurant": "Alimentation & Restaurant",
+      "gaming": "Jeux",
+      "grocery": "Épicerie",
+      "travelEntertainment": "Voyage & Divertissement",
+      "wellnessSport": "Bien-être & Sport"
+    },
+    "resultsCount": "{count, plural, =0 {Aucun produit} =1 {1 produit} other {# produits}} trouvé(s)",
+    "noResults": {
+      "title": "Aucun produit trouvé",
+      "description": "Essayez d'ajuster votre recherche ou vos filtres pour trouver ce que vous cherchez."
+    },
+    "pagination": {
+      "prev": "Préc.",
+      "next": "Suiv."
+    },
+    "productDetail": {
+      "backToShop": "Retour à la boutique",
+      "selectAmount": "Sélectionnez le montant",
+      "addToCart": "Ajouter au panier",
+      "addedToCart": "Carte cadeau ajoutée au panier !",
+      "sendToFriend": "Envoyer à un ami",
+      "relatedProducts": "Vous pourriez aussi aimer",
+      "redeemOnline": "Utiliser en ligne",
+      "instant": "Instantané",
+      "noExpiry": "Sans date d'expiration",
+      "description": "Description",
+      "terms": "Conditions générales",
+      "termsContent": "Les cartes cadeaux sont valables pour les achats sur le site web et les magasins de la marque. Non échangeable contre de l'argent. Soumis aux conditions d'utilisation de la marque.",
+      "about": "À propos de",
+      "categories": {
+        "fashionLifestyle": "Mode & Lifestyle",
+        "foodRestaurant": "Alimentation & Restaurant",
+        "gaming": "Jeux",
+        "grocery": "Épicerie",
+        "travelEntertainment": "Voyage & Divertissement",
+        "wellnessSport": "Bien-être & Sport"
+      }
+    }
+  },
+  "ShopMetadata": {
+    "title": "Boutique de Cartes Cadeaux",
+    "description": "Parcourez notre collection de cartes cadeaux des meilleures marques. Parfait pour les récompenses employés, les cadeaux d'entreprise et les occasions personnelles.",
+    "imageAlt": "Boutique de Cartes Cadeaux PerkFlow",
+    "og": {
+      "title": "Boutique de Cartes Cadeaux - PerkFlow",
+      "description": "Parcourez notre collection de cartes cadeaux des meilleures marques. Parfait pour les récompenses employés."
+    },
+    "twitter": {
+      "title": "Boutique de Cartes Cadeaux - PerkFlow",
+      "description": "Parcourez notre collection de cartes cadeaux des meilleures marques."
+    },
+    "keywords": "cartes cadeaux, récompenses, avantages employés, cadeaux entreprise, bons d'achat"
+  }
+}

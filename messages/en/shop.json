@@ -1,0 +1,77 @@
+{
+  "Shop_Page": {
+    "hero": {
+      "heading": "Get your rewards equal now",
+      "subheading": "Choose from hundreds of gift cards for any occasion"
+    },
+    "topNav": {
+      "giftCard": "Gift Card",
+      "flights": "Flights",
+      "experience": "Experience",
+      "hotels": "Hotels",
+      "gadgets": "Gadgets",
+      "mobileTopup": "Mobile Topup"
+    },
+    "search": {
+      "placeholder": "Search for GiftCards"
+    },
+    "sidebar": {
+      "title": "Categories"
+    },
+    "categories": {
+      "all": "All",
+      "fashionLifestyle": "Fashion & Lifestyle",
+      "foodRestaurant": "Food & Restaurant",
+      "gaming": "Gaming",
+      "grocery": "Grocery",
+      "travelEntertainment": "Travel & Entertainment",
+      "wellnessSport": "Wellness & Sport"
+    },
+    "resultsCount": "{count, plural, =0 {No products} =1 {1 product} other {# products}} found",
+    "noResults": {
+      "title": "No products found",
+      "description": "Try adjusting your search or filter to find what you're looking for."
+    },
+    "pagination": {
+      "prev": "Prev",
+      "next": "Next"
+    },
+    "productDetail": {
+      "backToShop": "Back to Shop",
+      "selectAmount": "Select Amount",
+      "addToCart": "Add to Cart",
+      "addedToCart": "Gift card added to cart!",
+      "sendToFriend": "Send to Friend",
+      "relatedProducts": "You might also like",
+      "redeemOnline": "Redeem online",
+      "instant": "Instant",
+      "noExpiry": "No Expiry Validity",
+      "description": "Description",
+      "terms": "Terms and Conditions",
+      "termsContent": "Gift cards are valid for purchases on the brand's website and stores. Cannot be exchanged for cash. Subject to the brand's terms of service.",
+      "about": "About",
+      "categories": {
+        "fashionLifestyle": "Fashion & Lifestyle",
+        "foodRestaurant": "Food & Restaurant",
+        "gaming": "Gaming",
+        "grocery": "Grocery",
+        "travelEntertainment": "Travel & Entertainment",
+        "wellnessSport": "Wellness & Sport"
+      }
+    }
+  },
+  "ShopMetadata": {
+    "title": "Gift Card Shop",
+    "description": "Browse our collection of gift cards from top brands. Perfect for employee rewards, corporate gifts, and personal occasions.",
+    "imageAlt": "PerkFlow Gift Card Shop",
+    "og": {
+      "title": "Gift Card Shop - PerkFlow",
+      "description": "Browse our collection of gift cards from top brands. Perfect for employee rewards and corporate gifts."
+    },
+    "twitter": {
+      "title": "Gift Card Shop - PerkFlow",
+      "description": "Browse our collection of gift cards from top brands."
+    },
+    "keywords": "gift cards, rewards, employee benefits, corporate gifts, vouchers"
+  }
+}
