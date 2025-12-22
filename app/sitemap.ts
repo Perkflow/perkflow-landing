@@ -1,5 +1,4 @@
 import { MetadataRoute } from "next";
-import { getLocalizedSlug } from "@/lib/document-utils";
 import type { CMSPost } from "@/types/cms";
 
 const BASE_URL = "https://perkflow.io";
@@ -63,12 +62,10 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
         depth: "1",
         locale,
         "fallback-locale": "none",
-        // Optimization: Select only necessary fields to reduce response size and fix cache error
+        // Optimization: Select only necessary fields (slug now localized)
         "select[slug]": "true",
         "select[updatedAt]": "true",
         "select[title]": "true",
-        "select[languageSlugs]": "true",
-        "select[defaultLanguage]": "true",
       });
 
       // Fetch published articles from Payload CMS for the specific locale
@@ -91,9 +88,9 @@ async function getArticleEntries(): Promise<MetadataRoute.Sitemap> {
 
       // Generate sitemap entries for this locale
       const localeEntries = articles
-        .filter((article: CMSPost) => article.title)
+        .filter((article: CMSPost) => article.title && article.slug)
         .map((article: CMSPost) => {
-          const slug = getLocalizedSlug(article, locale);
+          const slug = article.slug;
           return {
             url: `${BASE_URL}${
               locale === "en" ? "" : `/${locale}`

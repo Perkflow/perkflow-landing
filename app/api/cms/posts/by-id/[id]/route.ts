@@ -7,25 +7,19 @@ const PAYLOAD_CMS_BASE_URL =
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { slug } = await params;
-
-    // Read locale from query param (client may provide it). Default to 'en'
+    const { id } = await params;
     const locale = request.nextUrl.searchParams.get("locale") || "en";
 
-    // Query CMS for the localized slug (CMS stores slug per-locale)
     const queryParams = new URLSearchParams();
-    queryParams.set(`where[slug.${locale}][equals]`, slug);
-    queryParams.set("where[status][equals]", "published");
-    queryParams.set("limit", "1");
     queryParams.set("depth", "2");
     queryParams.set("locale", locale);
     queryParams.set("fallback-locale", "none");
 
     const response = await fetch(
-      `${PAYLOAD_CMS_BASE_URL}/api/posts?${queryParams.toString()}`
+      `${PAYLOAD_CMS_BASE_URL}/api/posts/${id}?${queryParams.toString()}`
     );
 
     if (!response.ok) {
@@ -34,17 +28,16 @@ export async function GET(
 
     const data = await response.json();
 
-    // If not found, return 404 (no fallback — slugs are localized)
-    if (!data.docs || data.docs.length === 0) {
+    if (!data) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    const doc = data.docs[0];
+    const doc = data;
 
-    // Additional server-side check to ensure post is published
-    if (doc.status !== "published") {
+    if (doc.status && doc.status !== "published") {
       return NextResponse.json({ error: "Post not found." }, { status: 404 });
     }
+
     if (doc?.featuredImage) {
       const img = doc.featuredImage;
       const candidate = img?.url || img?.thumbnailURL || "";
@@ -60,14 +53,11 @@ export async function GET(
 
     return NextResponse.json(doc, {
       headers: {
-        "Cache-Control": "public, max-age=300, s-maxage=600", // 5 min cache, 10 min CDN
+        "Cache-Control": "public, max-age=300, s-maxage=600",
       },
     });
   } catch (error) {
-    console.error("Error fetching post by slug:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch post" },
-      { status: 500 }
-    );
+    console.error("Error fetching post by id:", error);
+    return NextResponse.json({ error: "Failed to fetch post" }, { status: 500 });
   }
 }

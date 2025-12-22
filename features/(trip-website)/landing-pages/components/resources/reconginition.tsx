@@ -6,7 +6,6 @@ import { getTranslations } from "next-intl/server";
 import { getResourceArticles } from "./resources-data";
 import { getLocale } from "next-intl/server";
 import Container from "@/components/layouts/container";
-import { getLocalizedSlug } from "@/lib/document-utils";
 
 function getArticleImage(imageSrc?: string | null) {
   return resolveMediaUrl(imageSrc) || recentEvent;
@@ -32,46 +31,87 @@ export default async function Recognition() {
   const [featured, ...rest] = articles;
   const sideArticles = rest.slice(0, 3);
 
+  const featuredSlug = featured.slug;
+
   return (
     <Container>
       <div className="relative flex flex-col gap-10 pt-10 pb-16 md:flex-row">
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-[#ABDEC980] via-[#D5EEE480] to-transparent" />
         {/* Left Featured Article */}
         <div className="w-full md:w-1/2">
-          <Link href={`/articles/${getLocalizedSlug(featured, locale)}`} className="block">
-            <div className="relative h-[280px] w-full md:h-[300px]">
-              <Image
-                src={getArticleImage(
-                  featured.featuredImage?.url || featured.image
-                )}
-                alt={`Image for ${featured.title}`}
-                fill
-                className="rounded-lg object-cover"
-                unoptimized
-              />
+          {featuredSlug ? (
+            <Link href={`/articles/${featuredSlug}`} className="block">
+              <div className="relative h-[280px] w-full md:h-[300px]">
+                <Image
+                  src={getArticleImage(
+                    featured.featuredImage?.url || featured.image
+                  )}
+                  alt={`Image for ${featured.title}`}
+                  fill
+                  className="rounded-lg object-cover"
+                  unoptimized
+                />
+              </div>
+              <div className="mt-4 flex flex-col gap-2">
+                <h2 className="text-foreground text-lg font-semibold">
+                  {featured.title}
+                </h2>
+                <p className="text-muted-foreground line-clamp-2 text-sm">
+                  {featured.contentPreview}
+                </p>
+                <p className="text-muted-foreground text-xs">
+                  {featured.author} • {featured.time}
+                </p>
+              </div>
+            </Link>
+          ) : (
+            <div className="block">
+              <div className="relative h-[280px] w-full md:h-[300px]">
+                <Image
+                  src={getArticleImage(
+                    featured.featuredImage?.url || featured.image
+                  )}
+                  alt={`Image for ${featured.title}`}
+                  fill
+                  className="rounded-lg object-cover"
+                  unoptimized
+                />
+              </div>
+              <div className="mt-4 flex flex-col gap-2">
+                <h2 className="text-foreground text-lg font-semibold">
+                  {featured.title}
+                </h2>
+                <p className="text-muted-foreground line-clamp-2 text-sm">
+                  {featured.contentPreview}
+                </p>
+                <p className="text-muted-foreground text-xs">
+                  {featured.author} • {featured.time}
+                </p>
+              </div>
             </div>
-            <div className="mt-4 flex flex-col gap-2">
-              <h2 className="text-foreground text-lg font-semibold">
-                {featured.title}
-              </h2>
-              <p className="text-muted-foreground line-clamp-2 text-sm">
-                {featured.contentPreview}
-              </p>
-              <p className="text-muted-foreground text-xs">
-                {featured.author} • {featured.time}
-              </p>
-            </div>
-          </Link>
+          )}
         </div>
 
         {/* Right List of Stories */}
         <div className="flex w-full flex-col gap-6 md:w-1/2">
-          {sideArticles.map((article) => (
-            <Link
-              key={article.id}
-              href={`/articles/${getLocalizedSlug(article, locale)}`}
-              className="flex flex-col gap-4 md:flex-row md:items-start"
-            >
+          {sideArticles.map((article) => {
+            const slug = article.slug;
+            if (!slug) {
+              return (
+                <div
+                  key={article.id}
+                  className="flex flex-col gap-4 md:flex-row md:items-start"
+                >
+                  {/* no localized slug for this article */}
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={article.id}
+                href={`/articles/${slug}`}
+                className="flex flex-col gap-4 md:flex-row md:items-start"
+              >
               <div className="relative h-[180px] w-full md:h-[110px] md:w-[110px]">
                 <Image
                   src={getArticleImage(
@@ -91,8 +131,9 @@ export default async function Recognition() {
                   {article.author} • {article.time}
                 </p>
               </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </Container>
